@@ -1,0 +1,396 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Frog8 - Veriphy | WhatsApp-First Onboarding Platform">
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="section gradient-bg pt-32">
+    <div class="container text-center">
+      <h1 class="fade-in mb-8">
+        No portals. No apps. No chaos.<br>
+        Just <span class="text-green">Veriphy</span>.
+      </h1>
+      <p class="fade-in-delay text-xl mb-8 max-w-4xl mx-auto">
+        Messaging-native, secure, compliant onboarding for any business, via WhatsApp, Signal, iMessage, or email.
+      </p>
+      <div class="fade-in-delay flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn btn-primary">Get Started</a>
+        <a href="/contact" class="btn btn-secondary">Request Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- How Veriphy Works -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-16">How <span class="text-green">Veriphy</span> Works</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-4 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">Customer Experience</h4>
+          <p class="text-center">Simple messaging interface - no apps to download, no portals to navigate</p>
+        </div>
+        
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-4 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">Frontline Team App</h4>
+          <p class="text-center">Field agents manage onboarding with mobile-first tools and real-time updates</p>
+        </div>
+        
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-4 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">Manager Console</h4>
+          <p class="text-center">Back office oversight with analytics, compliance tracking, and approval workflows</p>
+        </div>
+        
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-4 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">AI-Driven Performance</h4>
+          <p class="text-center">Intelligent insights, automation, and optimization across all touchpoints</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Use Cases -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <h2 class="text-center mb-16">Use Cases</h2>
+      
+      <div class="overflow-x-auto">
+        <div class="glass rounded-lg p-6">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-green/20">
+                <th class="p-4 text-left text-green">Industry</th>
+                <th class="p-4 text-left text-green">Use Case</th>
+                <th class="p-4 text-left text-green">Key Benefits</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Lending</td>
+                <td class="p-4">Loan application and KYC</td>
+                <td class="p-4">Faster approvals, reduced drop-offs</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Insurance</td>
+                <td class="p-4">Policy onboarding and claims</td>
+                <td class="p-4">Digital-first customer experience</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Banking</td>
+                <td class="p-4">Account opening and verification</td>
+                <td class="p-4">Regulatory compliance, secure process</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Cards</td>
+                <td class="p-4">Credit card applications</td>
+                <td class="p-4">Instant verification, quick issuance</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Recruitment</td>
+                <td class="p-4">Employee onboarding</td>
+                <td class="p-4">Streamlined HR processes</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Housing/Access</td>
+                <td class="p-4">Tenant verification</td>
+                <td class="p-4">Document management, background checks</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Government</td>
+                <td class="p-4">Citizen services</td>
+                <td class="p-4">Digital governance, transparency</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold">Vendor Onboarding</td>
+                <td class="p-4">Supplier verification</td>
+                <td class="p-4">Compliance tracking, audit trails</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Differentiators -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-16">What Makes Veriphy <span class="text-green">Different</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass p-8 hover-lift">
+          <h4 class="text-green mb-4">Messaging-Native</h4>
+          <p>Works on platforms your customers already use - WhatsApp, Signal, iMessage, email. No app downloads required.</p>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h4 class="text-green mb-4">Secure by Default</h4>
+          <p>End-to-end encryption, PII protection, and compliance-ready architecture built for regulated industries.</p>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h4 class="text-green mb-4">Seamless Integration</h4>
+          <p>APIs and SDKs for CRM, HRMS, eSign, and banking systems. Deploy in days, not months.</p>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h4 class="text-green mb-4">Role-Aware</h4>
+          <p>Different interfaces for customers, field agents, managers, and admins - each optimized for their workflow.</p>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h4 class="text-green mb-4">AI-Driven</h4>
+          <p>Intelligent document extraction, fraud detection, and process optimization powered by machine learning.</p>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h4 class="text-green mb-4">Designed in India</h4>
+          <p>Built for Indian compliance requirements, languages, and business processes from the ground up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Product Tiers -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <h2 class="text-center mb-16">Choose Your <span class="text-green">Plan</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glass p-8 hover-lift">
+          <h3 class="text-green mb-4">Lite</h3>
+          <p class="mb-6">Perfect for small teams getting started</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>WhatsApp integration</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Basic document capture</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>5 users included</span>
+            </li>
+          </ul>
+          <a href="/contact" class="btn btn-primary w-full">Get Started</a>
+        </div>
+        
+        <div class="glass p-8 hover-lift border-2 border-green">
+          <h3 class="text-green mb-4">Pro</h3>
+          <p class="mb-6">Advanced features for growing businesses</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Multi-platform messaging</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>AI document extraction</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>25 users included</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Analytics dashboard</span>
+            </li>
+          </ul>
+          <a href="/contact" class="btn btn-primary w-full">Choose Pro</a>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h3 class="text-green mb-4">Max</h3>
+          <p class="mb-6">Enterprise-grade security and compliance</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Advanced security</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Compliance features</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>100 users included</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Custom integrations</span>
+            </li>
+          </ul>
+          <a href="/contact" class="btn btn-primary w-full">Choose Max</a>
+        </div>
+        
+        <div class="glass p-8 hover-lift">
+          <h3 class="text-green mb-4">Enterprise</h3>
+          <p class="mb-6">Custom solutions for large organizations</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Unlimited users</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>White-label solution</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Dedicated support</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              <span>Custom development</span>
+            </li>
+          </ul>
+          <a href="/contact" class="btn btn-primary w-full">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Integrations -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-16">Integrations & <span class="text-green">SDKs</span></h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div class="glass p-6 text-center hover-lift">
+          <h5 class="text-green mb-2">CRM</h5>
+          <p class="text-sm">Salesforce, HubSpot</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h5 class="text-green mb-2">HRMS</h5>
+          <p class="text-sm">BambooHR, Workday</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h5 class="text-green mb-2">eSign</h5>
+          <p class="text-sm">DocuSign, Adobe Sign</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h5 class="text-green mb-2">Banking APIs</h5>
+          <p class="text-sm">Core banking systems</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h5 class="text-green mb-2">Payment</h5>
+          <p class="text-sm">Razorpay, Stripe</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h5 class="text-green mb-2">Storage</h5>
+          <p class="text-sm">AWS S3, Google Cloud</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Security & Compliance -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <h2 class="text-center mb-16">Security & <span class="text-green">Compliance</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glass p-6 text-center hover-lift">
+          <h4 class="text-green mb-4">PII Protection</h4>
+          <p>Advanced data encryption and privacy controls for sensitive information</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h4 class="text-green mb-4">KYC Ready</h4>
+          <p>Built-in compliance for Indian KYC and AML requirements</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h4 class="text-green mb-4">End-to-End Encryption</h4>
+          <p>Message and document encryption throughout the entire workflow</p>
+        </div>
+        <div class="glass p-6 text-center hover-lift">
+          <h4 class="text-green mb-4">Audit Trails</h4>
+          <p>Complete audit logs and compliance reporting for regulatory requirements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .w-4 { width: 1rem; }
+  .h-4 { height: 1rem; }
+  .gap-2 { gap: 0.5rem; }
+  .border-2 { border-width: 2px; }
+</style>

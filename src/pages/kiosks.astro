@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Frog8 - Kiosks | Unattended Automation Solutions">
+  <Navigation />
+  
+  <section class="section gradient-bg pt-32">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h1 class="fade-in mb-6">
+          Unattended <span class="text-green">Automation</span>
+        </h1>
+        <p class="fade-in-delay text-xl max-w-3xl mx-auto">
+          Industrial-grade kiosks for transit, banking, and retail. Built to operate 24/7 in any environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Transigo Series -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="slide-up mb-8">Transigo <span class="text-green">Transit Automation Series</span></h2>
+        <p class="text-xl mb-12 max-w-4xl mx-auto">
+          Modular unattended kiosks for ticketing, card issuance, and multi-modal payments. AFCS-compliant and built for India's metro networks.
+        </p>
+      </div>
+
+      <!-- Product Matrix -->
+      <div class="overflow-x-auto mb-16">
+        <div class="glass rounded-lg p-6">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-green/20">
+                <th class="p-4 text-left text-green">Variant</th>
+                <th class="p-4 text-left text-green">Use Cases</th>
+                <th class="p-4 text-left text-green">Payments</th>
+                <th class="p-4 text-left text-green">Screen</th>
+                <th class="p-4 text-left text-green">Modules</th>
+                <th class="p-4 text-left text-green">Environment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Transigo Lite</td>
+                <td class="p-4">QR ticketing, Basic payments</td>
+                <td class="p-4">UPI, Basic cards</td>
+                <td class="p-4">15" Touch</td>
+                <td class="p-4">QR scanner, Card reader</td>
+                <td class="p-4">Indoor, Low traffic</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Transigo Ticket+</td>
+                <td class="p-4">Paper tickets, Multi-payments</td>
+                <td class="p-4">UPI, Cards, Cash</td>
+                <td class="p-4">19" Touch</td>
+                <td class="p-4">Printer, Cash recycler</td>
+                <td class="p-4">Indoor/Outdoor, Medium</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Transigo Card</td>
+                <td class="p-4">NCMC issuance, Top-ups</td>
+                <td class="p-4">UPI, Cards</td>
+                <td class="p-4">21" Touch</td>
+                <td class="p-4">Card dispenser, RFID</td>
+                <td class="p-4">Indoor, High security</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Transigo Card+</td>
+                <td class="p-4">Full transit services</td>
+                <td class="p-4">All payment modes</td>
+                <td class="p-4">24" Touch</td>
+                <td class="p-4">All modules + Biometric</td>
+                <td class="p-4">Any environment</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="p-4 font-semibold">Transigo Max</td>
+                <td class="p-4">Premium station services</td>
+                <td class="p-4">All + Premium UI</td>
+                <td class="p-4">27" Touch</td>
+                <td class="p-4">Premium + Accessibility</td>
+                <td class="p-4">Flagship locations</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold">Transigo Enterprise</td>
+                <td class="p-4">Custom integrations</td>
+                <td class="p-4">Fully customizable</td>
+                <td class="p-4">Custom size</td>
+                <td class="p-4">Modular platform</td>
+                <td class="p-4">Enterprise deployments</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Transigo Features -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass p-6 hover-lift">
+          <h4 class="text-green mb-4">AFCS Compliant</h4>
+          <p>Fully compliant with Automatic Fare Collection System standards for metro networks</p>
+        </div>
+        <div class="glass p-6 hover-lift">
+          <h4 class="text-green mb-4">Multi-Modal Payments</h4>
+          <p>UPI, cards, cash, and NCMC - all payment methods supported in one platform</p>
+        </div>
+        <div class="glass p-6 hover-lift">
+          <h4 class="text-green mb-4">Weather Resistant</h4>
+          <p>IP65 rated, operates in -10°C to 55°C temperature range with 24/7 reliability</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Navo Series -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="slide-up mb-8">Navo <span class="text-green">Banking Automation Series</span></h2>
+        <p class="text-xl mb-12 max-w-4xl mx-auto">
+          Comprehensive banking kiosks for passbook printing, cheque deposits, and card issuance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">Navo Passbook</h4>
+          <p class="mb-4 text-center">Automated passbook printing and account updates</p>
+          <ul class="text-sm space-y-2">
+            <li>• High-speed printing</li>
+            <li>• Real-time account sync</li>
+            <li>• Multi-bank support</li>
+            <li>• Secure authentication</li>
+          </ul>
+        </div>
+        
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zM14 6a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h6z"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">Navo Cheque</h4>
+          <p class="mb-4 text-center">Secure cheque deposit and processing</p>
+          <ul class="text-sm space-y-2">
+            <li>• MICR reading</li>
+            <li>• Image capture</li>
+            <li>• Instant validation</li>
+            <li>• CTS integration</li>
+          </ul>
+        </div>
+        
+        <div class="glass p-6 hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zM14 6a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h6zM4 14a2 2 0 002 2h8a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2z"/>
+            </svg>
+          </div>
+          <h4 class="text-green mb-4 text-center">Navo Card</h4>
+          <p class="mb-4 text-center">Instant debit/credit card issuance</p>
+          <ul class="text-sm space-y-2">
+            <li>• PIN generation</li>
+            <li>• Card activation</li>
+            <li>• KYC integration</li>
+            <li>• Secure dispensing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Retail Automation -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="slide-up mb-8">Retail <span class="text-green">Automation</span></h2>
+        <p class="text-xl mb-12 max-w-4xl mx-auto">
+          Self-checkout solutions, wallet top-ups, and embedded offers for modern retail environments.
+        </p>
+      </div>
+
+      <div class="glass p-8 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-green mb-4">Self-Checkout & Wallet Kiosks</h3>
+            <p class="mb-6">
+              Complete self-service retail experience with barcode scanning, multiple payment options, and instant wallet top-ups. 24/7 modular hardware designed for high-traffic retail environments.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+                <span>Barcode/QR scanning</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+                <span>Mobile recharges & wallet top-ups</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+                <span>Embedded offers & loyalty integration</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+                <span>24/7 unattended operation</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center">
+            <h4 class="text-green mb-4">Retail Innovation</h4>
+            <p>Transforming retail experiences with intelligent automation and seamless payment integration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  .w-5 { width: 1.25rem; }
+  .h-5 { height: 1.25rem; }
+</style>
