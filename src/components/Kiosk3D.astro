@@ -1,0 +1,469 @@
+---
+// Kiosk3D.astro
+---
+
+<div id="container">
+    <div id="loading">
+        <div class="loading-spinner"></div>
+        Loading Professional Kiosk Model...
+    </div>
+    <div id="controls">
+        <h3>F8 Metro Kiosk</h3>
+        <p>🖱️ Left click + drag: Rotate</p>
+        <p>🔍 Mouse wheel: Zoom</p>
+        <p>⚡ Right click + drag: Pan</p>
+        <p>🎯 Double click: Focus</p>
+    </div>
+    <div id="info">
+        Professional Transit Kiosk<br>
+        Realistic Materials & Lighting
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0f1419, #1a2332);
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    #container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    
+    #controls {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #controls h3 {
+        margin: 0 0 15px 0;
+        color: #8e44ad;
+        font-weight: 600;
+    }
+    
+    #controls p {
+        margin: 8px 0;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+    
+    #info {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: white;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 14px;
+    }
+    
+    #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        z-index: 200;
+        text-align: center;
+    }
+    
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-top: 3px solid #8e44ad;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+<script>
+    import * as THREE from 'three';
+
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scene setup with enhanced quality
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.Fog(0x1a2332, 10, 50);
+        
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            antialias: true, 
+            alpha: true,
+            powerPreference: "high-performance"
+        });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setClearColor(0x0f1419, 1);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        
+        const container = document.getElementById('container');
+        if (container) {
+            container.appendChild(renderer.domElement);
+        }
+        
+        // Professional lighting setup
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+        scene.add(ambientLight);
+        
+        // Key light
+        const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+        keyLight.position.set(10, 15, 8);
+        keyLight.castShadow = true;
+        keyLight.shadow.mapSize.width = 4096;
+        keyLight.shadow.mapSize.height = 4096;
+        keyLight.shadow.camera.near = 0.5;
+        keyLight.shadow.camera.far = 50;
+        keyLight.shadow.camera.left = -10;
+        keyLight.shadow.camera.right = 10;
+        keyLight.shadow.camera.top = 10;
+        keyLight.shadow.camera.bottom = -10;
+        keyLight.shadow.bias = -0.0001;
+        scene.add(keyLight);
+        
+        // Fill light
+        const fillLight = new THREE.DirectionalLight(0x7fb3d3, 0.3);
+        fillLight.position.set(-5, 8, 5);
+        scene.add(fillLight);
+        
+        // Rim light
+        const rimLight = new THREE.DirectionalLight(0x8e44ad, 0.5);
+        rimLight.position.set(-8, 2, -5);
+        scene.add(rimLight);
+        
+        // Screen light
+        const screenLight = new THREE.PointLight(0x4a90e2, 0.8, 5);
+        screenLight.position.set(0, 0, 1);
+        scene.add(screenLight);
+        
+        // Professional materials with proper PBR properties
+        const createMaterial = (color: number, roughness = 0.1, metalness = 0.0, emissive = 0x000000) => {
+            return new THREE.MeshPhongMaterial({
+                color: color,
+                shininess: Math.max(1, (1 - roughness) * 100),
+                specular: new THREE.Color(0.2, 0.2, 0.2),
+                emissive: emissive
+            });
+        };
+        
+        const kioskBodyMaterial = createMaterial(0xf8f9fa, 0.15, 0.05);
+        const screenBezelMaterial = createMaterial(0x2c3e50, 0.2, 0.8);
+        const cardReaderMaterial = createMaterial(0x34495e, 0.3, 0.7);
+        const logoMaterial = createMaterial(0x27ae60, 0.2, 0.1, 0x0a3d20);
+        
+        // Define screenUIMaterial for the texture
+        const screenUIMaterial = new THREE.MeshPhongMaterial({
+            color: 0x000000, // Black until texture loads
+            emissive: 0x001122,
+            shininess: 60,
+            transparent: true,
+            opacity: 0.95
+        });
+
+        // Create kiosk with professional geometry
+        const kiosk = new THREE.Group();
+        
+        // Main body with beveled edges
+        const bodyShape = new THREE.Shape();
+        const width = 1.2, height = 2.4, radius = 0.08;
+        
+        bodyShape.moveTo(-width/2 + radius, -height/2);
+        bodyShape.lineTo(width/2 - radius, -height/2);
+        bodyShape.quadraticCurveTo(width/2, -height/2, width/2, -height/2 + radius);
+        bodyShape.lineTo(width/2, height/2 - radius);
+        bodyShape.quadraticCurveTo(width/2, height/2, width/2 - radius, height/2);
+        bodyShape.lineTo(-width/2 + radius, height/2);
+        bodyShape.quadraticCurveTo(-width/2, height/2, -width/2, height/2 - radius);
+        bodyShape.lineTo(-width/2, -height/2 + radius);
+        bodyShape.quadraticCurveTo(-width/2, -height/2, -width/2 + radius, -height/2);
+        
+        const extrudeSettings = {
+            depth: 0.25,
+            bevelEnabled: true,
+            bevelSegments: 8,
+            steps: 2,
+            bevelSize: 0.02,
+            bevelThickness: 0.02
+        };
+        
+        const bodyGeometry = new THREE.ExtrudeGeometry(bodyShape, extrudeSettings);
+        const body = new THREE.Mesh(bodyGeometry, kioskBodyMaterial);
+        body.position.set(0, 0, 0.125);
+        body.castShadow = true;
+        body.receiveShadow = true;
+        kiosk.add(body);
+        
+        // F8 logo with proper 3D depth
+        const logoGeometry = new THREE.CylinderGeometry(0.08, 0.08, 0.015, 16);
+        const logoBase = new THREE.Mesh(logoGeometry, new THREE.MeshPhongMaterial({ 
+            color: 0xecf0f1, 
+            shininess: 50 
+        }));
+        logoBase.position.set(0, 1.05, 0.28);
+        logoBase.rotation.x = Math.PI / 2;
+        logoBase.castShadow = true;
+        kiosk.add(logoBase);
+        
+        // F8 text
+        const f8TextGeometry = new THREE.BoxGeometry(0.05, 0.04, 0.008);
+        const f8Text = new THREE.Mesh(f8TextGeometry, logoMaterial);
+        f8Text.position.set(0, 1.05, 0.29);
+        kiosk.add(f8Text);
+        
+        // Screen assembly with realistic bezel
+        const screenBezelGeometry = new THREE.BoxGeometry(1.0, 1.7, 0.06);
+        const screenBezel = new THREE.Mesh(screenBezelGeometry, screenBezelMaterial);
+        screenBezel.position.set(0, 0.05, 0.28);
+        screenBezel.castShadow = true;
+        kiosk.add(screenBezel);
+        
+        // Inner screen recess
+        const screenRecessGeometry = new THREE.BoxGeometry(0.92, 1.62, 0.02);
+        const screenRecess = new THREE.Mesh(screenRecessGeometry, new THREE.MeshPhongMaterial({ 
+            color: 0x1a1a1a 
+        }));
+        screenRecess.position.set(0, 0.05, 0.305);
+        kiosk.add(screenRecess);
+        
+        // Actual screen surface with realistic glow
+        const screenSurfaceGeometry = new THREE.BoxGeometry(0.88, 1.58, 0.005);
+        const screenSurface = new THREE.Mesh(screenSurfaceGeometry, screenUIMaterial);
+        screenSurface.position.set(0, 0.05, 0.31);
+        kiosk.add(screenSurface);
+        
+        // Load UI texture from image
+        const textureLoader = new THREE.TextureLoader();
+        textureLoader.load('/images/Picture1.png', (texture) => { 
+            texture.minFilter = THREE.LinearFilter;
+            texture.magFilter = THREE.LinearFilter;
+            texture.colorSpace = THREE.SRGBColorSpace; 
+            screenUIMaterial.map = texture;
+            screenUIMaterial.needsUpdate = true; 
+        }, undefined, (err) => {
+            console.error('An error occurred while loading the texture:', err);
+        });
+        
+        // Professional card reader assembly
+        const cardReaderBody = new THREE.Group();
+        
+        // Main card reader housing
+        const readerHousingGeo = new THREE.BoxGeometry(0.18, 0.45, 0.15);
+        const readerHousing = new THREE.Mesh(readerHousingGeo, cardReaderMaterial);
+        readerHousing.castShadow = true;
+        cardReaderBody.add(readerHousing);
+        
+        // Card reader screen
+        const readerScreenGeo = new THREE.BoxGeometry(0.14, 0.2, 0.02);
+        const readerScreen = new THREE.Mesh(readerScreenGeo, createMaterial(0x000000, 0.05, 0.0, 0x001122));
+        readerScreen.position.set(0, 0.05, 0.085);
+        cardReaderBody.add(readerScreen);
+        
+        // Card slot with realistic depth
+        const cardSlotGeo = new THREE.BoxGeometry(0.12, 0.025, 0.03);
+        const cardSlot = new THREE.Mesh(cardSlotGeo, new THREE.MeshPhongMaterial({ color: 0x000000 }));
+        cardSlot.position.set(0, -0.18, 0.085);
+        cardReaderBody.add(cardSlot);
+        
+        // Status LED
+        const ledGeo = new THREE.SphereGeometry(0.015, 8, 6);
+        const led = new THREE.Mesh(ledGeo, createMaterial(0x00ff00, 0.1, 0.0, 0x004400));
+        led.position.set(0, -0.1, 0.085);
+        cardReaderBody.add(led);
+        
+        cardReaderBody.position.set(0.55, -0.25, 0.2);
+        kiosk.add(cardReaderBody);
+        
+        // Bottom branding panel with realistic finish
+        const brandingGeo = new THREE.BoxGeometry(0.9, 0.18, 0.01);
+        const branding = new THREE.Mesh(brandingGeo, createMaterial(0xffffff, 0.1, 0.05, 0x111111));
+        branding.position.set(0, -0.95, 0.32);
+        branding.castShadow = true;
+        kiosk.add(branding);
+        
+        // Metro logo
+        const metroLogoGeo = new THREE.BoxGeometry(0.2, 0.06, 0.005);
+        const metroLogo = new THREE.Mesh(metroLogoGeo, logoMaterial);
+        metroLogo.position.set(-0.25, -0.95, 0.325);
+        kiosk.add(metroLogo);
+        
+        // Payment symbols
+        const paymentGeo = new THREE.BoxGeometry(0.15, 0.04, 0.005);
+        const payment = new THREE.Mesh(paymentGeo, createMaterial(0x3498db, 0.2, 0.0, 0x1a1a2e));
+        payment.position.set(0.25, -0.95, 0.325);
+        kiosk.add(payment);
+        
+        // Professional mounting system
+        const mountGeo = new THREE.BoxGeometry(1.4, 0.3, 0.12);
+        const mount = new THREE.Mesh(mountGeo, createMaterial(0xbdc3c7, 0.3, 0.6));
+        mount.position.set(0, 0, 0.06);
+        mount.castShadow = true;
+        mount.receiveShadow = true;
+        kiosk.add(mount);
+        
+        // Add subtle edge lighting
+        const edgeLight1 = new THREE.PointLight(0x8e44ad, 0.3, 3);
+        edgeLight1.position.set(-0.7, 0, 0.5);
+        kiosk.add(edgeLight1);
+        
+        const edgeLight2 = new THREE.PointLight(0x3498db, 0.3, 3);
+        edgeLight2.position.set(0.7, 0, 0.5);
+        kiosk.add(edgeLight2);
+        
+        scene.add(kiosk);
+        
+        // Professional environment
+        const floorGeo = new THREE.PlaneGeometry(20, 20);
+        const floorMat = new THREE.MeshPhongMaterial({ 
+            color: 0x2c3e50, 
+            shininess: 80,
+            transparent: true,
+            opacity: 0.8
+        });
+        const floor = new THREE.Mesh(floorGeo, floorMat);
+        floor.rotation.x = -Math.PI / 2;
+        floor.position.y = -1.5;
+        floor.receiveShadow = true;
+        scene.add(floor);
+        
+        // Camera setup
+        camera.position.set(4, 2, 4);
+        camera.lookAt(0, 0, 0);
+        
+        // Enhanced controls
+        let mouseDown = false;
+        let mouseButton = 0;
+        let mouseX = 0;
+        let mouseY = 0;
+        let autoRotate = false;
+        
+        renderer.domElement.addEventListener('mousedown', (event: MouseEvent) => {
+            mouseDown = true;
+            mouseButton = event.button;
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+            autoRotate = false;
+        });
+        
+        renderer.domElement.addEventListener('mousemove', (event: MouseEvent) => {
+            if (!mouseDown) return;
+            
+            const deltaX = event.clientX - mouseX;
+            const deltaY = event.clientY - mouseY;
+            
+            if (mouseButton === 0) {
+                kiosk.rotation.y += deltaX * 0.008;
+                kiosk.rotation.x += deltaY * 0.008;
+                kiosk.rotation.x = Math.max(-Math.PI/4, Math.min(Math.PI/4, kiosk.rotation.x));
+            } else if (mouseButton === 2) {
+                camera.position.x -= deltaX * 0.01;
+                camera.position.y += deltaY * 0.01;
+            }
+            
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+        
+        renderer.domElement.addEventListener('mouseup', () => {
+            mouseDown = false;
+        });
+        
+        renderer.domElement.addEventListener('wheel', (event: WheelEvent) => {
+            const distance = camera.position.distanceTo(new THREE.Vector3(0, 0, 0));
+            const factor = event.deltaY > 0 ? 1.05 : 0.95;
+            const newDistance = Math.max(2.5, Math.min(12, distance * factor));
+            
+            const direction = camera.position.clone().normalize();
+            camera.position.copy(direction.multiplyScalar(newDistance));
+        });
+        
+        renderer.domElement.addEventListener('dblclick', () => {
+            camera.position.set(4, 2, 4);
+            kiosk.rotation.set(0, 0, 0);
+            autoRotate = true;
+        });
+        
+        renderer.domElement.addEventListener('contextmenu', (event: MouseEvent) => {
+            event.preventDefault();
+        });
+        
+        // Professional animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            const time = Date.now() * 0.001;
+            
+            // Auto-rotate demo
+            if (autoRotate) {
+                kiosk.rotation.y += 0.005;
+            }
+            
+            // Screen UI texture animation - will only work if screenUIMaterial has emissive property
+            if (screenUIMaterial.emissive) {
+                screenUIMaterial.emissive.setHex(0x001122 + Math.floor((Math.sin(time * 2) + 1) * 0.5 * 0x002244));
+            }
+            
+            // Button pulse
+            kiosk.children.forEach((child, index) => {
+                if (child instanceof THREE.Mesh && child.material && 'emissive' in child.material && child.position.y < 0 && child.position.y > -0.3) {
+                    const intensity = (Math.sin(time * 3 + index) + 1) * 0.5;
+                    const baseColor = [0x4a1e5c, 0x3d1b3d, 0x2d1b3d][index % 3] || 0x2d1b3d;
+                    (child.material as THREE.MeshPhongMaterial).emissive.setHex(baseColor + Math.floor(intensity * 0x221133));
+                }
+            });
+            
+            // LED animation
+            if (led.material) {
+                (led.material as THREE.MeshPhongMaterial).emissive.setHex(0x004400 + Math.floor((Math.sin(time * 4) + 1) * 0.5 * 0x00bb00));
+            }
+            
+            // Dynamic lighting
+            screenLight.intensity = 0.8 + Math.sin(time * 2) * 0.2;
+            rimLight.intensity = 0.5 + Math.sin(time * 1.5) * 0.1;
+            
+            camera.lookAt(0, 0, 0);
+            renderer.render(scene, camera);
+        }
+        
+        // Responsive handling
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // Initialize
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+            loadingElement.style.display = 'none';
+        }
+        autoRotate = true;
+        animate();
+    });
+</script> 

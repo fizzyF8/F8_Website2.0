@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/logo_inverted.png';
+import logo from '../assets/logo.png';
 ---
 
-<footer class="footer">
+<footer class="footer glass-dark">
   <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Company -->
       <div class="fade-in">
-        <div class="logo-container mb-6">
+        <div class="logo-container mb-12">
           <a href="/" class="block">
             <Image 
               src={logo} 
@@ -16,10 +16,11 @@ import logo from '../assets/logo_inverted.png';
               width={100}
               height={70}
               class="h-10 w-auto"
+              loading="lazy"
             />
           </a>
         </div>
-        <p class="text-gray-400 mb-6">
+        <p style="color: black;" class="mb-6">
           Building the next generation of infrastructure for India.
         </p>
         <div class="flex space-x-4">
@@ -43,57 +44,74 @@ import logo from '../assets/logo_inverted.png';
 
       <!-- Products -->
       <div class="fade-in-delay">
-        <h3 class="text-primary mb-6">Products</h3>
+        <h3 style="color: #a7d221;" class="mb-6">Products</h3>
         <ul class="space-y-4">
-          <li><a href="/platforms" class="footer-link">Raahi Platform</a></li>
-          <li><a href="/kiosks" class="footer-link">Smart Kiosks</a></li>
-          <li><a href="/veriphy" class="footer-link">Veriphy</a></li>
-          <li><a href="/deployments" class="footer-link">Deployments</a></li>
+          <li><a href="/platforms" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Raahi Platform</a></li>
+          <li><a href="/kiosks" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Smart Kiosks</a></li>
+          <li><a href="/veriphy" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Veriphy</a></li>
+          <li><a href="/deployments" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Deployments</a></li>
         </ul>
       </div>
 
       <!-- Resources -->
       <div class="fade-in-delay">
-        <h3 class="text-primary mb-6">Resources</h3>
+        <h3 style="color: #a7d221;" class="mb-6">Resources</h3>
         <ul class="space-y-4">
-          <li><a href="/about" class="footer-link">About Us</a></li>
-          <li><a href="/contact" class="footer-link">Contact</a></li>
-          <li><a href="/careers" class="footer-link">Careers</a></li>
-          <li><a href="/blog" class="footer-link">Blog</a></li>
+          <li><a href="/about" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">About Us</a></li>
+          <li><a href="/contact" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Contact</a></li>
+          <li><a href="/careers" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Careers</a></li>
+          <li><a href="/blog" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">Blog</a></li>
         </ul>
       </div>
 
       <!-- Connect -->
       <div class="fade-in-delay">
-        <h3 class="text-primary mb-6">Connect</h3>
+        <h3 style="color: #a7d221;" class="mb-6">Connect</h3>
         <ul class="space-y-4">
-          <li><a href="mailto:hello@frog8.com" class="footer-link">hello@frog8.com</a></li>
-          <li><a href="tel:+919876543210" class="footer-link">+91 98765 43210</a></li>
-          <li class="text-gray-400">Bangalore, India</li>
+          <li><a href="mailto:hello@frog8.com" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">hello@frog8.com</a></li>
+          <li><a href="tel:+919876543210" style="color: black; text-decoration: none;" class="hover:translate-x-1 transition-all duration-300">+91 98765 43210</a></li>
+          <li style="color: #666;">Bangalore, India</li>
         </ul>
       </div>
     </div>
 
-    <div class="border-t border-primary/20 mt-12 pt-8 text-center text-gray-400">
-      <p>&copy; {new Date().getFullYear()} Frog8. All rights reserved.</p>
+    <div style="border-top: 1px solid rgba(167, 210, 33, 0.2);" class="mt-12 pt-8 text-center">
+      <p style="color: #666;">&copy; {new Date().getFullYear()} Frog8. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    @apply bg-black/20 py-16;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .footer.glass-dark {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(167, 210, 33, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(167, 210, 33, 0.15);
   }
 
   .logo-container {
     @apply transition-transform duration-300 hover:scale-105;
   }
 
-  .footer-link {
-    @apply text-gray-400 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block;
+  a:hover {
+    opacity: 0.8;
   }
 
   .social-icon {
-    @apply text-gray-400 hover:text-primary transition-colors duration-300 p-2 rounded-full hover:bg-primary/10;
+    color: #a7d221;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 9999px;
+  }
+
+  .social-icon:hover {
+    opacity: 0.8;
+    background-color: rgba(167, 210, 33, 0.1);
   }
 </style>
