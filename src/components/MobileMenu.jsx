@@ -62,7 +62,6 @@ export default function MobileMenu() {
           { href: '/veriphy', label: 'Veriphy' },
           { href: '/deployments', label: 'Deployments' },
           { href: '/about', label: 'About' },
-          { href: '/contact', label: 'Contact' },
         ].map(link => (
           <a
             key={link.href}
