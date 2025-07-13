@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import whatsapp from "../assets/whatsapp.png";
 ---
 
 <Layout title="Frog8 - Contact | Let's Build the Future Together">
@@ -106,7 +107,7 @@ import Footer from "../components/Footer.astro";
     aria-label="Chat with us on WhatsApp"
     class="whatsapp-float"
   >
-    <img src="../assets/whatsapp.png" alt="WhatsApp" class="whatsapp-img" />
+    <img src={whatsapp.src} alt="WhatsApp" class="whatsapp-img" />
 
     <span class="hidden md:inline ml-2"></span>
   </a>
@@ -493,7 +494,7 @@ import Footer from "../components/Footer.astro";
     z-index: 50;
     display: flex;
     align-items: center;
-    background: var(--f8-green);
+    background: transparent;
     padding: 0.78rem 1.17rem;
     font-size: 1.13rem;
     color: #fff;
