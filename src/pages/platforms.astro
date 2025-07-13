@@ -1,15 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import { Image } from 'astro:assets';
-import raahiLogo from '../assets/raahi.png';
-import veriphyLogo from '../assets/veriphy.png';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import raahiLogo from "../assets/raahi.png";
+import veriphyLogo from "../assets/veriphy.png";
 ---
 
 <Layout title="Frog8 - Platforms | Connected Software Solutions">
   <Navigation />
-  
+
   <section class="section gradient-bg pt-32">
     <div class="container">
       <div class="text-center mb-16">
@@ -17,7 +17,8 @@ import veriphyLogo from '../assets/veriphy.png';
           Connected <span class="text-green">Platforms</span>
         </h1>
         <p class="fade-in-delay text-xl max-w-3xl mx-auto">
-          Comprehensive software solutions powering the next generation of infrastructure across transit, banking, and public services.
+          Comprehensive software solutions powering the next generation of
+          infrastructure across transit, banking, and public services.
         </p>
       </div>
     </div>
@@ -32,49 +33,104 @@ import veriphyLogo from '../assets/veriphy.png';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
         <div class="slide-up">
           <div class="flex items-center mb-6">
-            <div class="mr-4 bg-green/20 rounded-full flex items-center justify-center">
-              <!-- <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zM14 6a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h6zM4 14a2 2 0 002 2h8a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2z"/>
-              </svg> -->
-              <Image src={raahiLogo} alt="Raahi Logo" class="h-10 w-10" loading="eager" />
+            <div
+              class="mr-4 bg-green/20 rounded-full flex items-center justify-center"
+            >
+              <Image
+                src={raahiLogo}
+                alt="Raahi Logo"
+                class="platform-logo"
+                loading="eager"
+              />
             </div>
           </div>
           <h3 class="mb-6">Transit Card + App Platform</h3>
           <p class="mb-6">
-            Complete NCMC issuance platform with UPI payments, rewards system, and embedded finance capabilities. Streamline transit operations with seamless payment integration.
+            Complete NCMC issuance platform with UPI payments, rewards system,
+            and embedded finance capabilities. Streamline transit operations
+            with seamless payment integration.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+          <ul class="platform-features-list space-y-3 mb-8">
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>NCMC-compliant card issuance</span>
+              <span class="platform-feature-text"
+                >NCMC-compliant card issuance</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>UPI and multi-modal payments</span>
+              <span class="platform-feature-text"
+                >UPI and multi-modal payments</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Rewards and loyalty programs</span>
+              <span class="platform-feature-text"
+                >Rewards and loyalty programs</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Embedded finance services</span>
+              <span class="platform-feature-text"
+                >Embedded finance services</span
+              >
             </li>
           </ul>
           <a href="/contact" class="btn btn-primary">Learn More</a>
         </div>
         <div class="glass p-8">
-          <div class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center">
+          <div
+            class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center"
+          >
             <h4 class="text-green mb-4">Transit Revolution</h4>
-            <p>Powering seamless journeys across India's metro networks with NCMC compliance and embedded finance</p>
+            <p>
+              Powering seamless journeys across India's metro networks with NCMC
+              compliance and embedded finance
+            </p>
           </div>
         </div>
       </div>
@@ -86,48 +142,101 @@ import veriphyLogo from '../assets/veriphy.png';
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
         <div class="glass p-8">
-          <div class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center">
+          <div
+            class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center"
+          >
             <h4 class="text-green mb-4">WhatsApp-First</h4>
-            <p>Secure onboarding without apps or portals - messaging-native experience</p>
+            <p>
+              Secure onboarding without apps or portals - messaging-native
+              experience
+            </p>
           </div>
         </div>
         <div class="slide-up">
           <div class="flex items-center mb-6">
-            <div class="mr-4 bg-green/20 rounded-full flex items-center justify-center">
-              <!-- <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                </svg> -->
-                <Image src={veriphyLogo} alt="Veriphy Logo" class="h-9 w-9" loading="lazy" />
+            <div
+              class="mr-4 bg-green/20 rounded-full flex items-center justify-center"
+            >
+              <Image
+                src={veriphyLogo}
+                alt="Veriphy Logo"
+                class="platform-logo"
+                loading="lazy"
+              />
             </div>
           </div>
           <h3 class="mb-6">WhatsApp-First Onboarding</h3>
           <p class="mb-6">
-            Secure, compliant onboarding platform that works through WhatsApp, Signal, iMessage, or email. No apps, no portals, no chaos.
+            Secure, compliant onboarding platform that works through WhatsApp,
+            Signal, iMessage, or email. No apps, no portals, no chaos.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+          <ul class="platform-features-list space-y-3 mb-8">
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Messaging-native experience</span>
+              <span class="platform-feature-text"
+                >Messaging-native experience</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Document capture and verification</span>
+              <span class="platform-feature-text"
+                >Document capture and verification</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>KYC and compliance ready</span>
+              <span class="platform-feature-text">KYC and compliance ready</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Task tracking and management</span>
+              <span class="platform-feature-text"
+                >Task tracking and management</span
+              >
             </li>
           </ul>
           <a href="/veriphy" class="btn btn-primary">Explore Veriphy</a>
@@ -142,50 +251,97 @@ import veriphyLogo from '../assets/veriphy.png';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
         <div class="slide-up">
           <div class="flex items-center mb-6">
-            <div class="w-16 h-16 mr-4 bg-green/20 rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
-              </svg>
+            <div
+              class="w-16 h-16 mr-4 bg-green/20 rounded-full flex items-center justify-center"
+            >
             </div>
             <h2 class="text-green">CTS</h2>
           </div>
           <h3 class="mb-6">Check Truncation System</h3>
           <p class="mb-6">
-            Advanced document digitization platform built in partnership with Kores. Streamline banking operations with secure, compliant check processing and document management.
+            Advanced document digitization platform built in partnership with
+            Kores. Streamline banking operations with secure, compliant check
+            processing and document management.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+          <ul class="platform-features-list space-y-3 mb-8">
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>RBI-compliant check truncation</span>
+              <span class="platform-feature-text"
+                >RBI-compliant check truncation</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Document digitization</span>
+              <span class="platform-feature-text">Document digitization</span>
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Automated processing workflows</span>
+              <span class="platform-feature-text"
+                >Automated processing workflows</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Banking integration ready</span>
+              <span class="platform-feature-text"
+                >Banking integration ready</span
+              >
             </li>
           </ul>
           <a href="/contact" class="btn btn-primary">Learn More</a>
         </div>
         <div class="glass p-8">
-          <div class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center">
+          <div
+            class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center"
+          >
             <h4 class="text-green mb-4">Banking Innovation</h4>
-            <p>Transforming document processing for modern banks with Kores partnership</p>
+            <p>
+              Transforming document processing for modern banks with Kores
+              partnership
+            </p>
           </div>
         </div>
       </div>
@@ -197,48 +353,103 @@ import veriphyLogo from '../assets/veriphy.png';
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="glass p-8">
-          <div class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center">
+          <div
+            class="bg-gradient-to-br from-green/20 to-green-light/20 rounded-lg p-8 text-center"
+          >
             <h4 class="text-green mb-4">Always Connected</h4>
-            <p>Remote monitoring and management for all devices and infrastructure</p>
+            <p>
+              Remote monitoring and management for all devices and
+              infrastructure
+            </p>
           </div>
         </div>
         <div class="slide-up">
           <div class="flex items-center mb-6">
-            <div class="w-16 h-16 mr-4 bg-green/20 rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            <div
+              class="w-16 h-16 mr-4 bg-green/20 rounded-full flex items-center justify-center"
+            >
+              <svg
+                class="w-8 h-8 text-green"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
               </svg>
             </div>
             <h2 class="text-green">Frog8 Connect</h2>
           </div>
           <h3 class="mb-6">Device Management Platform</h3>
           <p class="mb-6">
-            Comprehensive remote device monitoring, software updates, app orchestration, and real-time analytics platform. Keep your infrastructure running smoothly 24/7.
+            Comprehensive remote device monitoring, software updates, app
+            orchestration, and real-time analytics platform. Keep your
+            infrastructure running smoothly 24/7.
           </p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+          <ul class="platform-features-list space-y-3 mb-8">
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Remote device monitoring</span>
+              <span class="platform-feature-text">Remote device monitoring</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Over-the-air software updates</span>
+              <span class="platform-feature-text"
+                >Over-the-air software updates</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>App orchestration and deployment</span>
+              <span class="platform-feature-text"
+                >App orchestration and deployment</span
+              >
             </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+            <li class="flex items-center">
+              <svg
+                class="platform-tick"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11l3 3 7-7"></path>
               </svg>
-              <span>Real-time analytics and reporting</span>
+              <span class="platform-feature-text"
+                >Real-time analytics and reporting</span
+              >
             </li>
           </ul>
           <a href="/contact" class="btn btn-primary">Learn More</a>
@@ -251,8 +462,61 @@ import veriphyLogo from '../assets/veriphy.png';
 </Layout>
 
 <style>
-  .w-5 { width: 1.25rem; }
-  .h-5 { height: 1.25rem; }
-  .gap-3 { gap: 0.75rem; }
-  .mr-4 { margin-right: 1rem; }
+  .w-5 {
+    width: 1.25rem;
+  }
+  .h-5 {
+    height: 1.25rem;
+  }
+  .gap-3 {
+    gap: 0.75rem;
+  }
+  .gap-2 {
+    gap: 0.5rem;
+  }
+  .mr-4 {
+    margin-right: 1rem;
+  }
+
+  .platform-tick {
+    width: 1.18em !important;
+    height: 1.18em !important;
+    min-width: 1.18em !important;
+    min-height: 1.18em !important;
+    max-width: 1.18em !important;
+    max-height: 1.18em !important;
+    color: #a7d221;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+    margin-right: 0.62em;
+  }
+  .platform-features-list li {
+    align-items: center;
+    min-height: 2.2em;
+  }
+  .platform-feature-text {
+    color: #e6ffb7;
+    font-weight: 500;
+    font-size: 1.04em;
+    letter-spacing: 0.01em;
+  }
+  .platform-logo {
+    max-width: 30.2rem; /* desktop max size */
+    max-height: 10.1rem;
+    min-width: 8.2rem;
+    min-height: 5.3rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  @media (max-width: 640px) {
+    .platform-logo {
+      max-width: 25.2rem; /* mobile size */
+      max-height: 8.4rem;
+      min-width: 6.3rem;
+      min-height: 3rem;
+    }
+  }
 </style>
