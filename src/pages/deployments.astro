@@ -1,223 +1,374 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Frog8 - Deployments | Real-World Success Stories">
   <Navigation />
-  
-  <section class="section gradient-bg pt-32">
+
+  <!-- Hero Section -->
+  <section class="section gradient-bg pt-32 pb-10 md:pb-16">
     <div class="container">
-      <div class="text-center mb-16">
-        <h1 class="fade-in mb-6">
+      <div class="text-center mb-12 md:mb-16">
+        <h1
+          class="fade-in mb-4 md:mb-6 text-3xl md:text-5xl font-bold tracking-tight"
+        >
           Proven <span class="text-green">Deployments</span>
         </h1>
-        <p class="fade-in-delay text-xl max-w-3xl mx-auto">
-          Real-world success stories across metro networks, banks, and enterprises. See how Frog8 is powering India's infrastructure transformation.
+        <p
+          class="fade-in-delay text-lg md:text-xl max-w-3xl mx-auto text-white/90"
+        >
+          Real-world success stories across metro networks, banks, and
+          enterprises. See how Frog8 is powering India's infrastructure
+          transformation.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section Divider -->
   <div class="section-divider"></div>
 
   <!-- Partner Grid -->
-  <section class="section">
+  <section class="section bg-glass-light">
     <div class="container">
-      <h2 class="text-center mb-16">Trusted <span class="text-green">Partners</span></h2>
-      
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Metro/BMRCL</h5>
-          <p class="text-sm">Transit infrastructure</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Meta</h5>
-          <p class="text-sm">Technology partnerships</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">DBS Bank</h5>
-          <p class="text-sm">Digital banking solutions</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">South Indian Bank</h5>
-          <p class="text-sm">Banking automation</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">NSDL PB</h5>
-          <p class="text-sm">Payment bank infrastructure</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Axis Bank</h5>
-          <p class="text-sm">Financial services</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Kotak Life</h5>
-          <p class="text-sm">Insurance onboarding</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Veena World</h5>
-          <p class="text-sm">Travel tech solutions</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Aditya Vision</h5>
-          <p class="text-sm">Retail automation</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Sayba Group</h5>
-          <p class="text-sm">Enterprise solutions</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">ISG</h5>
-          <p class="text-sm">Technology integration</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Hitachi</h5>
-          <p class="text-sm">Industrial partnerships</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">AUM</h5>
-          <p class="text-sm">Asset management</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Aumnatic</h5>
-          <p class="text-sm">Automation solutions</p>
-        </div>
+      <h2 class="text-center mb-10 md:mb-16">
+        Trusted <span class="text-green">Partners</span>
+      </h2>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 lg:gap-8"
+      >
+        {
+          [
+            {
+              name: "Metro/BMRCL",
+              desc: "Transit infrastructure",
+              logo: "/src/assets/partners/bmrcl.svg"
+            },
+            {
+              name: "Meta",
+              desc: "Technology partnerships",
+              logo: "/src/assets/partners/meta.svg"
+            },
+            {
+              name: "DBS Bank",
+              desc: "Digital banking solutions",
+              logo: "/src/assets/partners/development-bank-of-singapore.svg"
+            },
+            {
+              name: "South Indian Bank",
+              desc: "Banking automation",
+              logo: "/src/assets/partners/south-indian-bank.png"
+            },
+            {
+              name: "NSDL PB",
+              desc: "Payment bank infrastructure",
+              logo: "/src/assets/partners/nsdl.png"
+            },
+            {
+              name: "Axis Bank",
+              desc: "Financial services",
+              logo: "/src/assets/partners/axis-bank-logo.svg"
+            },
+            {
+              name: "Kotak Life",
+              desc: "Insurance onboarding",
+              logo: "/src/assets/partners/kotak-life-insurance.png"
+            },
+            {
+              name: "Veena World",
+              desc: "Travel tech solutions",
+              logo: "/src/assets/partners/veena_world.svg"
+            },
+            {
+              name: "Aditya Vision",
+              desc: "Retail automation",
+              logo: "/src/assets/partners/aditya_vision.png"
+            },
+            {
+              name: "Sayba Group",
+              desc: "Enterprise solutions",
+              logo: "/src/assets/partners/sayba_group.png"
+            },
+            {
+              name: "AUM Infotech",
+              desc: "Asset management",
+              logo: "/src/assets/partners/aum_infotech.jpeg"
+            },
+            {
+              name: "Advantech",
+              desc: "Asset management",
+              logo: "/src/assets/partners/Advantech.svg"
+            }
+          ].map(({name, desc, logo}) => (
+            <div class="glass p-4 md:p-6 text-center hover-lift rounded-2xl border border-green/10 min-h-[120px] flex flex-col justify-center shadow-lg bg-white/10">
+              <div class="partner-logo-container mb-3">
+                <img 
+                  src={logo} 
+                  alt={`${name} logo`}
+                  class="partner-logo"
+                />
+              </div>
+              <h5 class="text-green mb-1 md:mb-2 text-base md:text-lg font-bold tracking-tight">
+                {name}
+              </h5>
+              <p class="text-xs md:text-sm text-white/70">{desc}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- Section Divider -->
   <div class="section-divider"></div>
 
   <!-- Featured Deployments -->
   <section class="section bg-black/20">
     <div class="container">
-      <h2 class="text-center mb-16">Featured <span class="text-green">Deployments</span></h2>
-      
+      <h2 class="text-center mb-16">
+        Featured <span class="text-green">Deployments</span>
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass p-8 hover-lift">
-          <div class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center">
-            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
-              <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"/>
-            </svg>
+        <!-- Card 1 -->
+        <div
+          class="glass p-8 hover-lift text-center flex flex-col items-center"
+        >
+          <div class="w-28 h-28 mb-6 flex items-center justify-center">
+            <!-- Your SVG icon here -->
+            <svg width="96" height="96" fill="none" viewBox="0 0 96 96"
+              ><circle cx="40" cy="70" r="10" fill="#C6F53A"></circle><rect
+                x="16"
+                y="24"
+                width="44"
+                height="36"
+                rx="10"
+                fill="#C6F53A"></rect><rect
+                x="64"
+                y="40"
+                width="20"
+                height="20"
+                rx="7"
+                fill="#C6F53A"></rect><circle
+                cx="74"
+                cy="70"
+                r="10"
+                fill="#C6F53A"></circle></svg
+            >
           </div>
-          <h3 class="text-green mb-4 text-center">BMRCL WhatsApp Ticketing</h3>
-          <p class="text-center mb-4">Revolutionary WhatsApp-based metro ticketing system serving 100K+ daily transactions</p>
-          <ul class="text-sm space-y-2">
-            <li>• 100K+ daily transactions</li>
-            <li>• WhatsApp-native experience</li>
-            <li>• NCMC compliance</li>
-            <li>• Multi-modal payments</li>
+          <h3 class="text-green mb-2 text-2xl font-bold">
+            BMRCL WhatsApp<br />Ticketing
+          </h3>
+          <p class="mb-4 text-base text-white/80">
+            Revolutionary WhatsApp-based metro ticketing system serving 100K+
+            daily transactions
+          </p>
+          <ul class="deploy-bullets">
+            <li>100K+ daily transactions</li>
+            <li>WhatsApp-native experience</li>
+            <li>NCMC compliance</li>
+            <li>Multi-modal payments</li>
           </ul>
         </div>
-        
-        <div class="glass p-8 hover-lift">
-          <div class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center">
-            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-            </svg>
+        <!-- Card 2 -->
+        <div
+          class="glass p-8 hover-lift text-center flex flex-col items-center"
+        >
+          <div class="w-28 h-28 mb-6 flex items-center justify-center">
+            <!-- Your SVG icon here -->
+            <svg width="96" height="96" fill="none" viewBox="0 0 96 96"
+              ><rect x="16" y="24" width="64" height="16" rx="8" fill="#C6F53A"
+              ></rect><rect
+                x="16"
+                y="48"
+                width="32"
+                height="32"
+                rx="8"
+                fill="#C6F53A"></rect><rect
+                x="56"
+                y="56"
+                width="24"
+                height="24"
+                rx="8"
+                fill="#C6F53A"></rect></svg
+            >
           </div>
-          <h3 class="text-green mb-4 text-center">Transit TVMs</h3>
-          <p class="text-center mb-4">Ticket Vending Machines deployed at key metro stations with 24/7 reliability</p>
-          <ul class="text-sm space-y-2">
-            <li>• 50+ stations deployed</li>
-            <li>• 99.9% uptime achieved</li>
-            <li>• Weather-resistant design</li>
-            <li>• Real-time monitoring</li>
+          <h3 class="text-green mb-2 text-2xl font-bold">Transit TVMs</h3>
+          <p class="mb-4 text-base text-white/80">
+            Ticket Vending Machines deployed at key metro stations with 24/7
+            reliability
+          </p>
+          <ul class="deploy-bullets">
+            <li>50+ stations deployed</li>
+            <li>99.9% uptime achieved</li>
+            <li>Weather-resistant design</li>
+            <li>Real-time monitoring</li>
           </ul>
         </div>
-        
-        <div class="glass p-8 hover-lift">
-          <div class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center">
-            <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zM14 6a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h6zM4 14a2 2 0 002 2h8a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2z"/>
-            </svg>
+        <!-- Card 3 -->
+        <div
+          class="glass p-8 hover-lift text-center flex flex-col items-center"
+        >
+          <div class="w-28 h-28 mb-6 flex items-center justify-center">
+            <!-- Your SVG icon here -->
+            <svg width="96" height="96" fill="none" viewBox="0 0 96 96"
+              ><rect x="14" y="26" width="50" height="50" rx="16" fill="#C6F53A"
+              ></rect><rect
+                x="32"
+                y="44"
+                width="50"
+                height="36"
+                rx="16"
+                fill="#C6F53A"></rect></svg
+            >
           </div>
-          <h3 class="text-green mb-4 text-center">CTS Banking</h3>
-          <p class="text-center mb-4">Check Truncation System deployment across multiple banks for digital transformation</p>
-          <ul class="text-sm space-y-2">
-            <li>• RBI-compliant processing</li>
-            <li>• Document digitization</li>
-            <li>• Automated workflows</li>
-            <li>• Banking integration</li>
+          <h3 class="text-green mb-2 text-2xl font-bold">CTS Banking</h3>
+          <p class="mb-4 text-base text-white/80">
+            Check Truncation System deployment across multiple banks for digital
+            transformation
+          </p>
+          <ul class="deploy-bullets">
+            <li>RBI-compliant processing</li>
+            <li>Document digitization</li>
+            <li>Automated workflows</li>
+            <li>Banking integration</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Divider -->
   <div class="section-divider"></div>
 
   <!-- Success Metrics -->
-  <section class="section">
+  <section class="section bg-glass-light">
     <div class="container">
-      <h2 class="text-center mb-16">By the <span class="text-green">Numbers</span></h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green text-4xl font-bold mb-4">100K+</h3>
-          <p>Daily transactions processed</p>
+      <h2 class="text-center mb-10 md:mb-16">
+        By the <span class="text-green">Numbers</span>
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
+        <div
+          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
+        >
+          <h3
+            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
+          >
+            100K+
+          </h3>
+          <p class="text-xs md:text-base text-white/80">
+            Daily transactions processed
+          </p>
         </div>
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green text-4xl font-bold mb-4">99.9%</h3>
-          <p>System uptime achieved</p>
+        <div
+          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
+        >
+          <h3
+            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
+          >
+            99.9%
+          </h3>
+          <p class="text-xs md:text-base text-white/80">
+            System uptime achieved
+          </p>
         </div>
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green text-4xl font-bold mb-4">50+</h3>
-          <p>Kiosks deployed nationwide</p>
+        <div
+          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
+        >
+          <h3
+            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
+          >
+            50+
+          </h3>
+          <p class="text-xs md:text-base text-white/80">
+            Kiosks deployed nationwide
+          </p>
         </div>
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green text-4xl font-bold mb-4">85%</h3>
-          <p>Digital adoption rate</p>
+        <div
+          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
+        >
+          <h3
+            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
+          >
+            85%
+          </h3>
+          <p class="text-xs md:text-base text-white/80">
+            Digital adoption rate
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Divider -->
   <div class="section-divider"></div>
 
   <!-- Case Study Highlights -->
   <section class="section bg-black/20">
     <div class="container">
-      <h2 class="text-center mb-16">Case Study <span class="text-green">Highlights</span></h2>
-      
-      <div class="space-y-12">
-        <div class="glass p-8">
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div>
-              <h3 class="text-green mb-4">Challenge</h3>
-              <p>Metro network needed to reduce cash handling, improve passenger experience, and increase digital adoption while maintaining AFCS compliance.</p>
+      <h2 class="text-center mb-16">
+        Case Study <span class="text-green">Highlights</span>
+      </h2>
+
+      <div class="case-study-blocks">
+        <!-- CASE STUDY 1 -->
+        <div class="case-study-block glass">
+          <div class="case-study-row">
+            <div class="case-study-segment">
+              <div class="case-study-label">Challenge</div>
+              <div class="case-study-content">
+                Metro network needed to reduce cash handling, improve passenger
+                experience, and increase digital adoption while maintaining AFCS
+                compliance.
+              </div>
             </div>
-            <div>
-              <h3 class="text-green mb-4">Solution</h3>
-              <p>Deployed Transigo kiosks with WhatsApp ticketing integration, NCMC card issuance, and multi-modal payment support across the network.</p>
+            <div class="case-study-divider"></div>
+            <div class="case-study-segment">
+              <div class="case-study-label">Solution</div>
+              <div class="case-study-content">
+                Deployed Transigo kiosks with WhatsApp ticketing integration,
+                NCMC card issuance, and multi-modal payment support across the
+                network.
+              </div>
             </div>
-            <div>
-              <h3 class="text-green mb-4">Results</h3>
-              <p>60% reduction in queue times, 85% digital adoption rate, and significant operational cost savings within 6 months.</p>
+            <div class="case-study-divider"></div>
+            <div class="case-study-segment">
+              <div class="case-study-label">Results</div>
+              <div class="case-study-content">
+                <ul>
+                  <li>60% reduction in queue times</li>
+                  <li>85% digital adoption rate</li>
+                  <li>Significant operational cost savings within 6 months</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div class="glass p-8">
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div>
-              <h3 class="text-green mb-4">Challenge</h3>
-              <p>Rural bank branches needed to extend services 24/7 without increasing staffing costs or compromising security.</p>
+        <!-- CASE STUDY 2 -->
+        <div class="case-study-block glass">
+          <div class="case-study-row">
+            <div class="case-study-segment">
+              <div class="case-study-label">Challenge</div>
+              <div class="case-study-content">
+                Rural bank branches needed to extend services 24/7 without
+                increasing staffing costs or compromising security.
+              </div>
             </div>
-            <div>
-              <h3 class="text-green mb-4">Solution</h3>
-              <p>Implemented Navo banking kiosks with passbook printing, cheque deposits, and Veriphy onboarding for new account opening.</p>
+            <div class="case-study-divider"></div>
+            <div class="case-study-segment">
+              <div class="case-study-label">Solution</div>
+              <div class="case-study-content">
+                Implemented Navo banking kiosks with passbook printing, cheque
+                deposits, and Veriphy onboarding for new account opening.
+              </div>
             </div>
-            <div>
-              <h3 class="text-green mb-4">Results</h3>
-              <p>Extended banking hours to 24/7, reduced operational costs by 40%, and increased customer satisfaction scores significantly.</p>
+            <div class="case-study-divider"></div>
+            <div class="case-study-segment">
+              <div class="case-study-label">Results</div>
+              <div class="case-study-content">
+                <ul>
+                  <li>Banking hours extended to 24/7</li>
+                  <li>40% reduction in operational costs</li>
+                  <li>Significant increase in customer satisfaction</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -229,11 +380,270 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-  .text-4xl {
-    font-size: 2.25rem;
+  .bg-glass-light {
+    background: linear-gradient(
+      135deg,
+      rgba(36, 40, 27, 0.15) 0%,
+      rgba(127, 197, 43, 0.09) 100%
+    );
   }
-  
-  .space-y-12 > * + * {
-    margin-top: 3rem;
+  .glass {
+    backdrop-filter: blur(14px);
+    background: rgba(36, 40, 27, 0.13);
+    box-shadow:
+      0 8px 32px 0 rgba(0, 0, 0, 0.07),
+      0 2px 8px 0 rgba(167, 210, 33, 0.13);
+    border-radius: 1.1rem;
+  }
+  .hover-lift {
+    transition:
+      box-shadow 0.2s,
+      transform 0.2s;
+  }
+  .hover-lift:hover {
+    box-shadow:
+      0 10px 34px 0 rgba(167, 210, 33, 0.17),
+      0 3px 12px 0 rgba(44, 187, 99, 0.13);
+    transform: translateY(-5px) scale(1.022);
+    z-index: 1;
+  }
+  ..section-divider {
+    width: 180px;
+    max-width: 28vw;
+    height: 8px;
+    margin: 2.5rem auto 2.5rem auto;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      rgba(167, 210, 33, 0.3) 0%,
+      rgba(36, 40, 27, 0.13) 65%,
+      rgba(18, 24, 15, 0.18) 100%
+    );
+    box-shadow: 0 2px 12px 0 rgba(167, 210, 33, 0.12);
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .section-divider {
+      width: 100px;
+      height: 6px;
+      margin: 1.3rem auto 1.5rem auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      margin: 1rem auto 1.1rem auto;
+    }
+  }
+
+  .text-green {
+    color: #a7d221;
+  }
+  @media (max-width: 900px) {
+    .grid-cols-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .text-3xl {
+      font-size: 2rem;
+    }
+    .text-2xl {
+      font-size: 1.3rem;
+    }
+  }
+  @media (max-width: 640px) {
+    .grid-cols-5 {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .text-4xl {
+      font-size: 1.6rem;
+    }
+    .text-3xl {
+      font-size: 1.1rem;
+    }
+    .text-2xl {
+      font-size: 1rem;
+    }
+    .mb-16 {
+      margin-bottom: 1.4rem !important;
+    }
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+    .p-8 {
+      padding: 1.1rem !important;
+    }
+    .p-6 {
+      padding: 0.82rem !important;
+    }
+    .gap-8 {
+      gap: 1rem !important;
+    }
+    .gap-6 {
+      gap: 0.7rem !important;
+    }
+    .gap-5 {
+      gap: 0.5rem !important;
+    }
+    .mb-12 {
+      margin-bottom: 0.7rem !important;
+    }
+    .mb-10 {
+      margin-bottom: 1.1rem !important;
+    }
+    .space-y-12 > * + * {
+      margin-top: 2.1rem !important;
+    }
+    .space-y-8 > * + * {
+      margin-top: 1.2rem !important;
+    }
+    .min-h-\[90px\] {
+      min-height: 78px;
+    }
+  }
+  .deploy-bullets {
+    margin-top: 0.5rem;
+    text-align: left;
+    display: inline-block;
+    color: #fff;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    list-style-type: disc;
+    padding-left: 1.25rem;
+  }
+  @media (max-width: 900px) {
+    .deploy-bullets {
+      font-size: 0.96rem;
+    }
+  }
+  @media (max-width: 640px) {
+    .deploy-bullets {
+      font-size: 0.92rem;
+    }
+  }
+  .case-study-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* 2.5rem = 40px; increase if you want more space between cards */
+  }
+  .case-study-block {
+    border-radius: 2.1rem;
+    background: rgba(24, 26, 20, 0.69);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      0 4px 28px 0 rgba(167, 210, 33, 0.09),
+      0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.2rem;
+    border: 1.5px solid rgba(167, 210, 33, 0.13);
+    transition:
+      box-shadow 0.18s,
+      transform 0.15s;
+  }
+  .case-study-block:hover {
+    box-shadow:
+      0 8px 40px 0 rgba(167, 210, 33, 0.17),
+      0 4px 16px rgba(0, 0, 0, 0.13);
+    transform: scale(1.012);
+  }
+  .case-study-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+  .case-study-segment {
+    flex: 1 1 0%;
+    padding: 0 1.3rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .case-study-label {
+    color: #a7d221;
+    font-weight: 700;
+    font-size: 1.16rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .case-study-content {
+    color: #f6ffe6;
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+  .case-study-content ul {
+    padding-left: 1.15em;
+    margin: 0.25em 0 0 0;
+    list-style: disc;
+  }
+  .case-study-divider {
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(167, 210, 33, 0.16) 0%,
+      rgba(167, 210, 33, 0.07) 100%
+    );
+    border-radius: 2px;
+    margin: 0.5rem 0;
+  }
+  @media (max-width: 900px) {
+    .case-study-row {
+      flex-direction: column;
+      gap: 1.7rem;
+    }
+    .case-study-divider {
+      width: 90%;
+      height: 2px;
+      margin: 1rem auto;
+      background: linear-gradient(
+        90deg,
+        rgba(167, 210, 33, 0.16) 0%,
+        rgba(167, 210, 33, 0.07) 100%
+      );
+    }
+    .case-study-segment {
+      padding: 0.7rem 0.2rem;
+    }
+    .case-study-block {
+      padding: 1.2rem 0.5rem;
+    }
+    .case-study-blocks {
+      gap: 1.8rem;
+    }
+  }
+
+  .partner-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+
+  .partner-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+
+  .partner-logo:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .partner-logo-container {
+      height: 50px;
+      margin-bottom: 0.5rem;
+    }
+    .min-h-\[120px\] {
+      min-height: 100px;
+    }
   }
 </style>

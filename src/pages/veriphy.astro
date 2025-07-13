@@ -28,10 +28,10 @@ import Footer from "../components/Footer.astro";
   <div class="section-divider"></div>
 
   <!-- How Veriphy Works -->
-  <section class="section">
+  <section class="section bg-glass-light">
     <div class="container">
-      <h2 class="text-center mb-16">
-        How <span class="text-green">Veriphy</span> Works
+      <h2 class="text-center mb-16 mb-10 md:mb-16">
+        How <span class="text-green">Veriphy Works</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="glass p-6 hover-lift">
@@ -99,7 +99,9 @@ import Footer from "../components/Footer.astro";
   <!-- Use Cases Table -->
   <section class="section bg-black/20">
     <div class="container">
-      <h2 class="text-center mb-16">Use Cases</h2>
+      <h2 class="text-center mb-16">
+        Use <span class="text-green">Cases</span>
+      </h2>
       <div class="overflow-x-auto">
         <div class="modern-table-glass p-3 rounded-xl shadow-lg">
           <table class="modern-table w-full min-w-[700px] text-base">
@@ -164,7 +166,7 @@ import Footer from "../components/Footer.astro";
   <section class="section">
     <div class="container">
       <h2 class="text-center mb-16">
-        What Makes Veriphy <span class="text-green">Different</span>
+        What <span class="text-green">Makes Veriphy Different</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="glass p-8 hover-lift">
@@ -219,7 +221,7 @@ import Footer from "../components/Footer.astro";
   <section class="section bg-black/20">
     <div class="container">
       <h2 class="text-center mb-16">
-        Choose Your <span class="text-green">Plan</span>
+        Choose <span class="text-green">Your Plan</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- LITE -->
@@ -425,7 +427,9 @@ import Footer from "../components/Footer.astro";
       padding: 0.1rem;
     }
   }
-
+  .text-green {
+    color: #a7d221;
+  }
   /* Icon sizing & alignment for feature cards */
   .icon-box {
     width: 3rem;
