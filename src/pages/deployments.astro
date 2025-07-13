@@ -2,6 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+
+// Import all partner logos
+import bmrclLogo from "../assets/partners/bmrcl.svg";
+import metaLogo from "../assets/partners/meta.svg";
+import dbsLogo from "../assets/partners/development-bank-of-singapore.svg";
+import southIndianBankLogo from "../assets/partners/south-indian-bank.png";
+import nsdlLogo from "../assets/partners/nsdl.png";
+import axisBankLogo from "../assets/partners/axis-bank-logo.svg";
+import kotakLifeLogo from "../assets/partners/kotak-life-insurance.png";
+import veenaWorldLogo from "../assets/partners/veena_world.svg";
+import adityaVisionLogo from "../assets/partners/aditya_vision.png";
+import saybaGroupLogo from "../assets/partners/sayba_group.png";
+import aumInfotechLogo from "../assets/partners/aum_infotech.jpeg";
+import advantechLogo from "../assets/partners/Advantech.svg";
 ---
 
 <Layout title="Frog8 - Deployments | Real-World Success Stories">
@@ -43,62 +57,62 @@ import Footer from "../components/Footer.astro";
             {
               name: "Metro/BMRCL",
               desc: "Transit infrastructure",
-              logo: "/src/assets/partners/bmrcl.svg"
+              logo: bmrclLogo.src
             },
             {
               name: "Meta",
               desc: "Technology partnerships",
-              logo: "/src/assets/partners/meta.svg"
+              logo: metaLogo.src
             },
             {
               name: "DBS Bank",
               desc: "Digital banking solutions",
-              logo: "/src/assets/partners/development-bank-of-singapore.svg"
+              logo: dbsLogo.src
             },
             {
               name: "South Indian Bank",
               desc: "Banking automation",
-              logo: "/src/assets/partners/south-indian-bank.png"
+              logo: southIndianBankLogo.src
             },
             {
               name: "NSDL PB",
               desc: "Payment bank infrastructure",
-              logo: "/src/assets/partners/nsdl.png"
+              logo: nsdlLogo.src
             },
             {
               name: "Axis Bank",
               desc: "Financial services",
-              logo: "/src/assets/partners/axis-bank-logo.svg"
+              logo: axisBankLogo.src
             },
             {
               name: "Kotak Life",
               desc: "Insurance onboarding",
-              logo: "/src/assets/partners/kotak-life-insurance.png"
+              logo: kotakLifeLogo.src
             },
             {
               name: "Veena World",
               desc: "Travel tech solutions",
-              logo: "/src/assets/partners/veena_world.svg"
+              logo: veenaWorldLogo.src
             },
             {
               name: "Aditya Vision",
               desc: "Retail automation",
-              logo: "/src/assets/partners/aditya_vision.png"
+              logo: adityaVisionLogo.src
             },
             {
               name: "Sayba Group",
               desc: "Enterprise solutions",
-              logo: "/src/assets/partners/sayba_group.png"
+              logo: saybaGroupLogo.src
             },
             {
               name: "AUM Infotech",
               desc: "Asset management",
-              logo: "/src/assets/partners/aum_infotech.jpeg"
+              logo: aumInfotechLogo.src
             },
             {
               name: "Advantech",
               desc: "Asset management",
-              logo: "/src/assets/partners/Advantech.svg"
+              logo: advantechLogo.src
             }
           ].map(({name, desc, logo}) => (
             <div class="glass p-4 md:p-6 text-center hover-lift rounded-2xl border border-green/10 min-h-[120px] flex flex-col justify-center shadow-lg bg-white/10">
