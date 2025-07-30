@@ -2,12 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import InteractiveTVMCards from "../components/InteractiveTVMCards.jsx";
 import afcIcon from "../assets/icons/afc_icon.png";
 import multiPaymentIcon from "../assets/icons/multi-payment.webp";
 import weatherResistantIcon from "../assets/icons/weather_resistant.png";
 import passbookIcon from "../assets/icons/passbook.png";
 import bankCardIcon from "../assets/icons/bank-card.svg";
 import chequeBookIcon from "../assets/icons/cheque_book.png";
+// TVM Kiosk Photos
+import tvm1000_1 from "../assets/kiosks/TVM 1000/tvm_1000_1.jpeg";
+import tvm1000_2 from "../assets/kiosks/TVM 1000/tvm_1000_2.png";
+import tvm2000_1 from "../assets/kiosks/TVM 2000/tvm_2000_1.jpg";
+import tvm2000_2 from "../assets/kiosks/TVM 2000/tvm_2000_2.jpg";
+import tvm2000_3 from "../assets/kiosks/TVM 2000/tvm_2000_3.png";
+import tvm4000_1 from "../assets/kiosks/TVM 4000/tvm_4000_1.jpg";
+import tvm4000_2 from "../assets/kiosks/TVM 4000/tvm_4000_2.jpg";
+import tvm4000_3 from "../assets/kiosks/TVM 4000/tvm_4000_3.jpg";
+// Automation Image
+import automationImage from "../assets/kiosks/automation.png";
 ---
 
 <Layout title="Frog8 - Kiosks | Unattended Automation Solutions">
@@ -23,6 +35,317 @@ import chequeBookIcon from "../assets/icons/cheque_book.png";
           Industrial-grade kiosks for transit, banking, and retail. Built to
           operate 24/7 in any environment.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TVMs Ticket Vending Machine Series -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="slide-up mb-8 accent-underline">
+          TVMs <span class="text-green">Ticket Vending Machine Series</span>
+        </h2>
+        <p class="text-xl mb-12 max-w-4xl mx-auto">
+          Advanced ticket vending machines designed for metro networks, featuring 
+          multi-modal payments, AFCS compliance, and 24/7 reliability. From compact 
+          stations to high-traffic hubs, our TVM series delivers seamless passenger experiences.
+        </p>
+      </div>
+
+      <!-- Interactive TVM Models -->
+      <div class="tvm-overview mb-16">
+        <InteractiveTVMCards client:load />
+      </div>
+
+      <!-- Detailed TVM Sections -->
+      <!-- <div class="tvm-detailed-sections"> -->
+        <!-- TVM 1000 Detailed -->
+        <!-- <div class="tvm-detailed-section">
+          <div class="tvm-detailed-header">
+            <div class="tvm-detailed-title">
+              <h2>TVM 1000</h2>
+              <p>Compact & Efficient Solution</p>
+            </div>
+            <div class="tvm-detailed-badge">
+              <span class="badge-compact">Compact</span>
+            </div>
+          </div>
+          
+          <div class="tvm-detailed-content">
+            <div class="tvm-detailed-images">
+              <div class="tvm-image-gallery">
+                <div class="tvm-gallery-main">
+                  <img src={tvm1000_1.src} alt="TVM 1000 Front View" />
+                </div>
+                <div class="tvm-gallery-thumbnails">
+                  <div class="tvm-thumbnail active">
+                    <img src={tvm1000_1.src} alt="Front View" />
+                  </div>
+                  <div class="tvm-thumbnail">
+                    <img src={tvm1000_2.src} alt="Side View" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tvm-detailed-info">
+              <div class="tvm-info-grid">
+                <div class="tvm-info-section">
+                  <h4>Key Features</h4>
+                  <ul class="tvm-feature-list">
+                    <li><span class="feature-icon">🖥️</span>15" Touch Display</li>
+                    <li><span class="feature-icon">💳</span>UPI & Card Payments</li>
+                    <li><span class="feature-icon">📱</span>QR Code Scanning</li>
+                    <li><span class="feature-icon">📦</span>Compact Footprint</li>
+                    <li><span class="feature-icon">🛡️</span>IP54 Protection</li>
+                    <li><span class="feature-icon">⏰</span>24/7 Operation</li>
+                  </ul>
+                </div>
+                
+                <div class="tvm-info-section">
+                  <h4>Ideal For</h4>
+                  <ul class="tvm-use-list">
+                    <li><span class="use-icon">🚇</span>Metro Stations</li>
+                    <li><span class="use-icon">🚌</span>Bus Terminals</li>
+                    <li><span class="use-icon">🅿️</span>Parking Facilities</li>
+                    <li><span class="use-icon">🏢</span>Small Transit Hubs</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="tvm-specs-table">
+                <h4>Technical Specifications</h4>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Display</span>
+                    <span class="spec-value">15" Touch</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Payments</span>
+                    <span class="spec-value">UPI, Cards</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Protection</span>
+                    <span class="spec-value">IP54</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Temperature</span>
+                    <span class="spec-value">-10°C to 55°C</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- TVM 2000 Detailed -->
+        <!-- <div class="tvm-detailed-section">
+          <div class="tvm-detailed-header">
+            <div class="tvm-detailed-title">
+              <h2>TVM 2000</h2>
+              <p>Advanced Multi-Payment Solution</p>
+            </div>
+            <div class="tvm-detailed-badge">
+              <span class="badge-advanced">Advanced</span>
+            </div>
+          </div>
+          
+          <div class="tvm-detailed-content">
+            <div class="tvm-detailed-images">
+              <div class="tvm-image-gallery">
+                <div class="tvm-gallery-main">
+                  <img src={tvm2000_1.src} alt="TVM 2000 Front View" />
+                </div>
+                <div class="tvm-gallery-thumbnails">
+                  <div class="tvm-thumbnail active">
+                    <img src={tvm2000_1.src} alt="Front View" />
+                  </div>
+                  <div class="tvm-thumbnail">
+                    <img src={tvm2000_2.src} alt="Side View" />
+                  </div>
+                  <div class="tvm-thumbnail">
+                    <img src={tvm2000_3.src} alt="Detail View" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tvm-detailed-info">
+              <div class="tvm-info-grid">
+                <div class="tvm-info-section">
+                  <h4>Key Features</h4>
+                  <ul class="tvm-feature-list">
+                    <li><span class="feature-icon">🖥️</span>19" HD Touch Display</li>
+                    <li><span class="feature-icon">💰</span>Cash & Digital Payments</li>
+                    <li><span class="feature-icon">🖨️</span>Paper Ticket Printing</li>
+                    <li><span class="feature-icon">💳</span>NCMC Card Support</li>
+                    <li><span class="feature-icon">🛡️</span>IP65 Protection</li>
+                    <li><span class="feature-icon">👆</span>Biometric Authentication</li>
+                  </ul>
+                </div>
+                
+                <div class="tvm-info-section">
+                  <h4>Ideal For</h4>
+                  <ul class="tvm-use-list">
+                    <li><span class="use-icon">🚇</span>Major Metro Stations</li>
+                    <li><span class="use-icon">✈️</span>Airport Terminals</li>
+                    <li><span class="use-icon">🛍️</span>Shopping Centers</li>
+                    <li><span class="use-icon">🏢</span>Corporate Parks</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="tvm-specs-table">
+                <h4>Technical Specifications</h4>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Display</span>
+                    <span class="spec-value">19" HD Touch</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Payments</span>
+                    <span class="spec-value">All Methods</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Protection</span>
+                    <span class="spec-value">IP65</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Printing</span>
+                    <span class="spec-value">Thermal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- TVM 4000 Detailed -->
+        <!-- <div class="tvm-detailed-section">
+          <div class="tvm-detailed-header">
+            <div class="tvm-detailed-title">
+              <h2>TVM 4000</h2>
+              <p>Flagship Enterprise Solution</p>
+            </div>
+            <div class="tvm-detailed-badge">
+              <span class="badge-flagship">Flagship</span>
+            </div>
+          </div>
+          
+          <div class="tvm-detailed-content">
+            <div class="tvm-detailed-images">
+              <div class="tvm-image-gallery">
+                <div class="tvm-gallery-main">
+                  <img src={tvm4000_1.src} alt="TVM 4000 Front View" />
+                </div>
+                <div class="tvm-gallery-thumbnails">
+                  <div class="tvm-thumbnail active">
+                    <img src={tvm4000_1.src} alt="Front View" />
+                  </div>
+                  <div class="tvm-thumbnail">
+                    <img src={tvm4000_2.src} alt="Side View" />
+                  </div>
+                  <div class="tvm-thumbnail">
+                    <img src={tvm4000_3.src} alt="Detail View" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tvm-detailed-info">
+              <div class="tvm-info-grid">
+                <div class="tvm-info-section">
+                  <h4>Key Features</h4>
+                  <ul class="tvm-feature-list">
+                    <li><span class="feature-icon">🖥️</span>24" Premium Touch Display</li>
+                    <li><span class="feature-icon">💳</span>All Payment Methods</li>
+                    <li><span class="feature-icon">🔒</span>Advanced Security Features</li>
+                    <li><span class="feature-icon">🌐</span>Multi-Language Support</li>
+                    <li><span class="feature-icon">🛡️</span>IP66 Protection</li>
+                    <li><span class="feature-icon">🤖</span>AI-Powered Assistance</li>
+                  </ul>
+                </div>
+                
+                <div class="tvm-info-section">
+                  <h4>Ideal For</h4>
+                  <ul class="tvm-use-list">
+                    <li><span class="use-icon">🏛️</span>Flagship Metro Stations</li>
+                    <li><span class="use-icon">✈️</span>International Airports</li>
+                    <li><span class="use-icon">🏙️</span>Premium Transit Hubs</li>
+                    <li><span class="use-icon">🏢</span>Smart City Centers</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="tvm-specs-table">
+                <h4>Technical Specifications</h4>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Display</span>
+                    <span class="spec-value">24" Premium</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Payments</span>
+                    <span class="spec-value">Universal</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Protection</span>
+                    <span class="spec-value">IP66</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">AI Features</span>
+                    <span class="spec-value">Enabled</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- TVM Features Grid -->
+      <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div class="glass p-6 hover-lift text-center">
+          <div class="feature-icon mx-auto mb-4">
+            <img src={afcIcon.src} alt="AFCS Compliant" />
+          </div>
+          <h4 class="text-green mb-4">AFCS Compliant</h4>
+          <p>
+            Fully compliant with Automatic Fare Collection System standards for
+            metro networks across India.
+          </p>
+        </div>
+        <div class="glass p-6 hover-lift text-center">
+          <div class="feature-icon mx-auto mb-4">
+            <img src={multiPaymentIcon.src} alt="Multi-Modal Payments" />
+          </div>
+          <h4 class="text-green mb-4">Multi-Modal Payments</h4>
+          <p>
+            UPI, cards, cash, and NCMC - all payment methods supported in one
+            unified platform.
+          </p>
+        </div>
+        <div class="glass p-6 hover-lift text-center">
+          <div class="feature-icon mx-auto mb-4">
+            <img src={weatherResistantIcon.src} alt="Weather Resistant" />
+          </div>
+          <h4 class="text-green mb-4">Weather Resistant</h4>
+          <p>
+            IP54 to IP66 rated, operates in -10°C to 55°C temperature range with 
+            24/7 reliability.
+          </p>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Automation Image Section -->
+  <section class="automation-image-section">
+    <div class="container">
+      <h2 class="automation-image-heading accent-underline text-center mb-8">Automation tailored to <span class="text-green">Your Needs</span></h2>
+      <div class="automation-image-container">
+        <img src={automationImage.src} alt="Automation Solutions" class="automation-full-image" />
       </div>
     </div>
   </section>
@@ -612,5 +935,401 @@ import chequeBookIcon from "../assets/icons/cheque_book.png";
   .overflow-x-auto::-webkit-scrollbar-thumb {
     background: rgba(167, 210, 33, 0.19);
     border-radius: 6px;
+  }
+  /* TVM Overview Cards */
+  .tvm-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .tvm-card {
+    background: rgba(24, 26, 20, 0.8);
+    border: 1.5px solid rgba(167, 210, 33, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tvm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a7d221, #b8e32e);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .tvm-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .tvm-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 20px 40px rgba(167, 210, 33, 0.15),
+      0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tvm-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tvm-number {
+    background: linear-gradient(135deg, #a7d221, #b8e32e);
+    color: #151a08;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .tvm-card-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f6ffe6;
+    margin: 0;
+  }
+  
+  .tvm-badge {
+    background: rgba(167, 210, 33, 0.1);
+    color: #a7d221;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(167, 210, 33, 0.3);
+  }
+  
+  .tvm-card-image {
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tvm-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .tvm-card:hover .tvm-card-image img {
+    transform: scale(1.05);
+  }
+  
+  .tvm-description {
+    color: rgba(246, 255, 230, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tvm-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .highlight {
+    background: rgba(167, 210, 33, 0.1);
+    color: #a7d221;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(167, 210, 33, 0.2);
+  }
+  
+  /* Detailed TVM Sections */
+  .tvm-detailed-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .tvm-detailed-section {
+    background: rgba(24, 26, 20, 0.85);
+    border: 1.5px solid rgba(167, 210, 33, 0.15);
+    border-radius: 24px;
+    padding: 3rem;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 12px 40px rgba(167, 210, 33, 0.1),
+      0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tvm-detailed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(167, 210, 33, 0.1);
+  }
+  
+  .tvm-detailed-title h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a7d221, #b8e32e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tvm-detailed-title p {
+    color: rgba(246, 255, 230, 0.7);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .badge-compact, .badge-advanced, .badge-flagship {
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .badge-compact {
+    background: linear-gradient(135deg, #a7d221, #b8e32e);
+    color: #151a08;
+  }
+  
+  .badge-advanced {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+  }
+  
+  .badge-flagship {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+  
+  .tvm-detailed-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .tvm-image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tvm-gallery-main {
+    height: 350px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(167, 210, 33, 0.1);
+  }
+  
+  .tvm-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .tvm-gallery-main:hover img {
+    transform: scale(1.02);
+  }
+  
+  .tvm-gallery-thumbnails {
+    display: flex;
+    gap: 0.8rem;
+  }
+  
+  .tvm-thumbnail {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .tvm-thumbnail.active {
+    border-color: #a7d221;
+    box-shadow: 0 0 12px rgba(167, 210, 33, 0.3);
+  }
+  
+  .tvm-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .tvm-info-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tvm-info-section h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #a7d221;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .tvm-feature-list, .tvm-use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.8rem;
+  }
+  
+  .tvm-feature-list li, .tvm-use-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(246, 255, 230, 0.9);
+    font-weight: 500;
+    padding: 0.5rem 0;
+  }
+  
+  .feature-icon, .use-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+  }
+  
+  .tvm-specs-table {
+    background: rgba(167, 210, 33, 0.05);
+    border: 1px solid rgba(167, 210, 33, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  
+  .tvm-specs-table h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #a7d221;
+    margin-bottom: 1rem;
+  }
+  
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: rgba(167, 210, 33, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(167, 210, 33, 0.1);
+  }
+  
+  .spec-label {
+    color: rgba(246, 255, 230, 0.7);
+    font-weight: 500;
+  }
+  
+  .spec-value {
+    color: #a7d221;
+    font-weight: 600;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .tvm-detailed-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .tvm-gallery-main {
+      height: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tvm-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .tvm-detailed-section {
+      padding: 2rem;
+    }
+    
+    .tvm-detailed-header {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    
+    .tvm-detailed-title h2 {
+      font-size: 2rem;
+    }
+    
+    .tvm-gallery-main {
+      height: 250px;
+    }
+    
+    .tvm-gallery-thumbnails {
+      justify-content: center;
+    }
+    
+    .specs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .automation-image-section {
+    background: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+  }
+  .automation-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .automation-full-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border-radius: 18px;
+  }
+  .automation-image-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a7d221, #b8e32e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 8px #b8e32e24;
+    font-weight: 800;
+    padding: 0 0.1em;
   }
 </style>
