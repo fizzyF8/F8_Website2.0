@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import InteractiveTVMCards from "../components/InteractiveTVMCards.jsx";
+import UnicornStudioEmbed from "../components/UnicornStudioEmbed.jsx";
 import afcIcon from "../assets/icons/afc_icon.png";
 import multiPaymentIcon from "../assets/icons/multi-payment.webp";
 import weatherResistantIcon from "../assets/icons/weather_resistant.png";
@@ -20,27 +21,88 @@ import tvm4000_2 from "../assets/kiosks/TVM 4000/tvm_4000_2.jpg";
 import tvm4000_3 from "../assets/kiosks/TVM 4000/tvm_4000_3.jpg";
 // Automation Image
 import automationImage from "../assets/kiosks/automation.png";
+// TVM Series Images
+import tvm2kImage from "../assets/tvm2k.png";
+import tvm4kImage from "../assets/tvm4k.png";
 ---
 
 <Layout title="Frog8 - Kiosks | Unattended Automation Solutions">
   <Navigation />
 
-  <section class="section gradient-bg pt-32 pb-12">
-    <div class="container">
-      <div class="text-center mb-16">
-        <h1 class="fade-in mb-6 accent-underline">
-          Unattended <span class="text-green">Automation</span>
-        </h1>
-        <p class="fade-in-delay text-xl max-w-3xl mx-auto">
-          Industrial-grade kiosks for transit, banking, and retail. Built to
-          operate 24/7 in any environment.
-        </p>
+  <!-- Full-Page Hero Section with Unicorn Studio Background -->
+  <section class="hero-section-fullpage">
+    <!-- Unicorn Studio Animation Background -->
+    <UnicornStudioEmbed 
+      client:load 
+      projectId="Ewoj40eRJR83ht443zTr"
+      fullPage={true}
+    />
+    
+    <!-- Content Overlay -->
+    <div class="hero-content-overlay">
+      <div class="hero-content-layout">
+        <!-- Left Content -->
+        <div class="hero-content-left">
+          <h1 class="hero-title">
+            <span class="hero-text-line">Unattended</span><br />
+            <span class="hero-highlight">Automation</span><span class="hero-text-line"> Solutions</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            Industrial-grade kiosks for transit, banking, and retail. Built to
+            operate 24/7 in any environment.
+          </p>
+          
+          <p class="hero-description">
+            From metro stations to rural banks, our intelligent kiosks transform how India moves, pays, and verifies. Experience the future of unattended automation.
+          </p>
+          
+          <div class="hero-cta">
+            <a href="/contact" class="btn btn-primary">
+              <span>Schedule a Demo</span>
+              <div class="btn-shine"></div>
+            </a>
+            <a href="#tvm-series" class="btn btn-secondary">
+              <span>Explore Our Kiosks</span>
+              <div class="btn-shine"></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Content - TVM Images Carousel -->
+        <div class="hero-content-right">
+          <div class="tvm-carousel-container">
+            <div class="tvm-carousel">
+              <div class="tvm-slide active">
+                <img src={tvm2kImage.src} alt="TVM 2000 Series" class="tvm-image tvm-2k" />
+              </div>
+              <div class="tvm-slide">
+                <img src={tvm4kImage.src} alt="TVM 4000 Series" class="tvm-image tvm-4k" />
+              </div>
+            </div>
+            <div class="tvm-carousel-dots">
+              <button class="tvm-dot active" data-slide="0"></button>
+              <button class="tvm-dot" data-slide="1"></button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <p class="scroll-text">Scroll to explore</p>
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
   <!-- TVMs Ticket Vending Machine Series -->
-  <section class="section">
+  <section id="tvm-series" class="section">
     <div class="container">
       <div class="text-center mb-16">
         <h2 class="slide-up mb-8 accent-underline">
@@ -740,12 +802,13 @@ import automationImage from "../assets/kiosks/automation.png";
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
     align-items: start;
-    background: rgba(24, 26, 20, 0.72);
+    background: rgba(18, 18, 18, 0.85);
     border-radius: 22px;
     box-shadow:
-      0 6px 36px rgba(167, 210, 33, 0.07),
-      0 1.5px 8px rgba(0, 0, 0, 0.09);
+      0 6px 36px rgba(0, 0, 0, 0.8),
+      0 1.5px 8px rgba(167, 210, 33, 0.12);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(167, 210, 33, 0.2);
   }
   @media (max-width: 900px) {
     .retail-automation-grid {
@@ -758,12 +821,12 @@ import automationImage from "../assets/kiosks/automation.png";
     }
   }
   .text-green-100 {
-    color: #e6ffb7;
+    color: var(--text);
   }
   .retail-tick {
     width: 1.12em;
     height: 1.12em;
-    color: #a7d221;
+    color: var(--primary);
     display: inline-block;
     vertical-align: middle;
     flex-shrink: 0;
@@ -771,7 +834,7 @@ import automationImage from "../assets/kiosks/automation.png";
   .retail-features-list svg {
     min-width: 1.5em;
     min-height: 1.5em;
-    color: #b8e32e;
+    color: var(--primary-light);
   }
   .accent-underline {
     position: relative;
@@ -781,9 +844,18 @@ import automationImage from "../assets/kiosks/automation.png";
     background: linear-gradient(90deg, #a7d221 60%, #b8e32e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: #a7d221; /* fallback color */
     text-shadow: 0 2px 8px #b8e32e24;
     font-weight: 800;
     padding: 0 0.1em;
+  }
+
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (-webkit-background-clip: text) {
+    .accent-underline .text-green {
+      -webkit-text-fill-color: initial;
+      color: #a7d221;
+    }
   }
   .accent-underline:after {
     content: "";
@@ -860,13 +932,13 @@ import automationImage from "../assets/kiosks/automation.png";
     filter: brightness(1.1) contrast(1.1);
   }
   .modern-table-glass {
-    background: rgba(24, 26, 20, 0.62);
+    background: rgba(18, 18, 18, 0.85);
     backdrop-filter: blur(14px);
     border-radius: 22px;
-    border: 1.5px solid rgba(167, 210, 33, 0.13);
+    border: 1.5px solid rgba(167, 210, 33, 0.25);
     box-shadow:
-      0 4px 32px rgba(167, 210, 33, 0.08),
-      0 1.5px 8px rgba(0, 0, 0, 0.09);
+      0 4px 32px rgba(0, 0, 0, 0.8),
+      0 1.5px 8px rgba(167, 210, 33, 0.12);
   }
   .modern-table {
     border-collapse: separate;
@@ -874,34 +946,34 @@ import automationImage from "../assets/kiosks/automation.png";
     width: 100%;
   }
   .modern-table thead th {
-    background: rgba(167, 210, 33, 0.13);
-    color: #a7d221;
+    background: rgba(167, 210, 33, 0.15);
+    color: var(--primary-light);
     font-weight: 800;
     font-size: 1.07em;
     letter-spacing: 0.01em;
     padding: 18px 16px;
-    border-bottom: 2px solid #a7d22144;
+    border-bottom: 2px solid rgba(167, 210, 33, 0.3);
     text-align: left;
   }
   .modern-table tbody td {
     background: transparent;
-    color: #f6ffe6;
+    color: var(--text);
     font-weight: 500;
     padding: 16px 16px;
-    border-bottom: 1.5px solid rgba(167, 210, 33, 0.07);
+    border-bottom: 1.5px solid rgba(167, 210, 33, 0.1);
   }
   .modern-table tbody tr {
     transition: background 0.18s;
   }
   .modern-table tbody tr:hover {
-    background: rgba(167, 210, 33, 0.09);
+    background: rgba(167, 210, 33, 0.12);
   }
   .modern-table tbody tr:nth-child(even) td {
-    background: rgba(255, 255, 255, 0.032);
+    background: rgba(255, 255, 255, 0.02);
   }
   .modern-table tbody td:first-child {
     font-weight: 700;
-    color: #b8e32e;
+    color: var(--primary-light);
     letter-spacing: 0.01em;
   }
   @media (max-width: 900px) {
@@ -1332,4 +1404,549 @@ import automationImage from "../assets/kiosks/automation.png";
     font-weight: 800;
     padding: 0 0.1em;
   }
+
+  /* Full-Page Hero Section */
+  .hero-section-fullpage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+
+  /* Content Overlay */
+  .hero-content-overlay {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(10, 10, 10, 0.3) 0%,
+      rgba(10, 10, 10, 0.6) 100%
+    );
+    padding: 120px 2rem 2rem; /* Account for navigation height */
+  }
+
+  .hero-content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: center;
+  }
+
+  .hero-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 4rem;
+    justify-content: center;
+  }
+
+  .hero-content-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tvm-carousel-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tvm-carousel {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .tvm-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tvm-slide.active {
+    opacity: 1;
+  }
+
+  .tvm-image {
+    width: 400px;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 32px rgba(167, 210, 33, 0.3));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tvm-2k {
+    width: 500px;
+    max-height: 600px;
+  }
+
+  .tvm-4k {
+    width: 550px;
+    max-height: 650px;
+  }
+
+  .tvm-carousel-dots {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .tvm-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(167, 210, 33, 0.3);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tvm-dot.active {
+    background: var(--primary);
+    transform: scale(1.2);
+  }
+
+  .tvm-dot:hover {
+    background: var(--primary-light);
+    transform: scale(1.1);
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    animation: fadeInUp 1.5s ease-out 2s both;
+  }
+
+  .scroll-mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid rgba(167, 210, 33, 0.6);
+    border-radius: 13px;
+    position: relative;
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .scroll-wheel {
+    width: 3px;
+    height: 8px;
+    background: #a7d221;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollWheel {
+    0%, 100% {
+      top: 8px;
+      opacity: 1;
+    }
+    50% {
+      top: 20px;
+      opacity: 0.3;
+    }
+  }
+
+  .scroll-text {
+    color: rgba(167, 210, 33, 0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* Hero Typography */
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 auto 1.5rem;
+    color: #f5f5f5;
+    text-align: center;
+    width: 100%;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s both;
+  }
+
+  .hero-text-line {
+    display: inline-block;
+    color: #f5f5f5;
+    text-align: center;
+  }
+
+  .hero-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, #a7d221, #c4e845);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #a7d221; /* fallback color */
+    position: relative;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 8px rgba(167, 210, 33, 0.4));
+  }
+
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (-webkit-background-clip: text) {
+    .hero-highlight {
+      -webkit-text-fill-color: initial;
+      color: #a7d221;
+      text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 4px 8px rgba(167, 210, 33, 0.3);
+    }
+  }
+
+  .hero-subtitle {
+    color: #f5f5f5;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out 0.5s both;
+  }
+
+  .hero-description {
+    color: rgba(245, 245, 245, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out 0.7s both;
+  }
+
+  .hero-cta {
+    animation: fadeInUp 1s ease-out 0.9s both;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .hero-cta .btn {
+    min-width: 180px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-cta .btn-primary {
+    background: linear-gradient(135deg, #a7d221 0%, #b8e32e 100%);
+    color: #0a0a0a;
+    border: none;
+  }
+
+  .hero-cta .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(167, 210, 33, 0.4);
+    background: linear-gradient(135deg, #b8e32e 0%, #c4e845 100%);
+  }
+
+  .hero-cta .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Enhanced Buttons */
+  .btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(167, 210, 33, 0.3);
+  }
+
+  .btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-enhanced:hover .btn-shine {
+    left: 100%;
+  }
+
+  /* Mobile Responsiveness for Hero */
+  @media (max-width: 768px) {
+    .hero-section-fullpage {
+      min-height: 100vh;
+      height: auto;
+    }
+
+    .hero-content-overlay {
+      padding: 100px 1.5rem 1.5rem;
+    }
+
+    .hero-content-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-content-left {
+      order: 1;
+      padding-left: 0;
+    }
+
+    .hero-content-right {
+      order: 2;
+    }
+
+    .tvm-carousel-container {
+      width: 250px;
+      height: 320px;
+    }
+
+    .tvm-carousel {
+      height: 280px;
+    }
+
+    .tvm-image {
+      width: 300px;
+      max-height: 380px;
+    }
+
+    .tvm-2k {
+      width: 350px;
+      max-height: 420px;
+    }
+
+    .tvm-4k {
+      width: 400px;
+      max-height: 450px;
+    }
+
+    .tvm-dot {
+      width: 10px;
+      height: 10px;
+    }
+
+    .tvm-carousel-dots {
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-description {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      min-width: auto;
+      padding: 14px 28px;
+    }
+
+    .scroll-indicator {
+      bottom: 20px;
+    }
+
+    .scroll-text {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content-overlay {
+      padding: 90px 1rem 1rem;
+    }
+
+    .hero-content-layout {
+      gap: 1.5rem;
+    }
+
+    .tvm-carousel-container {
+      width: 200px;
+      height: 280px;
+    }
+
+    .tvm-carousel {
+      height: 240px;
+    }
+
+    .tvm-image {
+      width: 250px;
+      max-height: 320px;
+    }
+
+    .tvm-2k {
+      width: 280px;
+      max-height: 340px;
+    }
+
+    .tvm-4k {
+      width: 320px;
+      max-height: 360px;
+    }
+
+    .tvm-dot {
+      width: 8px;
+      height: 8px;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9375rem;
+    }
+
+    .hero-description {
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .hero-cta {
+      max-width: 320px;
+    }
+
+    .hero-cta .btn {
+      padding: 12px 24px;
+      font-size: 0.9375rem;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  // TVM Carousel Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.tvm-slide');
+    const dots = document.querySelectorAll('.tvm-dot');
+    let currentSlide = 0;
+    
+    function showSlide(index: number) {
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Show current slide
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      
+      currentSlide = index;
+    }
+    
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+    
+    // Add click event listeners to dots
+    dots.forEach((dot, index: number) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+    
+    // Auto-advance carousel every 4 seconds
+    setInterval(nextSlide, 4000);
+  });
+</script>

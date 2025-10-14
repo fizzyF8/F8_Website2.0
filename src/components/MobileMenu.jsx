@@ -26,9 +26,9 @@ export default function MobileMenu() {
         width: '100vw',
         height: '100vh',
         zIndex: 9999,
-        background: 'linear-gradient(120deg, #fff 65%, #cde19b 100%)',
-        // Optionally: backdropFilter: 'blur(20px)',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+        background: 'linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(18, 18, 18, 0.98) 100%)',
+        backdropFilter: 'blur(20px)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.8)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -40,8 +40,8 @@ export default function MobileMenu() {
       <button
         onClick={toggleMenu}
         aria-label="Close menu"
-        className="absolute top-6 right-6 rounded-full p-2 bg-white/80 hover:bg-white/90 shadow transition"
-        style={{ fontSize: 24, lineHeight: 1, color: '#222', border: 'none', zIndex: 100 }}
+        className="absolute top-6 right-6 rounded-full p-2 bg-[rgba(167,210,33,0.2)] hover:bg-[rgba(167,210,33,0.3)] shadow-lg transition"
+        style={{ fontSize: 24, lineHeight: 1, color: '#a7d221', border: '1px solid rgba(167, 210, 33, 0.3)', zIndex: 100 }}
       >
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
       </button>
@@ -58,7 +58,7 @@ export default function MobileMenu() {
         {[
           { href: '/', label: 'Home' },
           { href: '/platforms', label: 'Platforms' },
-          { href: '/kiosks', label: 'Kiosks' },
+          { href: '/kiosks', label: 'Devices' },
           { href: '/veriphy', label: 'Veriphy' },
           { href: '/deployments', label: 'Deployments' },
           { href: '/about', label: 'About' },
@@ -67,17 +67,18 @@ export default function MobileMenu() {
             key={link.href}
             href={link.href}
             style={{
-              color: '#181818',
+              color: '#f5f5f5',
               fontWeight: 700,
               fontSize: '1.35rem',
               textDecoration: 'none',
               letterSpacing: '-0.01em',
               borderRadius: '12px',
-              padding: '12px 40px',
-              transition: 'background 0.2s, color 0.2s',
+              padding: '14px 48px',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
               display: 'block',
+              border: '1px solid transparent',
             }}
-            className="hover:bg-[#f3f3f3] hover:text-[#a7d221]"
+            className="hover:bg-[rgba(167,210,33,0.15)] hover:text-[#b8e32e] hover:border-[rgba(167,210,33,0.3)]"
             onClick={toggleMenu}
           >
             {link.label}
@@ -91,18 +92,18 @@ export default function MobileMenu() {
           href="/contact"
           style={{
             background: 'linear-gradient(135deg, #a7d221 0%, #b8e32e 100%)',
-            color: '#fff',
+            color: '#0a0a0a',
             borderRadius: '16px',
             padding: '18px 48px',
             fontWeight: 800,
             fontSize: '1.18rem',
-            boxShadow: '0 2px 12px rgba(167,210,33,0.13)',
+            boxShadow: '0 4px 20px rgba(167,210,33,0.3)',
             textDecoration: 'none',
-            transition: 'background 0.2s, color 0.2s',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
             display: 'inline-block',
             letterSpacing: '-0.01em',
           }}
-          className="hover:bg-[#a7d221] hover:text-white"
+          className="hover:shadow-[0_8px_32px_rgba(167,210,33,0.5)]"
           onClick={toggleMenu}
         >
           Get Started
@@ -126,32 +127,34 @@ export default function MobileMenu() {
   onClick={toggleMenu}
   aria-label="Toggle mobile menu"
   style={{
-    position: 'absolute',
-    top: 16,
-    right: 16,
+    position: 'relative',
     zIndex: 60,
-    background: 'none',
-    border: 'none',
-    padding: 8,
+    background: 'rgba(167, 210, 33, 0.1)',
+    border: '1px solid rgba(167, 210, 33, 0.2)',
+    padding: 10,
     borderRadius: 12,
     cursor: 'pointer',
-    transition: 'background 0.2s',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     outline: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   }}
   onMouseDown={e => e.preventDefault()}
+  className="hover:bg-[rgba(167,210,33,0.15)] hover:border-[rgba(167,210,33,0.3)]"
 >
   {!isMenuOpen ? (
     // Modern Hamburger
-    <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-      <rect y="7" width="32" height="4" rx="2" fill="#a7d221"/>
-      <rect y="14" width="32" height="4" rx="2" fill="#a7d221"/>
-      <rect y="21" width="32" height="4" rx="2" fill="#a7d221"/>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <rect y="8" width="32" height="3" rx="1.5" fill="#a7d221"/>
+      <rect y="15" width="32" height="3" rx="1.5" fill="#a7d221"/>
+      <rect y="22" width="32" height="3" rx="1.5" fill="#a7d221"/>
     </svg>
   ) : (
-    // Modern Close (X) Icon, same color
-    <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-      <rect x="8" y="8" width="22" height="4" rx="2" transform="rotate(45 8 8)" fill="#a7d221"/>
-      <rect x="8" y="24" width="22" height="4" rx="2" transform="rotate(-45 8 24)" fill="#a7d221"/>
+    // Modern Close (X) Icon
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <rect x="24" y="6" width="25" height="3" rx="1.5" transform="rotate(45 24 6)" fill="#a7d221"/>
+      <rect x="6" y="8" width="25" height="3" rx="1.5" transform="rotate(-45 6 8)" fill="#a7d221"/>
     </svg>
   )}
 </button>

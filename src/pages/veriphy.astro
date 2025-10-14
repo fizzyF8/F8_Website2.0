@@ -371,13 +371,13 @@ import Footer from "../components/Footer.astro";
 
   /* Modern table styling (consistent, themed, readable) */
   .modern-table-glass {
-    background: rgba(24, 26, 20, 0.62);
+    background: rgba(18, 18, 18, 0.85);
     backdrop-filter: blur(12px);
     border-radius: 16px;
-    border: 1.5px solid rgba(167, 210, 33, 0.14);
+    border: 1.5px solid rgba(167, 210, 33, 0.25);
     box-shadow:
-      0 4px 24px rgba(167, 210, 33, 0.06),
-      0 1.5px 8px rgba(0, 0, 0, 0.09);
+      0 4px 24px rgba(0, 0, 0, 0.8),
+      0 1.5px 8px rgba(167, 210, 33, 0.12);
   }
   .modern-table {
     border-collapse: separate;
@@ -386,27 +386,27 @@ import Footer from "../components/Footer.astro";
     min-width: 700px;
   }
   .modern-table thead th {
-    background: rgba(167, 210, 33, 0.12);
-    color: #a7d221;
+    background: rgba(167, 210, 33, 0.15);
+    color: var(--primary-light);
     font-weight: 800;
     font-size: 1.05em;
     padding: 15px 14px;
-    border-bottom: 2px solid #a7d22144;
+    border-bottom: 2px solid rgba(167, 210, 33, 0.3);
     text-align: left;
   }
   .modern-table tbody td {
     background: transparent;
-    color: #f6ffe6;
+    color: var(--text);
     font-weight: 500;
     padding: 13px 14px;
-    border-bottom: 1.5px solid rgba(167, 210, 33, 0.06);
+    border-bottom: 1.5px solid rgba(167, 210, 33, 0.1);
   }
   .modern-table tbody tr:hover {
-    background: rgba(167, 210, 33, 0.055);
+    background: rgba(167, 210, 33, 0.12);
   }
   .modern-table tbody td:first-child {
     font-weight: 700;
-    color: #b8e32e;
+    color: var(--primary-light);
   }
 
   @media (max-width: 900px) {

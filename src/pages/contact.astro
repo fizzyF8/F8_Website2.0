@@ -2,24 +2,44 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import UnicornStudioEmbed from "../components/UnicornStudioEmbed.jsx";
 import whatsapp from "../assets/whatsapp.png";
 ---
 
 <Layout title="Frog8 - Contact | Let's Build the Future Together">
   <Navigation />
 
-  <!-- Hero Section -->
-  <section class="section gradient-bg pt-32 pb-10">
-    <div class="container">
-      <div class="text-center mb-14">
-        <h1 class="fade-in mb-6">
-          Let's build the future of <span class="text-green">access</span> — TOGETHER
+  <!-- Hero Section with Unicorn Studio Background -->
+  <section class="hero-section-fullpage">
+    <!-- Unicorn Studio Animation Background -->
+    <UnicornStudioEmbed 
+      client:load 
+      projectId="Ewoj40eRJR83ht443zTr"
+      fullPage={true}
+    />
+    
+    <!-- Content Overlay -->
+    <div class="hero-content-overlay">
+      <div class="hero-content-center">
+        <h1 class="hero-title">
+          <span class="hero-text-line">Let's build the future of</span><br />
+          <span class="hero-highlight">access</span>
+          <span class="hero-text-line">— TOGETHER</span>
         </h1>
-        <p class="fade-in-delay text-xl max-w-3xl mx-auto">
+        
+        <p class="hero-subtitle">
           Ready to transform your infrastructure with cutting-edge automation
           and seamless user experiences? We'd love to hear from you.
         </p>
       </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <p class="scroll-text">Scroll to explore</p>
     </div>
   </section>
 
@@ -30,71 +50,59 @@ import whatsapp from "../assets/whatsapp.png";
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
         <!-- Email -->
-        <div class="glass p-8 text-center hover-lift">
-          <div
-            class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center"
-          >
-            <!-- Envelope -->
-            <svg
-              class="w-8 h-8 text-green"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-              ></path>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-              ></path>
-            </svg>
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <div class="contact-icon-container">
+              <div class="contact-icon-bg"></div>
+              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-title">Email Us</h3>
+            <p class="contact-description mb-6">For partnerships, support, or general inquiries</p>
+            <a href="mailto:sales@f8payments.com" class="btn btn-primary btn-enhanced">
+              <span>sales@f8payments.com</span>
+              <div class="btn-shine"></div>
+            </a>
+            <div class="contact-glow"></div>
           </div>
-          <h3 class="text-green mb-4">Email Us</h3>
-          <p class="mb-6">For partnerships, support, or general inquiries</p>
-          <a href="mailto:sales@f8payments.com" class="btn btn-primary"
-            >sales@f8payments.com</a
-          >
         </div>
         <!-- Call -->
-        <div class="glass p-8 text-center hover-lift">
-          <div
-            class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center"
-          >
-            <!-- Phone -->
-            <svg
-              class="w-8 h-8 text-green"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-              ></path>
-            </svg>
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <div class="contact-icon-container">
+              <div class="contact-icon-bg"></div>
+              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-title">Call Us</h3>
+            <p class="contact-description mb-6">Speak directly with our team of experts</p>
+            <a href="tel:+91-9820459958" class="btn btn-primary btn-enhanced">
+              <span>+91-9820459958</span>
+              <div class="btn-shine"></div>
+            </a>
+            <div class="contact-glow"></div>
           </div>
-          <h3 class="text-green mb-4">Call Us</h3>
-          <p class="mb-6">Speak directly with our team of experts</p>
-          <a href="tel:+91-9820459958" class="btn btn-primary">
-            +91-9820459958</a
-          >
         </div>
         <!-- Visit -->
-        <div class="glass p-8 text-center hover-lift">
-          <div
-            class="w-16 h-16 mx-auto mb-6 bg-green/20 rounded-full flex items-center justify-center"
-          >
-            <!-- Location -->
-            <svg
-              class="w-8 h-8 text-green"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                clip-rule="evenodd"></path>
-            </svg>
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <div class="contact-icon-container">
+              <div class="contact-icon-bg"></div>
+              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="contact-title">Visit Us</h3>
+            <p class="contact-description mb-6">Meet us at our HQ in India's tech capital</p>
+            <span class="btn btn-primary btn-enhanced">
+              <span>Mumbai, India</span>
+              <div class="btn-shine"></div>
+            </span>
+            <div class="contact-glow"></div>
           </div>
-          <h3 class="text-green mb-4">Visit Us</h3>
-          <p class="mb-6">Meet us at our HQ in India's tech capital</p>
-          <span class="btn btn-primary">Mumbai, India</span>
         </div>
       </div>
     </div>
@@ -113,35 +121,6 @@ import whatsapp from "../assets/whatsapp.png";
     <span class="hidden md:inline ml-2"></span>
   </a>
 
-  <div class="section-divider"></div>
-
-  <!-- Quick Actions -->
-  <section class="section pt-8 pb-8 bg-black/20">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="mb-6">Quick <span class="text-green">Actions</span></h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green mb-4">Request a Callback</h3>
-          <p class="mb-6">Our team will call you at your preferred time</p>
-          <a href="#" class="btn btn-primary">Request Callback</a>
-        </div>
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green mb-4">Schedule a Demo</h3>
-          <p class="mb-6">See how our platforms work live and in action</p>
-          <a href="#" class="btn btn-primary">Schedule Demo</a>
-        </div>
-        <div class="glass p-8 text-center hover-lift">
-          <h3 class="text-green mb-4">Download Brochure</h3>
-          <p class="mb-6">Detailed info about our solutions (PDF)</p>
-          <a href="#" class="btn btn-primary">Download Brochure</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
 
   <!-- Grouped Contact & Project Planner -->
   <section class="section pt-8 pb-8">
@@ -253,7 +232,7 @@ import whatsapp from "../assets/whatsapp.png";
   <div class="section-divider"></div>
 
   <!-- FAQ Section -->
-  <section class="section bg-black/20 pt-8 pb-8">
+  <section class="section bg-white/20 pt-8 pb-8">
     <div class="container">
       <h2 class="text-center mb-8">
         Frequently Asked <span class="text-green">Questions</span>
@@ -297,64 +276,341 @@ import whatsapp from "../assets/whatsapp.png";
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
-  <!-- Newsletter Signup & Media Contact -->
-  <section class="section pt-8 pb-8 newsletter-section">
-    <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <div class="max-w-xl mx-auto glass p-8 text-center rounded-2xl">
-            <h2 class="mb-4">
-              Subscribe to Our <span class="text-green">Newsletter</span>
-            </h2>
-            <p class="mb-6 text-lg">
-              Get the latest news and product updates from Frog8
-            </p>
-            <form class="flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                name="newsletter"
-                required
-                class="f8-input"
-                placeholder="Enter your email"
-              />
-              <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-          </div>
-        </div>
-        <div>
-          <div class="max-w-xl mx-auto glass p-8 text-center rounded-2xl">
-            <h2 class="mb-4">
-              Press & <span class="text-green">Media Inquiries</span>
-            </h2>
-            <p class="mb-2 text-lg">Are you a journalist or analyst?</p>
-            <a href="mailto:press@frog8.in" class="btn btn-secondary"
-              >Contact Media Team</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <Footer />
 </Layout>
 
 <style>
-  :root {
-    --f8-green: #a7d221;
-    --f8-green-dark: #7aab1b;
+  /* Full-Page Hero Section */
+  .hero-section-fullpage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   }
 
-  body {
-    background: #0c0e0f !important;
-    color: #faffef;
-    font-family: "Inter", "Manrope", "Segoe UI", "Poppins", system-ui, Arial,
-      sans-serif !important;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+  /* Content Overlay */
+  .hero-content-overlay {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(10, 10, 10, 0.3) 0%,
+      rgba(10, 10, 10, 0.6) 100%
+    );
+    padding: 120px 2rem 2rem;
   }
+
+  .hero-content-center {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    animation: fadeInUp 1.5s ease-out 2s both;
+  }
+
+  .scroll-mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid rgba(167, 210, 33, 0.6);
+    border-radius: 13px;
+    position: relative;
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .scroll-wheel {
+    width: 3px;
+    height: 8px;
+    background: #a7d221;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollWheel {
+    0%, 100% {
+      top: 8px;
+      opacity: 1;
+    }
+    50% {
+      top: 20px;
+      opacity: 0.3;
+    }
+  }
+
+  .scroll-text {
+    color: rgba(167, 210, 33, 0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* Hero Typography */
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 auto 1.5rem;
+    color: #f5f5f5;
+    text-align: center;
+    width: 100%;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s both;
+  }
+
+  .hero-text-line {
+    display: inline-block;
+    color: #f5f5f5;
+    text-align: center;
+  }
+
+  .hero-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, #a7d221, #c4e845);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #a7d221;
+    position: relative;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 8px rgba(167, 210, 33, 0.4));
+  }
+
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (-webkit-background-clip: text) {
+    .hero-highlight {
+      -webkit-text-fill-color: initial;
+      color: #a7d221;
+      text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 4px 8px rgba(167, 210, 33, 0.3);
+    }
+  }
+
+  .hero-subtitle {
+    color: #f5f5f5;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out 0.5s both;
+  }
+
+  /* Contact Cards */
+  .contact-card {
+    perspective: 1000px;
+    height: 350px;
+  }
+
+  .contact-card:nth-child(1) { opacity: 1; transform: translateY(0) scale(1); }
+  .contact-card:nth-child(2) { opacity: 1; transform: translateY(0) scale(1); }
+  .contact-card:nth-child(3) { opacity: 1; transform: translateY(0) scale(1); }
+
+  @keyframes cardSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(60px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .contact-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(167, 210, 33, 0.25);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transform-style: preserve-3d;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .contact-card:hover .contact-card-inner {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+    border-color: rgba(167, 210, 33, 0.6);
+    box-shadow: 
+      0 20px 40px rgba(167, 210, 33, 0.2),
+      0 0 0 1px rgba(167, 210, 33, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-icon-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-icon-bg {
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, #a7d221, #bdfc52, #a7d221);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: iconRotate 8s linear infinite;
+  }
+
+  .contact-icon-bg::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: 50%;
+  }
+
+  @keyframes iconRotate {
+    to { transform: rotate(360deg); }
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    color: #a7d221;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover .contact-icon {
+    color: #bdfc52;
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .contact-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #a7d221;
+    margin-bottom: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover .contact-title {
+    color: #bdfc52;
+    transform: translateY(-2px);
+  }
+
+  .contact-description {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover .contact-description {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .contact-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(167, 210, 33, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+
+  .contact-card:hover .contact-glow {
+    opacity: 1;
+  }
+
+  /* Enhanced Buttons */
+  .btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(167, 210, 33, 0.3);
+  }
+
+  .btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-enhanced:hover .btn-shine {
+    left: 100%;
+  }
+
+  :root {
+    --f8-green: #a7d221;
+    --f8-green-dark: #8fb31c;
+  }
+
+  /* Page specific overrides are already handled by global dark theme */
 
   .section {
     background: transparent !important;
@@ -377,13 +633,13 @@ import whatsapp from "../assets/whatsapp.png";
   }
 
   .glass {
-    background: rgba(18, 28, 28, 0.62) !important;
+    background: rgba(26, 26, 26, 0.85) !important;
     border-radius: 1.2rem;
     box-shadow:
-      0 2px 16px #a7d22123,
-      0 1px 10px #001d0c11;
-    border: 1.5px solid rgba(167, 210, 33, 0.13) !important;
-    backdrop-filter: blur(8px);
+      0 4px 24px rgba(0, 0, 0, 0.8),
+      0 2px 12px rgba(167, 210, 33, 0.15);
+    border: 1.5px solid rgba(167, 210, 33, 0.25) !important;
+    backdrop-filter: blur(15px);
   }
 
   .text-green,
@@ -403,17 +659,17 @@ import whatsapp from "../assets/whatsapp.png";
     width: 100%;
     padding: 1.13rem 1.13rem;
     border-radius: 1.15rem;
-    border: 1.5px solid rgba(255, 255, 255, 0.11);
-    background: rgba(16, 30, 23, 0.18);
-    color: #fff;
+    border: 1.5px solid rgba(167, 210, 33, 0.25);
+    background: rgba(26, 26, 26, 0.8);
+    color: var(--text);
     font-size: 1.09rem;
     margin-bottom: 0.9rem;
     outline: none;
     transition:
       border 0.17s,
       background 0.18s;
-    box-shadow: 0 2px 16px #a7d22125;
-    backdrop-filter: blur(7px);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -431,7 +687,8 @@ import whatsapp from "../assets/whatsapp.png";
   .f8-select:focus,
   .f8-textarea:focus {
     border-color: var(--f8-green);
-    background: rgba(10, 20, 14, 0.26);
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 0 0 3px rgba(167, 210, 33, 0.2);
   }
 
   /* Custom dropdown styling */
@@ -551,43 +808,48 @@ import whatsapp from "../assets/whatsapp.png";
 
   .btn-primary {
     background: linear-gradient(
-      90deg,
-      var(--f8-green) 10%,
-      #c0ee50 90%
+      135deg,
+      var(--f8-green) 0%,
+      #b8e32e 100%
     ) !important;
-    color: #011;
+    color: #0a0a0a;
     padding: 0.7rem 2.1rem;
     border-radius: 999px;
-    font-weight: 600;
+    font-weight: 700;
     border: none;
     margin-bottom: 20px;
-    box-shadow: 0 1px 8px #a7d22136;
+    box-shadow: 0 4px 16px rgba(167, 210, 33, 0.3);
     transition:
-      background 0.18s,
-      box-shadow 0.18s,
-      color 0.14s;
+      all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-primary:hover {
-    background: #bce34d !important;
-    color: #212800 !important;
-    box-shadow: 0 2px 16px #a7d22175;
+    background: linear-gradient(
+      135deg,
+      #b8e32e 0%,
+      var(--f8-green) 100%
+    ) !important;
+    color: #0a0a0a !important;
+    box-shadow: 0 6px 24px rgba(167, 210, 33, 0.5);
+    transform: translateY(-2px);
   }
 
   .btn-secondary {
-    background: rgba(167, 210, 33, 0.11) !important;
+    background: rgba(167, 210, 33, 0.15) !important;
     color: var(--f8-green) !important;
     border-radius: 999px;
     font-weight: 600;
     padding: 0.7rem 2.1rem;
-    border: 1px solid var(--f8-green);
+    border: 1.5px solid rgba(167, 210, 33, 0.4);
     transition:
-      background 0.17s,
-      color 0.12s;
+      all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .btn-secondary:hover {
-    background: #b9d84b33 !important;
-    color: #222 !important;
+    background: rgba(167, 210, 33, 0.25) !important;
+    color: var(--primary-light) !important;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(167, 210, 33, 0.25);
   }
 
   .hover-lift:hover {
@@ -635,6 +897,38 @@ import whatsapp from "../assets/whatsapp.png";
     justify-content: center;
   }
 
+  /* Mobile Responsiveness for Hero */
+  @media (max-width: 768px) {
+    .hero-section-fullpage {
+      min-height: 100vh;
+      height: auto;
+    }
+
+    .hero-content-overlay {
+      padding: 100px 1.5rem 1.5rem;
+    }
+
+    .hero-content-center {
+      gap: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .scroll-indicator {
+      bottom: 20px;
+    }
+
+    .scroll-text {
+      font-size: 0.75rem;
+    }
+  }
+
   /* Responsive grids & spacing */
   @media (max-width: 900px) {
     .grid-cols-3,
@@ -652,6 +946,139 @@ import whatsapp from "../assets/whatsapp.png";
       gap: 1.5rem !important;
     }
   }
+
+  @media (max-width: 480px) {
+    .hero-content-overlay {
+      padding: 90px 1rem 1rem;
+    }
+
+    .hero-content-center {
+      gap: 1rem;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9375rem;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+
+    .container {
+      padding: 0 12px !important;
+    }
+
+    .section {
+      padding: 40px 0 !important;
+    }
+
+    .w-16,
+    .h-16 {
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+    }
+
+    .p-8 {
+      padding: 1rem !important;
+    }
+
+    .rounded-2xl {
+      border-radius: 0.8rem !important;
+    }
+
+    .text-xl,
+    .text-lg {
+      font-size: 1rem !important;
+    }
+
+    h1 {
+      font-size: 1.8rem !important;
+      line-height: 1.1 !important;
+    }
+
+    h2 {
+      font-size: 1.5rem !important;
+      line-height: 1.2 !important;
+    }
+
+    h3 {
+      font-size: 1.3rem !important;
+    }
+
+    .btn {
+      width: 100% !important;
+      padding: 0.8rem 1.5rem !important;
+      font-size: 0.9rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .grid.grid-cols-1.md\\:grid-cols-2 {
+      gap: 1rem !important;
+    }
+
+    .grid.grid-cols-1.md\\:grid-cols-3 {
+      gap: 1rem !important;
+    }
+
+    .grid.grid-cols-1.lg\\:grid-cols-2 {
+      gap: 1.5rem !important;
+    }
+
+    .f8-input,
+    .f8-select,
+    .f8-textarea {
+      padding: 0.9rem !important;
+      font-size: 1rem !important;
+      margin-bottom: 0.7rem !important;
+    }
+
+    .f8-textarea {
+      height: 200px !important;
+    }
+
+    .whatsapp-float {
+      bottom: 1rem !important;
+      right: 1rem !important;
+      padding: 0.6rem 0.9rem !important;
+      font-size: 1rem !important;
+    }
+
+    .whatsapp-img {
+      min-width: 28px !important;
+      min-height: 28px !important;
+      max-width: 28px !important;
+      max-height: 28px !important;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1rem !important;
+    }
+
+    .flex.flex-col.sm\\:flex-row {
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+    }
+
+    details.glass {
+      margin-bottom: 0.5rem;
+    }
+
+    details.glass summary {
+      padding: 1rem !important;
+      font-size: 0.95rem !important;
+    }
+
+    details.glass > div {
+      padding: 1rem !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
   @media (max-width: 640px) {
     .w-16,
     .h-16 {

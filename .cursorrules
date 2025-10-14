@@ -1,0 +1,380 @@
+# Frog8 Website - Cursor Rules
+
+## Project Overview
+This is the Frog8 company website - a professional B2B platform showcasing fintech and infrastructure solutions. The site emphasizes modern design with glassmorphism, smooth animations, and a distinctive lime-green brand identity.
+
+## Tech Stack
+- **Framework**: Astro 5.14.1 (Static Site Generation)
+- **UI Components**: React 19.1.0 (for interactive elements only)
+- **3D Graphics**: Three.js 0.177.0
+- **Styling**: CSS (scoped styles in Astro components)
+- **TypeScript**: Strict mode enabled
+
+## Design System
+
+### Brand Colors (PRIMARY - NEVER CHANGE)
+```css
+--primary: #a7d221        /* Frog8 lime green */
+--primary-light: #b8e32e  /* Lighter variant */
+--primary-dark: #8fb31c   /* Darker variant */
+--background: #0a0a0a     /* Dark theme background */
+--background-light: #121212
+--background-card: #1a1a1a
+--text: #f5f5f5          /* Light text on dark */
+--text-muted: #a0a0a0
+```
+
+### Typography
+- **Primary Font**: Inter (Google Fonts) - professional, modern
+- **Headings**: Font weights 600-800, letter-spacing: -0.02em
+- **Body**: Font weight 400-500, line-height: 1.6-1.7
+- **Responsive**: Use clamp() for fluid typography
+
+### Spacing System
+- Use 8px base unit (0.5rem increments)
+- Container max-width: 1280px
+- Section padding: 120px vertical (desktop), 60px (mobile)
+
+## Code Quality Standards
+
+### File Organization
+```
+src/
+├── components/     # Reusable UI components
+├── layouts/        # Page layouts (Layout.astro)
+├── pages/          # Route pages (index.astro, about.astro, etc.)
+├── assets/         # Images, icons, logos
+└── styles/         # Global styles (if needed)
+```
+
+### Naming Conventions
+- **Files**: PascalCase for components (Navigation.astro, MobileMenu.jsx)
+- **Pages**: lowercase with hyphens (about.astro, contact.astro)
+- **CSS Classes**: kebab-case (nav-link, btn-primary, tvm-card)
+- **Variables**: camelCase in JS, kebab-case in CSS
+
+### Component Guidelines
+
+#### Astro Components (.astro)
+```astro
+---
+// 1. Imports first
+import Layout from '../layouts/Layout.astro';
+import Component from '../components/Component.astro';
+
+// 2. Props interface (if needed)
+export interface Props {
+  title?: string;
+}
+
+// 3. Props destructuring with defaults
+const { title = "Default Title" } = Astro.props;
+---
+
+<!-- 4. HTML structure -->
+<Layout>
+  <!-- Semantic HTML5 elements -->
+  <section class="section">
+    <div class="container">
+      <!-- Content -->
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* 5. Scoped styles at bottom */
+  .section {
+    /* Component-specific styles */
+  }
+</style>
+```
+
+#### React Components (.jsx)
+- Use ONLY for interactive features (menus, galleries, modals)
+- Add `client:load` directive in Astro for hydration
+- Export default function ComponentName()
+- Use hooks (useState, useEffect) appropriately
+- Include PropTypes or TypeScript types
+
+## Design Patterns
+
+### Glassmorphism (SIGNATURE STYLE - DARK THEME)
+```css
+.glass {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.9) 0%, 
+    rgba(30, 30, 30, 0.85) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(167, 210, 33, 0.2);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(167, 210, 33, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+```
+
+### Animations (SMOOTH & PROFESSIONAL)
+- Use `cubic-bezier(0.4, 0, 0.2, 1)` for transitions
+- Hover effects: translateY(-8px) with shadow increase
+- Page load: fade-in, slide-up animations
+- Keep animations under 0.6s duration
+- Add `will-change` for performance on heavy animations
+
+### Button Styles
+```css
+.btn-primary {
+  background: linear-gradient(135deg, #a7d221 0%, #b8e32e 100%);
+  color: #0a0a0a;  /* Dark text on bright button */
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(167, 210, 33, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(167, 210, 33, 0.5);
+}
+```
+
+## Responsive Design (MOBILE-FIRST)
+
+### Breakpoints
+```css
+/* Mobile: < 480px (base styles) */
+@media (max-width: 480px) { }
+
+/* Small tablets: 640px */
+@media (max-width: 640px) { }
+
+/* Tablets: 768px */
+@media (max-width: 768px) { }
+
+/* Large tablets: 900px */
+@media (max-width: 900px) { }
+
+/* Desktop: 1024px+ */
+@media (min-width: 1024px) { }
+```
+
+### Mobile Optimization Rules
+1. Stack grid columns on mobile (grid-cols-1)
+2. Reduce padding: p-8 → p-4 on small screens
+3. Font sizes: Use clamp() or reduce by 20-30%
+4. Hide decorative elements on mobile (particles, background effects)
+5. Full-width buttons on mobile
+6. Increase touch target sizes (min 44px)
+
+## Content & Messaging
+
+### Tone of Voice
+- **Professional**: B2B audience (banks, metros, enterprises)
+- **Confident**: "Powering India Next" - authoritative
+- **Clear & Concise**: No jargon unless industry-specific
+- **Action-Oriented**: "Get Started", "Learn More", "Schedule Demo"
+
+### Copywriting Rules
+1. Headlines: Action-oriented, benefit-focused
+2. Descriptions: 1-2 sentences max, value-first
+3. CTAs: Clear next steps, contrasting buttons
+4. Technical specs: Bulleted lists, easy to scan
+5. Avoid: Marketing fluff, excessive adjectives, vague claims
+
+### SEO Best Practices
+- Unique title/description per page
+- Descriptive alt text for all images
+- Semantic HTML5 (section, article, nav, header, footer)
+- Heading hierarchy (h1 → h2 → h3)
+- Internal linking between related pages
+
+## Performance
+
+### Image Optimization
+- Use Astro's Image component for optimization
+- Add `loading="lazy"` for below-fold images
+- Add `loading="eager"` for hero images
+- WebP format preferred, PNG fallback
+- Max width: 2000px for hero images
+
+### Code Splitting
+- Keep React components minimal
+- Use `client:load` only when necessary
+- Consider `client:visible` for below-fold interactive elements
+- Lazy load heavy components (3D models, galleries)
+
+## Accessibility (WCAG 2.1 AA)
+
+### Essential Requirements
+1. **Color Contrast**: 4.5:1 minimum for text
+2. **Keyboard Navigation**: All interactive elements accessible via keyboard
+3. **ARIA Labels**: Add to icon-only buttons, navigation
+4. **Focus Indicators**: Visible focus states on all interactive elements
+5. **Alt Text**: Descriptive for meaningful images, empty for decorative
+6. **Semantic HTML**: Use proper elements (button, nav, main, etc.)
+
+### Implementation
+```html
+<!-- Good -->
+<button aria-label="Open menu" class="menu-btn">
+  <svg aria-hidden="true">...</svg>
+</button>
+
+<!-- Bad -->
+<div onclick="openMenu()">...</div>
+```
+
+## Component-Specific Rules
+
+### Navigation
+- Fixed position, glassmorphism background
+- Desktop: horizontal links with hover effects
+- Mobile: Fullscreen overlay menu (React component)
+- Sticky on scroll, blur backdrop
+- Logo always links to homepage
+
+### Footer
+- 4-column layout (Company, Products, Resources, Connect)
+- Social icons with hover effects
+- Copyright year dynamic: {new Date().getFullYear()}
+- Links in dark text on light glass background
+
+### Hero Sections
+- Full viewport height (min-height: 100vh)
+- Animated background (particles, floating orbs, grid)
+- Gradient text for brand keywords
+- Clear CTA buttons below fold
+- Text shadow for readability
+
+### Cards
+- Use `.glass` or `.card-premium` classes
+- Hover: lift with shadow increase
+- Rounded corners (20-24px)
+- Consistent padding (2rem desktop, 1rem mobile)
+
+## Git Workflow
+
+### Commit Messages
+- Format: `type: description`
+- Types: feat, fix, style, refactor, docs, perf, test
+- Examples:
+  - `feat: add partner logos to deployments page`
+  - `fix: mobile menu not closing on link click`
+  - `style: update button hover animations`
+
+### Before Committing
+1. Test on mobile viewport (< 480px)
+2. Check all interactive elements
+3. Verify no console errors
+4. Run `npm run build` to check for build errors
+5. Validate links and images
+
+## Testing Checklist
+
+### Pre-Deployment
+- [ ] All pages load without errors
+- [ ] Forms submit correctly
+- [ ] Navigation works (desktop + mobile)
+- [ ] Images load and are optimized
+- [ ] Responsive on 320px, 768px, 1920px
+- [ ] Animations smooth (no janky transitions)
+- [ ] Colors match brand guidelines
+- [ ] Contact info up to date
+- [ ] External links open in new tabs
+- [ ] WhatsApp integration working
+
+### Browser Compatibility
+- Chrome (latest)
+- Safari (latest)
+- Firefox (latest)
+- Edge (latest)
+- Mobile Safari (iOS)
+- Mobile Chrome (Android)
+
+## Common Patterns to Follow
+
+### Section Structure
+```astro
+<section class="section gradient-bg pt-32">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="slide-up mb-6">
+        Heading <span class="text-green">Highlight</span>
+      </h2>
+      <p class="text-xl max-w-3xl mx-auto">
+        Description text
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Grid items -->
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+```
+
+### Form Inputs
+```astro
+<div>
+  <label for="name" class="f8-label">Full Name *</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    required
+    class="f8-input"
+    placeholder="Your full name"
+  />
+</div>
+```
+
+## What NOT to Do
+
+❌ **Never** change the primary brand color (#a7d221)
+❌ **Never** use inline styles (use scoped CSS or classes)
+❌ **Never** add external CSS frameworks (Tailwind, Bootstrap)
+❌ **Never** use jQuery or legacy libraries
+❌ **Never** create pages without proper SEO meta tags
+❌ **Never** use `!important` in CSS (refactor specificity instead)
+❌ **Never** add animations longer than 1 second
+❌ **Never** break mobile responsiveness
+❌ **Never** remove accessibility features
+❌ **Never** hardcode contact info (use centralized variables)
+
+## When Adding New Features
+
+### Process
+1. **Plan**: Sketch layout, consider mobile-first
+2. **Design**: Use brand colors, glassmorphism, smooth animations
+3. **Code**: Follow file structure, naming conventions
+4. **Test**: All breakpoints, interactions, accessibility
+5. **Optimize**: Images, code splitting, performance
+6. **Document**: Update README if significant change
+
+### Questions to Ask
+- Does this fit the brand identity (professional, modern)?
+- Is it responsive on all screen sizes?
+- Does it maintain the glassmorphism aesthetic?
+- Is the animation smooth and purposeful?
+- Does it improve user experience?
+- Is it accessible?
+
+## Emergency Contacts
+- Sales Email: sales@f8payments.com
+- Phone: +91-9820459958
+- Location: Mumbai, India
+
+## Version Control
+- Last Updated: October 2025
+- Astro Version: 5.14.1
+- React Version: 19.1.0
+- Node Version: Recommended 20.x LTS
+
+---
+
+**Remember**: This website represents Frog8's professional image to enterprise clients (banks, metros, government). Every change should enhance credibility, clarity, and conversion while maintaining the modern, distinctive design system.
+

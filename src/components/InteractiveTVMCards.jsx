@@ -318,15 +318,16 @@ export default function InteractiveTVMCards() {
           transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           border-radius: 20px;
           overflow: hidden;
-          background: rgba(255, 255, 255, 0.02);
+          background: rgba(26, 26, 26, 0.85);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(167, 210, 33, 0.1);
+          border: 1px solid rgba(167, 210, 33, 0.2);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .tvm-interactive-card:not(.expanded):hover {
           transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 20px 40px rgba(167, 210, 33, 0.15);
-          border-color: rgba(167, 210, 33, 0.3);
+          box-shadow: 0 20px 40px rgba(167, 210, 33, 0.25);
+          border-color: rgba(167, 210, 33, 0.4);
         }
 
         .tvm-interactive-card.expanded {
@@ -352,7 +353,7 @@ export default function InteractiveTVMCards() {
           height: 100%;
           object-fit: contain;
           object-position: center;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(0, 0, 0, 0.3);
           transition: transform 0.6s ease;
         }
 
@@ -401,8 +402,8 @@ export default function InteractiveTVMCards() {
           max-height: 0;
           overflow: hidden;
           transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          background: rgba(255, 255, 255, 0.95);
-          color: #333;
+          background: rgba(18, 18, 18, 0.95);
+          color: #f5f5f5;
         }
 
         .tvm-expanded-view.active {
@@ -444,12 +445,12 @@ export default function InteractiveTVMCards() {
           font-size: 2rem;
           font-weight: 700;
           margin: 0 0 0.5rem 0;
-          color: #333;
+          color: #f5f5f5;
         }
 
         .tvm-subtitle {
           font-size: 1.1rem;
-          color: #666;
+          color: #a0a0a0;
           margin: 0;
           line-height: 1.6;
         }
@@ -493,7 +494,7 @@ export default function InteractiveTVMCards() {
           height: 100%;
           object-fit: contain;
           object-position: center;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(0, 0, 0, 0.3);
         }
 
         .tvm-fullscreen-hint {
@@ -552,7 +553,7 @@ export default function InteractiveTVMCards() {
           font-size: 1.3rem;
           font-weight: 700;
           margin-bottom: 1rem;
-          color: #333;
+          color: #f5f5f5;
           border-bottom: 2px solid #a7d221;
           padding-bottom: 0.5rem;
         }
@@ -570,16 +571,17 @@ export default function InteractiveTVMCards() {
           align-items: center;
           gap: 0.8rem;
           padding: 0.8rem;
-          background: rgba(167, 210, 33, 0.05);
+          background: rgba(167, 210, 33, 0.08);
           border-radius: 12px;
-          border: 1px solid rgba(167, 210, 33, 0.1);
+          border: 1px solid rgba(167, 210, 33, 0.2);
           transition: all 0.3s ease;
         }
 
         .tvm-feature-item:hover,
         .tvm-ideal-item:hover {
-          background: rgba(167, 210, 33, 0.1);
+          background: rgba(167, 210, 33, 0.15);
           transform: translateY(-2px);
+          border-color: rgba(167, 210, 33, 0.3);
         }
 
         .tvm-feature-icon,
@@ -590,7 +592,7 @@ export default function InteractiveTVMCards() {
         .tvm-feature-text,
         .tvm-ideal-text {
           font-weight: 500;
-          color: #444;
+          color: #e0e0e0;
         }
 
         .tvm-specs-grid {
@@ -603,22 +605,22 @@ export default function InteractiveTVMCards() {
           display: flex;
           flex-direction: column;
           padding: 1rem;
-          background: rgba(167, 210, 33, 0.05);
+          background: rgba(167, 210, 33, 0.08);
           border-radius: 12px;
-          border: 1px solid rgba(167, 210, 33, 0.1);
+          border: 1px solid rgba(167, 210, 33, 0.2);
           text-align: center;
         }
 
         .tvm-spec-label {
           font-size: 0.9rem;
-          color: #666;
+          color: #a0a0a0;
           margin-bottom: 0.5rem;
         }
 
         .tvm-spec-value {
           font-size: 1.1rem;
           font-weight: 700;
-          color: #333;
+          color: #f5f5f5;
         }
 
         /* Fullscreen Modal */
@@ -695,10 +697,142 @@ export default function InteractiveTVMCards() {
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
           .tvm-interactive-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
+            margin: 1rem 0;
+          }
+
+          .tvm-interactive-card {
+            border-radius: 16px;
+          }
+
+          .tvm-compact-view {
+            height: 220px;
+          }
+
+          .tvm-overlay {
+            padding: 1rem;
+          }
+
+          .tvm-number-badge {
+            font-size: 1rem;
+            padding: 0.4rem 0.8rem;
+          }
+
+          .tvm-title {
+            font-size: 1.2rem;
+          }
+
+          .tvm-badge-compact {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+          }
+
+          .tvm-expanded-content {
+            padding: 1rem;
+          }
+
+          .tvm-main-content {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          .tvm-expanded-header {
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+          }
+
+          .tvm-header-left {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+          }
+
+          .tvm-number-large {
+            font-size: 1.5rem;
+            padding: 0.8rem 1rem;
+            align-self: center;
+            min-width: 80px;
+          }
+
+          .tvm-title-large {
+            font-size: 1.5rem;
+          }
+
+          .tvm-subtitle {
+            font-size: 1rem;
+          }
+
+          .tvm-badge-large {
+            font-size: 0.9rem;
+            padding: 0.4rem 1rem;
+            align-self: center;
+          }
+
+          .tvm-main-gallery-image {
+            height: 280px;
+          }
+
+          .tvm-thumbnail {
+            width: 80px;
+            height: 60px;
+          }
+
+          .tvm-info-section h4 {
+            font-size: 1.1rem;
+          }
+
+          .tvm-features-grid,
+          .tvm-ideal-grid {
+            grid-template-columns: 1fr;
+            gap: 0.6rem;
+          }
+
+          .tvm-feature-item,
+          .tvm-ideal-item {
+            padding: 0.6rem;
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+          }
+
+          .tvm-feature-icon,
+          .tvm-ideal-icon {
+            font-size: 1.5rem;
+          }
+
+          .tvm-specs-grid {
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+          }
+
+          .tvm-spec-item {
+            padding: 0.8rem;
+          }
+
+          .tvm-fullscreen-content {
+            max-width: 95vw;
+            max-height: 95vh;
+          }
+
+          .tvm-close-button {
+            top: -40px;
+            right: 10px;
+            padding: 0.6rem;
+          }
+
+          .tvm-fullscreen-title {
+            font-size: 1.2rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .tvm-interactive-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
           }
 
           .tvm-main-content {

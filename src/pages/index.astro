@@ -2,27 +2,56 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
 ---
 
 <Layout>
   <Navigation />
   
-  <!-- Hero Section -->
-  <section class="section gradient-bg pt-32">
-    <div class="container text-center">
-      <h1 class="fade-in mb-8">
-        Powering India Next: <span class="text-primary">Seamless Journeys</span>, Smarter Access
-      </h1>
-      <p class="fade-in-delay text-xl mb-6 max-w-3xl mx-auto">
-        Unattended automation. Design-first experiences. Building for the next 100 million.
-      </p>
-      <p class="fade-in-delay mb-12 max-w-4xl mx-auto">
-        Frog8 builds connected platforms and intelligent kiosks that transform access—across transit, banking, and public services. From metro stations to rural banks, our solutions simplify how India moves, pays, and verifies.
-      </p>
-      <div class="fade-in-delay flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="/contact" class="btn btn-primary">Schedule a Demo</a>
-        <a href="/platforms" class="btn btn-secondary">Explore Our Offerings</a>
+  <!-- Full-Page Hero Section with Unicorn Studio Background -->
+  <section class="hero-section-fullpage">
+    <!-- Unicorn Studio Animation Background -->
+    <UnicornStudioEmbed 
+      client:load 
+      projectId="1qpipNvszw8yfmoe6OyZ"
+      fullPage={true}
+    />
+    
+    <!-- Content Overlay -->
+    <div class="hero-content-overlay">
+      <div class="hero-content-center">
+          <h1 class="hero-title">
+            <span class="hero-text-line">Powering India Next:</span><br />
+            <span class="hero-highlight">Seamless Journeys</span><span class="hero-text-line">, Smarter Access</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            Unattended automation. Design-first experiences. Building for the next 100 million.
+          </p>
+          
+          <p class="hero-description">
+            Frog8 builds connected platforms and intelligent kiosks that transform access—across transit, banking, and public services. From metro stations to rural banks, our solutions simplify how India moves, pays, and verifies.
+          </p>
+          
+          <div class="hero-cta">
+            <a href="/contact" class="btn btn-primary">
+              <span>Schedule a Demo</span>
+              <div class="btn-shine"></div>
+            </a>
+            <a href="/platforms" class="btn btn-secondary">
+              <span>Explore Our Offerings</span>
+              <div class="btn-shine"></div>
+            </a>
+          </div>
       </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <p class="scroll-text">Scroll to explore</p>
     </div>
   </section>
 
@@ -40,34 +69,46 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass p-8 hover-lift">
-          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+        <div class="ethos-card" data-tilt>
+          <div class="ethos-card-inner">
+            <div class="ethos-icon-container">
+              <div class="ethos-icon-bg"></div>
+              <svg class="ethos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="ethos-title">Speed & Efficiency</h3>
+            <p class="ethos-description">Streamlined processes that save time and reduce friction in everyday transactions.</p>
+            <div class="ethos-glow"></div>
           </div>
-          <h3 class="text-primary mb-4">Speed & Efficiency</h3>
-          <p>Streamlined processes that save time and reduce friction in everyday transactions.</p>
         </div>
 
-        <div class="glass p-8 hover-lift">
-          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-            </svg>
+        <div class="ethos-card" data-tilt>
+          <div class="ethos-card-inner">
+            <div class="ethos-icon-container">
+              <div class="ethos-icon-bg"></div>
+              <svg class="ethos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <h3 class="ethos-title">Security First</h3>
+            <p class="ethos-description">Enterprise-grade security with end-to-end encryption and compliance built-in.</p>
+            <div class="ethos-glow"></div>
           </div>
-          <h3 class="text-primary mb-4">Security First</h3>
-          <p>Enterprise-grade security with end-to-end encryption and compliance built-in.</p>
         </div>
 
-        <div class="glass p-8 hover-lift">
-          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
+        <div class="ethos-card" data-tilt>
+          <div class="ethos-card-inner">
+            <div class="ethos-icon-container">
+              <div class="ethos-icon-bg"></div>
+              <svg class="ethos-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="ethos-title">Inclusive Design</h3>
+            <p class="ethos-description">Solutions that work for everyone, from tech-savvy urbanites to first-time digital users.</p>
+            <div class="ethos-glow"></div>
           </div>
-          <h3 class="text-primary mb-4">Inclusive Design</h3>
-          <p>Solutions that work for everyone, from tech-savvy urbanites to first-time digital users.</p>
         </div>
       </div>
     </div>
@@ -77,7 +118,7 @@ import Footer from '../components/Footer.astro';
   <div class="section-divider"></div>
 
   <!-- Featured Products -->
-  <section class="section bg-black/20">
+  <section class="section bg-gray-50">
     <div class="container">
       <div class="text-center mb-16">
         <h2 class="slide-up mb-6">Featured <span class="text-primary">Products</span></h2>
@@ -87,13 +128,13 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="glass p-8 hover-scale">
+        <div class="card-premium p-8 hover-scale">
           <h3 class="text-primary mb-4">Raahi Platform</h3>
           <p class="mb-6">End-to-end transit management platform with real-time analytics and seamless integration.</p>
           <a href="/platforms" class="btn btn-secondary">Learn More</a>
         </div>
 
-        <div class="glass p-8 hover-scale">
+        <div class="card-premium p-8 hover-scale">
           <h3 class="text-primary mb-4">Veriphy</h3>
           <p class="mb-6">WhatsApp-based document verification and onboarding solution for financial services.</p>
           <a href="/veriphy" class="btn btn-secondary">Learn More</a>
@@ -108,7 +149,7 @@ import Footer from '../components/Footer.astro';
   <!-- Call to Action -->
   <section class="section">
     <div class="container">
-      <div class="glass p-12 text-center">
+      <div class="card-premium p-12 text-center">
         <h2 class="slide-up mb-6">Ready to Transform Your Infrastructure?</h2>
         <p class="text-xl mb-8 max-w-3xl mx-auto">
           Join the growing network of organizations using Frog8 to build smarter, more accessible services.
@@ -123,4 +164,558 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .p-12 { padding: 3rem; }
+
+  /* Mobile responsive styles */
+  @media (max-width: 480px) {
+    .p-12 { 
+      padding: 1.5rem; 
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .grid.grid-cols-1.md\\:grid-cols-3 {
+      gap: 1.5rem;
+    }
+    
+    .grid.grid-cols-1.md\\:grid-cols-2 {
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .p-12 { 
+      padding: 2rem; 
+    }
+  }
+
+  /* Full-Page Hero Section */
+  .hero-section-fullpage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+
+  /* Content Overlay */
+  .hero-content-overlay {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(10, 10, 10, 0.3) 0%,
+      rgba(10, 10, 10, 0.6) 100%
+    );
+    padding: 120px 2rem 2rem; /* Account for navigation height */
+  }
+
+  .hero-content-center {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    animation: fadeInUp 1.5s ease-out 2s both;
+  }
+
+  .scroll-mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid rgba(167, 210, 33, 0.6);
+    border-radius: 13px;
+    position: relative;
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .scroll-wheel {
+    width: 3px;
+    height: 8px;
+    background: #a7d221;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollWheel {
+    0%, 100% {
+      top: 8px;
+      opacity: 1;
+    }
+    50% {
+      top: 20px;
+      opacity: 0.3;
+    }
+  }
+
+  .scroll-text {
+    color: rgba(167, 210, 33, 0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* Hero Typography */
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 auto 1.5rem;
+    color: #f5f5f5;
+    text-align: center;
+    width: 100%;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s both;
+    margin-left: 750px;
+
+  }
+
+  .hero-text-line {
+    display: inline-block;
+    color: #f5f5f5;
+    text-align: center;
+  }
+
+  .hero-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, #a7d221, #c4e845);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #a7d221; /* fallback color */
+    position: relative;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 8px rgba(167, 210, 33, 0.4));
+  }
+
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (-webkit-background-clip: text) {
+    .hero-highlight {
+      -webkit-text-fill-color: initial;
+      color: #a7d221;
+      text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 4px 8px rgba(167, 210, 33, 0.3);
+    }
+  }
+
+  .hero-subtitle {
+    color: #f5f5f5;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out 0.5s both;
+    margin-left: 750px;
+
+  }
+
+  .hero-description {
+    color: rgba(245, 245, 245, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out 0.7s both;
+    margin-left: 750px;
+
+  }
+
+  .hero-cta {
+    animation: fadeInUp 1s ease-out 0.9s both;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-left:400px;
+
+  }
+
+  .hero-cta .btn {
+    min-width: 180px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-cta .btn-primary {
+    background: linear-gradient(135deg, #a7d221 0%, #b8e32e 100%);
+    color: #0a0a0a;
+    border: none;
+  }
+
+  .hero-cta .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(167, 210, 33, 0.4);
+    background: linear-gradient(135deg, #b8e32e 0%, #c4e845 100%);
+  }
+
+  .hero-cta .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Enhanced Buttons */
+  .btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(167, 210, 33, 0.3);
+  }
+
+  .btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-enhanced:hover .btn-shine {
+    left: 100%;
+  }
+
+  /* Ethos Cards */
+  .ethos-card {
+    perspective: 1000px;
+    height: 320px;
+  }
+
+  .ethos-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(167, 210, 33, 0.2);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transform-style: preserve-3d;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .ethos-card:hover .ethos-card-inner {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+    border-color: rgba(167, 210, 33, 0.6);
+    box-shadow: 
+      0 20px 40px rgba(167, 210, 33, 0.2),
+      0 0 0 1px rgba(167, 210, 33, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .ethos-icon-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ethos-icon-bg {
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, #a7d221, #bdfc52, #a7d221);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: iconRotate 8s linear infinite;
+  }
+
+  .ethos-icon-bg::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+  }
+
+  @keyframes iconRotate {
+    to { transform: rotate(360deg); }
+  }
+
+  .ethos-icon {
+    width: 40px;
+    height: 40px;
+    color: #a7d221;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+
+  .ethos-card:hover .ethos-icon {
+    color: #bdfc52;
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .ethos-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #a7d221;
+    margin-bottom: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .ethos-card:hover .ethos-title {
+    color: #bdfc52;
+    transform: translateY(-2px);
+  }
+
+  .ethos-description {
+    color: rgba(26, 26, 26, 0.8);
+    text-align: center;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+  }
+
+  .ethos-card:hover .ethos-description {
+    color: rgba(26, 26, 26, 0.95);
+  }
+
+  .ethos-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(167, 210, 33, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+
+  .ethos-card:hover .ethos-glow {
+    opacity: 1;
+  }
+
+  /* Staggered Animation */
+  .ethos-card:nth-child(1) { animation: cardSlideIn 0.8s ease-out 0.2s both; }
+  .ethos-card:nth-child(2) { animation: cardSlideIn 0.8s ease-out 0.4s both; }
+  .ethos-card:nth-child(3) { animation: cardSlideIn 0.8s ease-out 0.6s both; }
+
+  @keyframes cardSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(60px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .hero-section-fullpage {
+      min-height: 100vh;
+      height: auto;
+    }
+
+    .hero-content-overlay {
+      padding: 100px 1.5rem 1.5rem;
+    }
+
+    .hero-content-center {
+      gap: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.5rem, 6vw, 2.25rem);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-description {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      min-width: auto;
+      padding: 14px 28px;
+    }
+
+    .scroll-indicator {
+      bottom: 20px;
+    }
+
+    .scroll-text {
+      font-size: 0.75rem;
+    }
+
+    .ethos-card {
+      height: 280px;
+    }
+
+    .ethos-card-inner {
+      padding: 1.5rem;
+    }
+
+    .ethos-card:hover .ethos-card-inner {
+      transform: translateY(-5px);
+    }
+
+    .ethos-icon-container {
+      width: 60px;
+      height: 60px;
+    }
+
+    .ethos-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content-overlay {
+      padding: 90px 1rem 1rem;
+    }
+
+    .hero-content-center {
+      gap: 1rem;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9375rem;
+    }
+
+    .hero-description {
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .hero-cta {
+      max-width: 320px;
+    }
+
+    .hero-cta .btn {
+      padding: 12px 24px;
+      font-size: 0.9375rem;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .hero-content-center {
+      max-width: 1600px;
+    }
+
+    .hero-title {
+      font-size: 5.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+    }
+  }
 </style>
