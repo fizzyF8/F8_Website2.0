@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import InteractiveTVMCards from "../components/InteractiveTVMCards.jsx";
+import InteractiveTransigoCards from "../components/InteractiveTransigoCards.jsx";
 import UnicornStudioEmbed from "../components/UnicornStudioEmbed.jsx";
 import afcIcon from "../assets/icons/afc_icon.png";
 import multiPaymentIcon from "../assets/icons/multi-payment.webp";
@@ -74,10 +74,10 @@ import tvm4kImage from "../assets/tvm4k.png";
           <div class="tvm-carousel-container">
             <div class="tvm-carousel">
               <div class="tvm-slide active">
-                <img src={tvm2kImage.src} alt="TVM 2000 Series" class="tvm-image tvm-2k" />
+                <img src={tvm2kImage.src} alt="Transigo 2000 Series" class="tvm-image tvm-2k" />
               </div>
               <div class="tvm-slide">
-                <img src={tvm4kImage.src} alt="TVM 4000 Series" class="tvm-image tvm-4k" />
+                <img src={tvm4kImage.src} alt="Transigo 4000 Series" class="tvm-image tvm-4k" />
               </div>
             </div>
             <div class="tvm-carousel-dots">
@@ -101,32 +101,32 @@ import tvm4kImage from "../assets/tvm4k.png";
   <!-- Section Divider -->
   <div class="section-divider"></div>
 
-  <!-- TVMs Ticket Vending Machine Series -->
+  <!-- Transigo Ticket Vending Machine Series -->
   <section id="tvm-series" class="section">
     <div class="container">
       <div class="text-center mb-16">
         <h2 class="slide-up mb-8 accent-underline">
-          TVMs <span class="text-green">Ticket Vending Machine Series</span>
+          Transigo <span class="text-green">Ticket Vending Machine Series</span>
         </h2>
         <p class="text-xl mb-12 max-w-4xl mx-auto">
           Advanced ticket vending machines designed for metro networks, featuring 
           multi-modal payments, AFCS compliance, and 24/7 reliability. From compact 
-          stations to high-traffic hubs, our TVM series delivers seamless passenger experiences.
+          stations to high-traffic hubs, our Transigo series delivers seamless passenger experiences.
         </p>
       </div>
 
-      <!-- Interactive TVM Models -->
-      <div class="tvm-overview mb-16">
-        <InteractiveTVMCards client:load />
+      <!-- Interactive Transigo Models -->
+      <div class="transigo-overview mb-16">
+        <InteractiveTransigoCards client:load />
       </div>
 
-      <!-- Detailed TVM Sections -->
+      <!-- Detailed Transigo Sections -->
       <!-- <div class="tvm-detailed-sections"> -->
-        <!-- TVM 1000 Detailed -->
+        <!-- Transigo 1000 Detailed -->
         <!-- <div class="tvm-detailed-section">
           <div class="tvm-detailed-header">
             <div class="tvm-detailed-title">
-              <h2>TVM 1000</h2>
+              <h2>Transigo 1000</h2>
               <p>Compact & Efficient Solution</p>
             </div>
             <div class="tvm-detailed-badge">
@@ -138,7 +138,7 @@ import tvm4kImage from "../assets/tvm4k.png";
             <div class="tvm-detailed-images">
               <div class="tvm-image-gallery">
                 <div class="tvm-gallery-main">
-                  <img src={tvm1000_1.src} alt="TVM 1000 Front View" />
+                  <img src={tvm1000_1.src} alt="Transigo 1000 Front View" />
                 </div>
                 <div class="tvm-gallery-thumbnails">
                   <div class="tvm-thumbnail active">
@@ -201,11 +201,11 @@ import tvm4kImage from "../assets/tvm4k.png";
           </div>
         </div> -->
 
-        <!-- TVM 2000 Detailed -->
+        <!-- Transigo 2000 Detailed -->
         <!-- <div class="tvm-detailed-section">
           <div class="tvm-detailed-header">
             <div class="tvm-detailed-title">
-              <h2>TVM 2000</h2>
+              <h2>Transigo 2000</h2>
               <p>Advanced Multi-Payment Solution</p>
             </div>
             <div class="tvm-detailed-badge">
@@ -217,7 +217,7 @@ import tvm4kImage from "../assets/tvm4k.png";
             <div class="tvm-detailed-images">
               <div class="tvm-image-gallery">
                 <div class="tvm-gallery-main">
-                  <img src={tvm2000_1.src} alt="TVM 2000 Front View" />
+                  <img src={tvm2000_1.src} alt="Transigo 2000 Front View" />
                 </div>
                 <div class="tvm-gallery-thumbnails">
                   <div class="tvm-thumbnail active">
@@ -283,11 +283,11 @@ import tvm4kImage from "../assets/tvm4k.png";
           </div>
         </div> -->
 
-        <!-- TVM 4000 Detailed -->
+        <!-- Transigo 4000 Detailed -->
         <!-- <div class="tvm-detailed-section">
           <div class="tvm-detailed-header">
             <div class="tvm-detailed-title">
-              <h2>TVM 4000</h2>
+              <h2>Transigo 4000</h2>
               <p>Flagship Enterprise Solution</p>
             </div>
             <div class="tvm-detailed-badge">
@@ -299,7 +299,7 @@ import tvm4kImage from "../assets/tvm4k.png";
             <div class="tvm-detailed-images">
               <div class="tvm-image-gallery">
                 <div class="tvm-gallery-main">
-                  <img src={tvm4000_1.src} alt="TVM 4000 Front View" />
+                  <img src={tvm4000_1.src} alt="Transigo 4000 Front View" />
                 </div>
                 <div class="tvm-gallery-thumbnails">
                   <div class="tvm-thumbnail active">
@@ -366,7 +366,7 @@ import tvm4kImage from "../assets/tvm4k.png";
         </div>
       </div> -->
 
-      <!-- TVM Features Grid -->
+      <!-- Transigo Features Grid -->
       <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
         <div class="glass p-6 hover-lift text-center">
           <div class="feature-icon mx-auto mb-4">
@@ -1008,7 +1008,7 @@ import tvm4kImage from "../assets/tvm4k.png";
     background: rgba(167, 210, 33, 0.19);
     border-radius: 6px;
   }
-  /* TVM Overview Cards */
+  /* Transigo Overview Cards */
   .tvm-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1126,7 +1126,7 @@ import tvm4kImage from "../assets/tvm4k.png";
     border: 1px solid rgba(167, 210, 33, 0.2);
   }
   
-  /* Detailed TVM Sections */
+  /* Detailed Transigo Sections */
   .tvm-detailed-sections {
     display: flex;
     flex-direction: column;
@@ -1918,7 +1918,7 @@ import tvm4kImage from "../assets/tvm4k.png";
 </style>
 
 <script>
-  // TVM Carousel Functionality
+  // Transigo Carousel Functionality
   document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.tvm-slide');
     const dots = document.querySelectorAll('.tvm-dot');

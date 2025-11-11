@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-// Import TVM images
+// Import Transigo images
 import tvm1000_1 from "../assets/kiosks/TVM 1000/tvm_1000_1.jpeg";
 import tvm1000_2 from "../assets/kiosks/TVM 1000/tvm_1000_2.png";
 import tvm2000_1 from "../assets/kiosks/TVM 2000/tvm_2000_1.jpg";
@@ -10,11 +10,11 @@ import tvm4000_1 from "../assets/kiosks/TVM 4000/tvm_4000_1.jpg";
 import tvm4000_2 from "../assets/kiosks/TVM 4000/tvm_4000_2.jpg";
 import tvm4000_3 from "../assets/kiosks/TVM 4000/tvm_4000_3.jpg";
 
-const tvmData = [
+const transigoData = [
   {
-    id: 'tvm1000',
+    id: 'transigo1000',
     number: '1000',
-    title: 'TVM 1000',
+    title: 'Transigo 1000',
     badge: 'Compact',
     badgeColor: '#4ade80',
     mainImage: tvm1000_1.src,
@@ -43,9 +43,9 @@ const tvmData = [
     ]
   },
   {
-    id: 'tvm2000',
+    id: 'transigo2000',
     number: '2000',
-    title: 'TVM 2000',
+    title: 'Transigo 2000',
     badge: 'Advanced',
     badgeColor: '#3b82f6',
     mainImage: tvm2000_3.src,
@@ -74,9 +74,9 @@ const tvmData = [
     ]
   },
   {
-    id: 'tvm4000',
+    id: 'transigo4000',
     number: '4000',
-    title: 'TVM 4000',
+    title: 'Transigo 4000',
     badge: 'Flagship',
     badgeColor: '#8b5cf6',
     mainImage: tvm4000_2.src,
@@ -106,7 +106,7 @@ const tvmData = [
   }
 ];
 
-export default function InteractiveTVMCards() {
+export default function InteractiveTransigoCards() {
   const [expandedCard, setExpandedCard] = useState(null);
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState({});
@@ -126,7 +126,7 @@ export default function InteractiveTVMCards() {
   const handleImageClick = (e, cardId) => {
     e.stopPropagation();
     if (expandedCard === cardId) {
-      const card = tvmData.find(c => c.id === cardId);
+      const card = transigoData.find(c => c.id === cardId);
       const currentIndex = selectedImageIndex[cardId] || 0;
       setFullscreenImage({
         src: card.allImages[currentIndex],
@@ -146,89 +146,89 @@ export default function InteractiveTVMCards() {
 
   return (
     <>
-      <div className="tvm-interactive-grid">
-        {tvmData.map((tvm) => {
-          const isExpanded = expandedCard === tvm.id;
-          const currentImageIndex = selectedImageIndex[tvm.id] || 0;
-          
+      <div className="transigo-interactive-grid">
+        {transigoData.map((transigo) => {
+          const isExpanded = expandedCard === transigo.id;
+          const currentImageIndex = selectedImageIndex[transigo.id] || 0;
+
           return (
             <div
-              key={tvm.id}
-              className={`tvm-interactive-card ${isExpanded ? 'expanded' : ''}`}
-              onClick={() => handleCardClick(tvm.id)}
+              key={transigo.id}
+              className={`transigo-interactive-card ${isExpanded ? 'expanded' : ''}`}
+              onClick={() => handleCardClick(transigo.id)}
             >
               {/* Compact View - Just Image */}
-              <div className="tvm-compact-view">
-                <div className="tvm-image-container">
-                  <img 
-                    src={tvm.mainImage} 
-                    alt={tvm.title}
-                    className="tvm-main-image"
+              <div className="transigo-compact-view">
+                <div className="transigo-image-container">
+                  <img
+                    src={transigo.mainImage}
+                    alt={transigo.title}
+                    className="transigo-main-image"
                   />
-                  <div className="tvm-overlay">
-                    <div className="tvm-number-badge">{tvm.number}</div>
-                    <div className="tvm-title">{tvm.title}</div>
-                    <div 
-                      className="tvm-badge-compact" 
-                      style={{ backgroundColor: tvm.badgeColor }}
+                  <div className="transigo-overlay">
+                    <div className="transigo-number-badge">{transigo.number}</div>
+                    <div className="transigo-title">{transigo.title}</div>
+                    <div
+                      className="transigo-badge-compact"
+                      style={{ backgroundColor: transigo.badgeColor }}
                     >
-                      {tvm.badge}
+                      {transigo.badge}
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Expanded View - Detailed Information */}
-              <div className={`tvm-expanded-view ${isExpanded ? 'active' : ''}`}>
-                <div className="tvm-expanded-content">
+              <div className={`transigo-expanded-view ${isExpanded ? 'active' : ''}`}>
+                <div className="transigo-expanded-content">
                   {/* Header */}
-                  <div className="tvm-expanded-header">
-                    <div className="tvm-header-left">
-                      <div className="tvm-number-large">{tvm.number}</div>
+                  <div className="transigo-expanded-header">
+                    <div className="transigo-header-left">
+                      <div className="transigo-number-large">{transigo.number}</div>
                       <div>
-                        <h3 className="tvm-title-large">{tvm.title}</h3>
-                        <p className="tvm-subtitle">{tvm.description}</p>
+                        <h3 className="transigo-title-large">{transigo.title}</h3>
+                        <p className="transigo-subtitle">{transigo.description}</p>
                       </div>
                     </div>
-                    <div 
-                      className="tvm-badge-large"
-                      style={{ backgroundColor: tvm.badgeColor }}
+                    <div
+                      className="transigo-badge-large"
+                      style={{ backgroundColor: transigo.badgeColor }}
                     >
-                      {tvm.badge}
+                      {transigo.badge}
                     </div>
                   </div>
 
                   {/* Main Content */}
-                  <div className="tvm-main-content">
+                  <div className="transigo-main-content">
                     {/* Image Gallery */}
-                    <div className="tvm-gallery-section">
-                      <div 
-                        className="tvm-main-gallery-image"
-                        onClick={(e) => handleImageClick(e, tvm.id)}
+                    <div className="transigo-gallery-section">
+                      <div
+                        className="transigo-main-gallery-image"
+                        onClick={(e) => handleImageClick(e, transigo.id)}
                       >
-                        <img 
-                          src={tvm.allImages[currentImageIndex]} 
-                          alt={`${tvm.title} - View ${currentImageIndex + 1}`}
+                        <img
+                          src={transigo.allImages[currentImageIndex]}
+                          alt={`${transigo.title} - View ${currentImageIndex + 1}`}
                         />
-                        <div className="tvm-fullscreen-hint">
+                        <div className="transigo-fullscreen-hint">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
                           </svg>
                         </div>
                       </div>
-                      
-                      {tvm.allImages.length > 1 && (
-                        <div className="tvm-thumbnail-gallery">
-                          {tvm.allImages.map((image, index) => (
+
+                      {transigo.allImages.length > 1 && (
+                        <div className="transigo-thumbnail-gallery">
+                          {transigo.allImages.map((image, index) => (
                             <div
                               key={index}
-                              className={`tvm-thumbnail ${index === currentImageIndex ? 'active' : ''}`}
+                              className={`transigo-thumbnail ${index === currentImageIndex ? 'active' : ''}`}
                               onClick={(e) => {
                                 e.stopPropagation();
-                                selectImage(tvm.id, index);
+                                selectImage(transigo.id, index);
                               }}
                             >
-                              <img src={image} alt={`${tvm.title} thumbnail ${index + 1}`} />
+                              <img src={image} alt={`${transigo.title} thumbnail ${index + 1}`} />
                             </div>
                           ))}
                         </div>
@@ -236,41 +236,41 @@ export default function InteractiveTVMCards() {
                     </div>
 
                     {/* Information Sections */}
-                    <div className="tvm-info-sections">
+                    <div className="transigo-info-sections">
                       {/* Features */}
-                      <div className="tvm-info-section">
+                      <div className="transigo-info-section">
                         <h4>Key Features</h4>
-                        <div className="tvm-features-grid">
-                          {tvm.features.map((feature, index) => (
-                            <div key={index} className="tvm-feature-item">
-                              <span className="tvm-feature-icon">{feature.icon}</span>
-                              <span className="tvm-feature-text">{feature.text}</span>
+                        <div className="transigo-features-grid">
+                          {transigo.features.map((feature, index) => (
+                            <div key={index} className="transigo-feature-item">
+                              <span className="transigo-feature-icon">{feature.icon}</span>
+                              <span className="transigo-feature-text">{feature.text}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* Ideal For */}
-                      <div className="tvm-info-section">
+                      <div className="transigo-info-section">
                         <h4>Ideal For</h4>
-                        <div className="tvm-ideal-grid">
-                          {tvm.idealFor.map((use, index) => (
-                            <div key={index} className="tvm-ideal-item">
-                              <span className="tvm-ideal-icon">{use.icon}</span>
-                              <span className="tvm-ideal-text">{use.text}</span>
+                        <div className="transigo-ideal-grid">
+                          {transigo.idealFor.map((use, index) => (
+                            <div key={index} className="transigo-ideal-item">
+                              <span className="transigo-ideal-icon">{use.icon}</span>
+                              <span className="transigo-ideal-text">{use.text}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* Specifications */}
-                      <div className="tvm-info-section">
+                      <div className="transigo-info-section">
                         <h4>Specifications</h4>
-                        <div className="tvm-specs-grid">
-                          {tvm.specs.map((spec, index) => (
-                            <div key={index} className="tvm-spec-item">
-                              <span className="tvm-spec-label">{spec.label}</span>
-                              <span className="tvm-spec-value">{spec.value}</span>
+                        <div className="transigo-specs-grid">
+                          {transigo.specs.map((spec, index) => (
+                            <div key={index} className="transigo-spec-item">
+                              <span className="transigo-spec-label">{spec.label}</span>
+                              <span className="transigo-spec-value">{spec.value}</span>
                             </div>
                           ))}
                         </div>
@@ -286,33 +286,33 @@ export default function InteractiveTVMCards() {
 
       {/* Fullscreen Image Modal */}
       {fullscreenImage && (
-        <div className="tvm-fullscreen-modal" onClick={closeFullscreen}>
-          <div className="tvm-fullscreen-content">
-            <button className="tvm-close-button" onClick={closeFullscreen}>
+        <div className="transigo-fullscreen-modal" onClick={closeFullscreen}>
+          <div className="transigo-fullscreen-content">
+            <button className="transigo-close-button" onClick={closeFullscreen}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <img 
-              src={fullscreenImage.src} 
+            <img
+              src={fullscreenImage.src}
               alt={fullscreenImage.title}
-              className="tvm-fullscreen-image"
+              className="transigo-fullscreen-image"
             />
-            <div className="tvm-fullscreen-title">{fullscreenImage.title}</div>
+            <div className="transigo-fullscreen-title">{fullscreenImage.title}</div>
           </div>
         </div>
       )}
 
       <style jsx>{`
-        .tvm-interactive-grid {
+        .transigo-interactive-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: 2.5rem;
           margin: 2rem 0;
         }
 
-        .tvm-interactive-card {
+        .transigo-interactive-card {
           position: relative;
           cursor: pointer;
           transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -324,31 +324,31 @@ export default function InteractiveTVMCards() {
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
-        .tvm-interactive-card:not(.expanded):hover {
+        .transigo-interactive-card:not(.expanded):hover {
           transform: translateY(-8px) scale(1.02);
           box-shadow: 0 20px 40px rgba(167, 210, 33, 0.25);
           border-color: rgba(167, 210, 33, 0.4);
         }
 
-        .tvm-interactive-card.expanded {
+        .transigo-interactive-card.expanded {
           grid-column: 1 / -1;
           max-width: none;
         }
 
         /* Compact View Styles */
-        .tvm-compact-view {
+        .transigo-compact-view {
           position: relative;
           height: 265px;
           overflow: hidden;
         }
 
-        .tvm-image-container {
+        .transigo-image-container {
           position: relative;
           width: 100%;
           height: 100%;
         }
 
-        .tvm-main-image {
+        .transigo-main-image {
           width: 100%;
           height: 100%;
           object-fit: contain;
@@ -357,11 +357,11 @@ export default function InteractiveTVMCards() {
           transition: transform 0.6s ease;
         }
 
-        .tvm-interactive-card:not(.expanded):hover .tvm-main-image {
+        .transigo-interactive-card:not(.expanded):hover .transigo-main-image {
           transform: scale(1.1);
         }
 
-        .tvm-overlay {
+        .transigo-overlay {
           position: absolute;
           bottom: 0;
           left: 0;
@@ -371,7 +371,7 @@ export default function InteractiveTVMCards() {
           color: white;
         }
 
-        .tvm-number-badge {
+        .transigo-number-badge {
           background: linear-gradient(135deg, #a7d221, #b8e32e);
           color: #0a0a0a;
           font-size: 1.2rem;
@@ -382,13 +382,13 @@ export default function InteractiveTVMCards() {
           margin-bottom: 0.5rem;
         }
 
-        .tvm-title {
+        .transigo-title {
           font-size: 1.5rem;
           font-weight: 700;
           margin-bottom: 0.5rem;
         }
 
-        .tvm-badge-compact {
+        .transigo-badge-compact {
           color: white;
           font-size: 0.8rem;
           font-weight: 600;
@@ -398,7 +398,7 @@ export default function InteractiveTVMCards() {
         }
 
         /* Expanded View Styles */
-        .tvm-expanded-view {
+        .transigo-expanded-view {
           max-height: 0;
           overflow: hidden;
           transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -406,16 +406,16 @@ export default function InteractiveTVMCards() {
           color: #f5f5f5;
         }
 
-        .tvm-expanded-view.active {
+        .transigo-expanded-view.active {
           max-height: 2000px;
         }
 
-        .tvm-expanded-content {
+        .transigo-expanded-content {
           padding: 2rem;
           animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .tvm-expanded-header {
+        .transigo-expanded-header {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
@@ -424,13 +424,13 @@ export default function InteractiveTVMCards() {
           border-bottom: 2px solid rgba(167, 210, 33, 0.2);
         }
 
-        .tvm-header-left {
+        .transigo-header-left {
           display: flex;
           gap: 1.5rem;
           align-items: flex-start;
         }
 
-        .tvm-number-large {
+        .transigo-number-large {
           background: linear-gradient(135deg, #a7d221, #b8e32e);
           color: #0a0a0a;
           font-size: 2rem;
@@ -441,21 +441,21 @@ export default function InteractiveTVMCards() {
           text-align: center;
         }
 
-        .tvm-title-large {
+        .transigo-title-large {
           font-size: 2rem;
           font-weight: 700;
           margin: 0 0 0.5rem 0;
           color: #f5f5f5;
         }
 
-        .tvm-subtitle {
+        .transigo-subtitle {
           font-size: 1.1rem;
           color: #a0a0a0;
           margin: 0;
           line-height: 1.6;
         }
 
-        .tvm-badge-large {
+        .transigo-badge-large {
           color: white;
           font-size: 1rem;
           font-weight: 600;
@@ -463,20 +463,20 @@ export default function InteractiveTVMCards() {
           border-radius: 25px;
         }
 
-        .tvm-main-content {
+        .transigo-main-content {
           display: grid;
           grid-template-columns: 1.2fr 1fr;
           gap: 3rem;
         }
 
         /* Gallery Styles */
-        .tvm-gallery-section {
+        .transigo-gallery-section {
           display: flex;
           flex-direction: column;
           gap: 1rem;
         }
 
-        .tvm-main-gallery-image {
+        .transigo-main-gallery-image {
           position: relative;
           height: 380px;
           border-radius: 16px;
@@ -485,11 +485,11 @@ export default function InteractiveTVMCards() {
           transition: transform 0.3s ease;
         }
 
-        .tvm-main-gallery-image:hover {
+        .transigo-main-gallery-image:hover {
           transform: scale(1.02);
         }
 
-        .tvm-main-gallery-image img {
+        .transigo-main-gallery-image img {
           width: 100%;
           height: 100%;
           object-fit: contain;
@@ -497,7 +497,7 @@ export default function InteractiveTVMCards() {
           background: rgba(0, 0, 0, 0.3);
         }
 
-        .tvm-fullscreen-hint {
+        .transigo-fullscreen-hint {
           position: absolute;
           top: 1rem;
           right: 1rem;
@@ -509,16 +509,16 @@ export default function InteractiveTVMCards() {
           transition: opacity 0.3s ease;
         }
 
-        .tvm-main-gallery-image:hover .tvm-fullscreen-hint {
+        .transigo-main-gallery-image:hover .transigo-fullscreen-hint {
           opacity: 1;
         }
 
-        .tvm-thumbnail-gallery {
+        .transigo-thumbnail-gallery {
           display: flex;
           gap: 0.5rem;
         }
 
-        .tvm-thumbnail {
+        .transigo-thumbnail {
           width: 120px;
           height: 90px;
           border-radius: 8px;
@@ -528,28 +528,28 @@ export default function InteractiveTVMCards() {
           transition: all 0.3s ease;
         }
 
-        .tvm-thumbnail.active {
+        .transigo-thumbnail.active {
           border-color: #a7d221;
         }
 
-        .tvm-thumbnail:hover {
+        .transigo-thumbnail:hover {
           border-color: #b8e32e;
         }
 
-        .tvm-thumbnail img {
+        .transigo-thumbnail img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
 
         /* Info Sections */
-        .tvm-info-sections {
+        .transigo-info-sections {
           display: flex;
           flex-direction: column;
           gap: 2rem;
         }
 
-        .tvm-info-section h4 {
+        .transigo-info-section h4 {
           font-size: 1.3rem;
           font-weight: 700;
           margin-bottom: 1rem;
@@ -558,15 +558,15 @@ export default function InteractiveTVMCards() {
           padding-bottom: 0.5rem;
         }
 
-        .tvm-features-grid,
-        .tvm-ideal-grid {
+        .transigo-features-grid,
+        .transigo-ideal-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 0.8rem;
         }
 
-        .tvm-feature-item,
-        .tvm-ideal-item {
+        .transigo-feature-item,
+        .transigo-ideal-item {
           display: flex;
           align-items: center;
           gap: 0.8rem;
@@ -577,31 +577,31 @@ export default function InteractiveTVMCards() {
           transition: all 0.3s ease;
         }
 
-        .tvm-feature-item:hover,
-        .tvm-ideal-item:hover {
+        .transigo-feature-item:hover,
+        .transigo-ideal-item:hover {
           background: rgba(167, 210, 33, 0.15);
           transform: translateY(-2px);
           border-color: rgba(167, 210, 33, 0.3);
         }
 
-        .tvm-feature-icon,
-        .tvm-ideal-icon {
+        .transigo-feature-icon,
+        .transigo-ideal-icon {
           font-size: 1.2rem;
         }
 
-        .tvm-feature-text,
-        .tvm-ideal-text {
+        .transigo-feature-text,
+        .transigo-ideal-text {
           font-weight: 500;
           color: #e0e0e0;
         }
 
-        .tvm-specs-grid {
+        .transigo-specs-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1rem;
         }
 
-        .tvm-spec-item {
+        .transigo-spec-item {
           display: flex;
           flex-direction: column;
           padding: 1rem;
@@ -611,20 +611,20 @@ export default function InteractiveTVMCards() {
           text-align: center;
         }
 
-        .tvm-spec-label {
+        .transigo-spec-label {
           font-size: 0.9rem;
           color: #a0a0a0;
           margin-bottom: 0.5rem;
         }
 
-        .tvm-spec-value {
+        .transigo-spec-value {
           font-size: 1.1rem;
           font-weight: 700;
           color: #f5f5f5;
         }
 
         /* Fullscreen Modal */
-        .tvm-fullscreen-modal {
+        .transigo-fullscreen-modal {
           position: fixed;
           top: 0;
           left: 0;
@@ -638,7 +638,7 @@ export default function InteractiveTVMCards() {
           animation: fadeIn 0.3s ease;
         }
 
-        .tvm-fullscreen-content {
+        .transigo-fullscreen-content {
           position: relative;
           max-width: 90vw;
           max-height: 90vh;
@@ -647,7 +647,7 @@ export default function InteractiveTVMCards() {
           align-items: center;
         }
 
-        .tvm-close-button {
+        .transigo-close-button {
           position: absolute;
           top: -50px;
           right: 0;
@@ -660,18 +660,18 @@ export default function InteractiveTVMCards() {
           transition: background 0.3s ease;
         }
 
-        .tvm-close-button:hover {
+        .transigo-close-button:hover {
           background: rgba(255, 255, 255, 0.2);
         }
 
-        .tvm-fullscreen-image {
+        .transigo-fullscreen-image {
           max-width: 100%;
           max-height: 80vh;
           object-fit: contain;
           border-radius: 12px;
         }
 
-        .tvm-fullscreen-title {
+        .transigo-fullscreen-title {
           color: white;
           font-size: 1.5rem;
           font-weight: 700;
@@ -698,168 +698,168 @@ export default function InteractiveTVMCards() {
 
         /* Responsive Design */
         @media (max-width: 480px) {
-          .tvm-interactive-grid {
+          .transigo-interactive-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
             margin: 1rem 0;
           }
 
-          .tvm-interactive-card {
+          .transigo-interactive-card {
             border-radius: 16px;
           }
 
-          .tvm-compact-view {
+          .transigo-compact-view {
             height: 220px;
           }
 
-          .tvm-overlay {
+          .transigo-overlay {
             padding: 1rem;
           }
 
-          .tvm-number-badge {
+          .transigo-number-badge {
             font-size: 1rem;
             padding: 0.4rem 0.8rem;
           }
 
-          .tvm-title {
+          .transigo-title {
             font-size: 1.2rem;
           }
 
-          .tvm-badge-compact {
+          .transigo-badge-compact {
             font-size: 0.7rem;
             padding: 0.2rem 0.6rem;
           }
 
-          .tvm-expanded-content {
+          .transigo-expanded-content {
             padding: 1rem;
           }
 
-          .tvm-main-content {
+          .transigo-main-content {
             grid-template-columns: 1fr;
             gap: 1.5rem;
           }
 
-          .tvm-expanded-header {
+          .transigo-expanded-header {
             flex-direction: column;
             gap: 1rem;
             margin-bottom: 1.5rem;
           }
 
-          .tvm-header-left {
+          .transigo-header-left {
             flex-direction: column;
             gap: 1rem;
             text-align: center;
           }
 
-          .tvm-number-large {
+          .transigo-number-large {
             font-size: 1.5rem;
             padding: 0.8rem 1rem;
             align-self: center;
             min-width: 80px;
           }
 
-          .tvm-title-large {
+          .transigo-title-large {
             font-size: 1.5rem;
           }
 
-          .tvm-subtitle {
+          .transigo-subtitle {
             font-size: 1rem;
           }
 
-          .tvm-badge-large {
+          .transigo-badge-large {
             font-size: 0.9rem;
             padding: 0.4rem 1rem;
             align-self: center;
           }
 
-          .tvm-main-gallery-image {
+          .transigo-main-gallery-image {
             height: 280px;
           }
 
-          .tvm-thumbnail {
+          .transigo-thumbnail {
             width: 80px;
             height: 60px;
           }
 
-          .tvm-info-section h4 {
+          .transigo-info-section h4 {
             font-size: 1.1rem;
           }
 
-          .tvm-features-grid,
-          .tvm-ideal-grid {
+          .transigo-features-grid,
+          .transigo-ideal-grid {
             grid-template-columns: 1fr;
             gap: 0.6rem;
           }
 
-          .tvm-feature-item,
-          .tvm-ideal-item {
+          .transigo-feature-item,
+          .transigo-ideal-item {
             padding: 0.6rem;
             flex-direction: column;
             text-align: center;
             gap: 0.5rem;
           }
 
-          .tvm-feature-icon,
-          .tvm-ideal-icon {
+          .transigo-feature-icon,
+          .transigo-ideal-icon {
             font-size: 1.5rem;
           }
 
-          .tvm-specs-grid {
+          .transigo-specs-grid {
             grid-template-columns: 1fr;
             gap: 0.8rem;
           }
 
-          .tvm-spec-item {
+          .transigo-spec-item {
             padding: 0.8rem;
           }
 
-          .tvm-fullscreen-content {
+          .transigo-fullscreen-content {
             max-width: 95vw;
             max-height: 95vh;
           }
 
-          .tvm-close-button {
+          .transigo-close-button {
             top: -40px;
             right: 10px;
             padding: 0.6rem;
           }
 
-          .tvm-fullscreen-title {
+          .transigo-fullscreen-title {
             font-size: 1.2rem;
           }
         }
 
         @media (max-width: 768px) {
-          .tvm-interactive-grid {
+          .transigo-interactive-grid {
             grid-template-columns: 1fr;
             gap: 1.5rem;
           }
 
-          .tvm-main-content {
+          .transigo-main-content {
             grid-template-columns: 1fr;
             gap: 2rem;
           }
 
-          .tvm-expanded-header {
+          .transigo-expanded-header {
             flex-direction: column;
             gap: 1rem;
           }
 
-          .tvm-header-left {
+          .transigo-header-left {
             flex-direction: column;
             gap: 1rem;
           }
 
-          .tvm-number-large {
+          .transigo-number-large {
             align-self: flex-start;
           }
 
-          .tvm-features-grid,
-          .tvm-ideal-grid {
+          .transigo-features-grid,
+          .transigo-ideal-grid {
             grid-template-columns: 1fr;
           }
 
-          .tvm-specs-grid {
+          .transigo-specs-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }

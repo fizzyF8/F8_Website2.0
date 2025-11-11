@@ -57,7 +57,7 @@ export default function MobileMenu() {
       <nav style={{ flex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 28 }}>
         {[
           { href: '/', label: 'Home' },
-          { href: '/platforms', label: 'Platforms' },
+          { href: '/solutions', label: 'Solutions' },
           { href: '/kiosks', label: 'Devices' },
           { href: '/veriphy', label: 'Veriphy' },
           { href: '/deployments', label: 'Deployments' },
