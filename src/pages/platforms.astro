@@ -1,13 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
 import { Image } from "astro:assets";
 import raahiLogo from "../assets/raahi.png";
 import veriphyLogo from "../assets/veriphy.png";
+import tvm2000_3 from "../assets/kiosks/TVM 2000/tvm_2000_3.png";
+import tvm4000_2 from "../assets/kiosks/TVM 4000/tvm_4000_2.jpg";
 ---
 
-<Layout title="Frog8 - Platforms | Connected Software Solutions">
+<Layout title="Frog8 - Solutions | Connected Software Solutions">
   <Navigation />
 
   <section class="section gradient-bg pt-32 relative overflow-hidden hero-section">
@@ -35,13 +36,79 @@ import veriphyLogo from "../assets/veriphy.png";
     
     <div class="container text-center relative z-10">
       <h1 class="hero-title mb-6 relative">
-        <span class="hero-text-line">Connected</span>
-        <span class="hero-highlight">Platforms</span>
+        <span class="hero-text-line">Connected Platforms.</span>
+        <span class="hero-highlight">Real-World Impact.</span>
       </h1>
       <p class="hero-subtitle text-xl max-w-3xl mx-auto">
-        Comprehensive software solutions powering the next generation of
-        infrastructure across transit, banking, and public services.
+        From transit networks to banking and automation, Frog8 builds solutions that connect people, payments, and infrastructure.
       </p>
+    </div>
+  </section>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="section solutions-overview-section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="slide-up mb-6">Our Integrated <span class="text-green">Solutions</span></h2>
+        <p class="text-xl max-w-3xl mx-auto">
+          A portfolio engineered for regulated environments—designed to streamline transit, banking, and onboarding journeys.
+        </p>
+      </div>
+      <div class="solutions-grid">
+        <article class="glass solution-card solution-card-with-images">
+          <div class="solution-images-container">
+            <div class="solution-image-wrapper">
+              <Image 
+                src={tvm2000_3} 
+                alt="Transigo 2000 Series" 
+                class="solution-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="solution-image-wrapper">
+              <Image 
+                src={tvm4000_2} 
+                alt="Transigo 4000 Series" 
+                class="solution-image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div>
+            <h3>Transigo</h3>
+            <p class="solution-card-tagline">Complete AFCS-compliant ticketing and payment platform.</p>
+          </div>
+          <p class="solution-card-meta">Models: Transigo 2000, 4000 (Formerly TVM Series)</p>
+          <a href="/transigo" class="solution-link">Learn More</a>
+        </article>
+
+        <article class="glass solution-card">
+          <div>
+            <h3>Navigo</h3>
+            <p class="solution-card-tagline">Self-service banking kiosk for passbook printing, cheque processing, and instant card issuance.</p>
+          </div>
+          <p class="solution-card-meta">Instant Banking at Every Branch.</p>
+          <a href="/navigo" class="solution-link">Learn More</a>
+        </article>
+
+        <article class="glass solution-card">
+          <div>
+            <h3>CTS Solutions (with Kores)</h3>
+            <p class="solution-card-tagline">RBI-compliant cheque truncation and document digitization platform deployed across Indian banks.</p>
+          </div>
+          <p class="solution-card-meta">Co-developed for nationwide scale.</p>
+          <a href="/cts" class="solution-link">Learn More</a>
+        </article>
+
+        <article class="glass solution-card">
+          <div>
+            <h3>Veriphy</h3>
+            <p class="solution-card-tagline">Onboard customers, agents, or staff via WhatsApp — secure, compliant, and ready for regulated sectors.</p>
+          </div>
+          <p class="solution-card-meta">Messaging-native automation for financial-grade workflows.</p>
+          <a href="/veriphy" class="solution-link">Learn More</a>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -478,8 +545,6 @@ import veriphyLogo from "../assets/veriphy.png";
       </div>
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -627,6 +692,128 @@ import veriphyLogo from "../assets/veriphy.png";
     transform: translateY(0);
   }
 
+  /* Solutions Overview */
+  .solutions-overview-section {
+    background: rgba(10, 10, 10, 0.1);
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .solution-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .solution-card-with-images {
+    gap: 1.25rem;
+  }
+
+  .solution-images-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .solution-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: rgba(10, 10, 10, 0.3);
+    border: 1px solid rgba(167, 210, 33, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .solution-image-wrapper:hover {
+    transform: translateY(-4px);
+    border-color: rgba(167, 210, 33, 0.3);
+    box-shadow: 0 8px 24px rgba(167, 210, 33, 0.2);
+  }
+
+  .solution-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .solution-image-wrapper:hover .solution-image {
+    transform: scale(1.05);
+  }
+
+  .solution-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(167, 210, 33, 0.08), rgba(184, 227, 46, 0.06));
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .solution-card:hover::after {
+    opacity: 1;
+  }
+
+  .solution-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin-bottom: 0.5rem;
+  }
+
+  .solution-card-tagline {
+    color: rgba(245, 245, 245, 0.78);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .solution-card-meta {
+    color: rgba(167, 210, 33, 0.85);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .solution-link {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #a7d221;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .solution-link::after {
+    content: '→';
+    font-size: 1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .solution-link:hover {
+    color: #b8e32e;
+    transform: translateY(-2px);
+  }
+
+  .solution-link:hover::after {
+    transform: translateX(4px);
+  }
+
   .w-5 {
     width: 1.25rem;
   }
@@ -740,6 +927,36 @@ import veriphyLogo from "../assets/veriphy.png";
     .glass {
       border-radius: 16px;
     }
+
+    .solutions-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .solution-card {
+      padding: 2rem;
+    }
+
+    .solution-card h3 {
+      font-size: 1.5rem;
+    }
+
+    .solution-card-tagline {
+      font-size: 1rem;
+    }
+
+    .solution-card-meta {
+      font-size: 0.85rem;
+    }
+
+    .solution-images-container {
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .solution-image-wrapper {
+      border-radius: 12px;
+    }
   }
 
   @media (max-width: 640px) {
@@ -763,6 +980,15 @@ import veriphyLogo from "../assets/veriphy.png";
       margin-right: 0;
       margin-bottom: 1rem;
     }
+
+    .solutions-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .solution-images-container {
+      gap: 0.75rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -772,6 +998,16 @@ import veriphyLogo from "../assets/veriphy.png";
 
     .slide-up {
       text-align: center;
+    }
+
+    .solution-card {
+      padding: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .solutions-grid {
+      gap: 1.75rem;
     }
   }
 </style>

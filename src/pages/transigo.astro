@@ -1,0 +1,393 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import { Image } from "astro:assets";
+import tvm2000_3 from "../assets/kiosks/TVM 2000/tvm_2000_3.png";
+import tvm4000_2 from "../assets/kiosks/TVM 4000/tvm_4000_2.jpg";
+---
+
+<Layout title="Frog8 - TransiGo | Transit Automation Platform">
+  <Navigation />
+
+  <!-- Hero Section -->
+  <section class="section gradient-bg pt-32 pb-10 md:pb-16">
+    <div class="container">
+      <div class="text-center mb-12 md:mb-16">
+        <h1 class="fade-in mb-4 md:mb-6 text-3xl md:text-5xl font-bold tracking-tight">
+          TransiGo: Transit <span class="text-green">Automation Platform</span>
+        </h1>
+        <p class="fade-in-delay text-lg md:text-xl max-w-3xl mx-auto text-white/90">
+          Flagship transit hardware. Designed in India. Manufactured in India. Proven at Bengaluru Namma Metro.
+        </p>
+        <div class="fade-in-delay mt-6">
+          <span class="inline-block px-4 py-2 glass rounded-full text-green font-semibold">
+            Live at 6 Metro Stations
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- TransiGo 2000 -->
+  <section class="section bg-glass-light">
+    <div class="container">
+      <div class="product-section">
+        <div class="product-content">
+          <div class="product-badge">Currently Deployed</div>
+          <h2 class="product-title">TransiGo 2000</h2>
+          <p class="product-description">
+            Our 21.5" all-digital TVM delivers seamless QR ticketing and NCMC top-ups. Currently deployed at Bengaluru Namma Metro, processing thousands of transactions daily.
+          </p>
+          <ul class="product-features">
+            <li>21.5" Android touch screen</li>
+            <li>QR code ticketing</li>
+            <li>NCMC card top-ups</li>
+            <li>All-digital payments (UPI, cards)</li>
+            <li>Real-time analytics dashboard</li>
+            <li>Remote monitoring & updates</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Request Deployment Details</a>
+        </div>
+        <div class="product-image">
+          <Image 
+            src={tvm2000_3} 
+            alt="TransiGo 2000 kiosk" 
+            class="product-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- TransiGo 4000 -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <div class="product-section product-section-reverse">
+        <div class="product-content">
+          <div class="product-badge product-badge-upcoming">Launching Q3 2025</div>
+          <h2 class="product-title">TransiGo 4000</h2>
+          <p class="product-description">
+            India's most advanced transit kiosk. Enables instant issuance of full-KYC, personalized RuPay + NCMC bank cards in under 45 seconds—a first outside a traditional bank branch.
+          </p>
+          <ul class="product-features">
+            <li>32" HD Android touch screen</li>
+            <li>Biometric KYC capture (fingerprint, iris)</li>
+            <li>HD camera for photo verification</li>
+            <li>Instant card personalization (45 seconds)</li>
+            <li>Cash acceptance & dispensing</li>
+            <li>Full NCMC + RuPay integration</li>
+            <li>Multi-language support</li>
+            <li>Accessibility features</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Schedule Technical Briefing</a>
+        </div>
+        <div class="product-image">
+          <Image 
+            src={tvm4000_2} 
+            alt="TransiGo 4000 kiosk" 
+            class="product-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Why TransiGo -->
+  <section class="section bg-glass-light">
+    <div class="container">
+      <h2 class="text-center mb-12 md:mb-16">
+        Why <span class="text-green">TransiGo?</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>45-second card issuance. Sub-3-second transactions.</p>
+        </div>
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <h3>Banking Grade</h3>
+          <p>Full compliance. Secure KYC. Data privacy.</p>
+        </div>
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3>Digital First</h3>
+          <p>WhatsApp + App integration. Remote management.</p>
+        </div>
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 12l2 2 4-4" />
+              <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" />
+            </svg>
+          </div>
+          <h3>Proven Platform</h3>
+          <p>99.9% uptime. 100K+ daily transactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Smart City Ready -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <div class="smart-city-section glass">
+        <h2 class="smart-city-title">Smart City Ready</h2>
+        <p class="smart-city-description">
+          Our platform extends beyond metro systems to integrate with Bus Services, BRTS, and National High-Speed Rail networks.
+        </p>
+        <a href="/contact" class="btn btn-primary">Explore Integration Options</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- See TransiGo in Action -->
+  <section class="section bg-glass-light">
+    <div class="container">
+      <div class="cta-section glass">
+        <h2 class="cta-title">See TransiGo in Action</h2>
+        <p class="cta-description">
+          Visit our live deployment at Bengaluru Namma Metro or schedule a demo at our experience center.
+        </p>
+        <div class="cta-buttons">
+          <a href="/deployments" class="btn btn-primary">View Deployments</a>
+          <a href="/contact" class="btn btn-secondary">Request Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .product-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .product-section-reverse {
+    direction: rtl;
+  }
+
+  .product-section-reverse > * {
+    direction: ltr;
+  }
+
+  .product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(167, 210, 33, 0.2);
+    color: #a7d221;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    width: fit-content;
+  }
+
+  .product-badge-upcoming {
+    background: rgba(167, 210, 33, 0.15);
+    border: 1px solid rgba(167, 210, 33, 0.3);
+  }
+
+  .product-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .product-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.85);
+  }
+
+  .product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .product-features li {
+    color: rgba(245, 245, 245, 0.85);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .product-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #a7d221;
+    font-weight: 700;
+  }
+
+  .product-image {
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .product-img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+  }
+
+  .why-card {
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(167, 210, 33, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin: 0 auto 1rem;
+  }
+
+  .why-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 2;
+  }
+
+  .why-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card p {
+    color: rgba(245, 245, 245, 0.8);
+    line-height: 1.7;
+  }
+
+  .smart-city-section {
+    padding: 3rem;
+    text-align: center;
+    border-radius: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .smart-city-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .smart-city-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.85);
+    margin-bottom: 2rem;
+  }
+
+  .cta-section {
+    padding: 3rem;
+    text-align: center;
+    border-radius: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.85);
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .product-section {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .product-section-reverse {
+      direction: ltr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .why-card {
+      padding: 1.5rem;
+    }
+
+    .smart-city-section,
+    .cta-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>
+

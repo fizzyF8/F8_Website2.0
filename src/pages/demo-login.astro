@@ -1,0 +1,433 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+---
+
+<Layout
+  title="Frog8 Partner Access | Secure Login"
+  description="Authenticate to enter the Frog8 Partner Studio. Review live product environments, investor materials, and performance dashboards in one secure space."
+>
+  <main class="login-surface">
+    <section class="section demo-login-hero">
+      <div class="container login-container">
+        <div class="login-grid glass-light">
+          <div class="login-intro">
+            <a href="/" class="brand-mark" aria-label="Frog8 homepage">
+              <Image src={logo} alt="Frog8 logo" width={180} height={60} loading="eager" />
+            </a>
+            <span class="eyebrow eyebrow-alt">Partner Access</span>
+            <h1 class="mb-6">
+              Enter the Frog8 <span class="text-green">Partner Studio</span>
+            </h1>
+            <p class="text-lg">
+              Log in with your issued credentials to explore live environments, strategic dashboards,
+              and curated product journeys designed for investors and enterprise partners.
+            </p>
+            <ul class="intro-list">
+              <li>Real-time visibility into platform health and performance KPIs</li>
+              <li>Curated walkthroughs for mobility, onboarding, and payments</li>
+              <li>Enterprise-grade security with continuous activity monitoring</li>
+            </ul>
+            <div class="support-actions">
+              <a href="/contact" class="btn btn-secondary">Request Access Credentials</a>
+              <a
+                href="mailto:support@f8payments.com?subject=Partner%20Studio%20Support"
+                class="support-link"
+              >
+                Contact Support →
+              </a>
+            </div>
+          </div>
+
+          <div class="login-panel white-card" role="region" aria-labelledby="partner-login-heading">
+            <h2 id="partner-login-heading">Secure Console Sign-In</h2>
+            <p class="panel-subhead">
+              Use the access key provided by your Frog8 representative. For internal reviews, enter
+              <span class="code-badge">F8-STUDIO-ACCESS</span>.
+            </p>
+            <form id="partner-login-form" class="login-form" aria-describedby="login-status">
+              <div class="input-group">
+                <label for="login-email">Work Email *</label>
+                <input
+                  type="email"
+                  id="login-email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@company.com"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="login-access-key">Access Key *</label>
+                <input
+                  type="password"
+                  id="login-access-key"
+                  name="access-key"
+                  autocomplete="current-password"
+                  placeholder="Enter secure access key"
+                  required
+                />
+              </div>
+              <label class="remember-me">
+                <input type="checkbox" name="remember" />
+                <span>Keep me signed in on this device</span>
+              </label>
+              <button type="submit" class="btn btn-primary">Enter Partner Studio</button>
+              <p id="login-status" class="status-text" role="status" aria-live="polite"></p>
+              <p class="helper-text">
+                Sessions automatically expire after 30 minutes of inactivity. Need a reset?
+                <a
+                  href="mailto:support@f8payments.com?subject=Reset%20Partner%20Studio%20Access"
+                  class="support-link"
+                >
+                  Email support
+                </a>
+                .
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</Layout>
+
+<script is:inline>
+  if (typeof window !== "undefined") {
+    const form = document.getElementById("partner-login-form");
+    const statusNode = document.getElementById("login-status");
+    const sessionKey = "frog8StudioAccess";
+    const allowedKey = "F8-STUDIO-ACCESS";
+    const redirectPath = "/demo";
+
+    const existingSession = window.localStorage.getItem(sessionKey);
+    if (existingSession) {
+      try {
+        const session = JSON.parse(existingSession);
+        if (session?.expiresAt && Date.now() < Number(session.expiresAt)) {
+          window.location.replace(redirectPath);
+        }
+      } catch {
+        window.localStorage.removeItem(sessionKey);
+      }
+    }
+
+    if (form) {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!statusNode) return;
+
+        const formData = new FormData(form);
+        const email = String(formData.get("email") ?? "").trim();
+        const accessKey = String(formData.get("access-key") ?? "").trim();
+        const remember = formData.get("remember") !== null;
+
+        const showStatus = (message, type = "error") => {
+          statusNode.textContent = message;
+          statusNode.dataset.type = type;
+        };
+
+        if (!email || !accessKey) {
+          showStatus("Please enter your work email and access key.");
+          return;
+        }
+
+        if (accessKey !== allowedKey) {
+          showStatus("The access key you entered is incorrect. Please try again or contact support.");
+          return;
+        }
+
+        const expiresAt = remember ? Date.now() + 1000 * 60 * 60 * 12 : Date.now() + 1000 * 60 * 30;
+        const session = { email, issuedAt: Date.now(), expiresAt };
+
+        try {
+          window.localStorage.setItem(sessionKey, JSON.stringify(session));
+        } catch {
+          showStatus("We could not store your session. Please enable cookies/local storage and retry.");
+          return;
+        }
+
+        showStatus("Access verified. Redirecting to the Partner Studio…", "success");
+        window.setTimeout(() => {
+          window.location.replace(redirectPath);
+        }, 600);
+      });
+    }
+  }
+</script>
+
+<style>
+  .login-surface {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 45%, #eef3ff 100%);
+    color: #111111;
+  }
+
+  .demo-login-hero {
+    padding-block: clamp(3rem, 6vh, 5rem);
+  }
+
+  .login-container {
+    min-height: calc(100vh - 6rem);
+    display: flex;
+    align-items: center;
+  }
+
+  .demo-login-hero .login-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+    padding: 3.5rem;
+    border-radius: 32px;
+  }
+
+  .glass-light {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(243, 248, 255, 0.96) 100%
+    );
+    border: 1px solid rgba(167, 210, 33, 0.2);
+    box-shadow:
+      0 22px 48px rgba(15, 23, 42, 0.12),
+      0 8px 20px rgba(167, 210, 33, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+  }
+
+  .login-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .brand-mark {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .brand-mark img {
+    width: min(220px, 55%);
+    height: auto;
+  }
+
+  .login-intro h1 {
+    color: #0a0a0a;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eyebrow-alt {
+    background: rgba(167, 210, 33, 0.16);
+    border: 1px solid rgba(167, 210, 33, 0.28);
+    color: var(--primary-dark);
+  }
+
+  .intro-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.75rem;
+    color: #3a3a3a;
+  }
+
+  .intro-list li::marker {
+    color: var(--primary);
+  }
+
+  .support-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .support-link::after {
+    content: "↗";
+    font-size: 1rem;
+  }
+
+  .support-link:hover {
+    color: var(--primary);
+  }
+
+  .login-panel {
+    padding: 3rem;
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .white-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f6f8fc 100%);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow:
+      0 24px 50px rgba(15, 23, 42, 0.12),
+      0 12px 24px rgba(167, 210, 33, 0.1);
+  }
+
+  .login-panel h2 {
+    font-size: clamp(1.75rem, 3vw, 2.1rem);
+    color: #101010;
+  }
+
+  .panel-subhead {
+    color: #4a5568;
+    line-height: 1.6;
+  }
+
+  .code-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(167, 210, 33, 0.18);
+    border: 1px solid rgba(167, 210, 33, 0.3);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .input-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1a202c;
+  }
+
+  .input-group input {
+    padding: 0.95rem 1.15rem;
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .input-group input::placeholder {
+    color: #64748b;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border-color: rgba(167, 210, 33, 0.65);
+    box-shadow:
+      0 0 0 4px rgba(167, 210, 33, 0.15),
+      0 10px 30px rgba(15, 23, 42, 0.14);
+  }
+
+  .remember-me {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+  }
+
+  .remember-me input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+  }
+
+  .status-text {
+    min-height: 1.2em;
+    font-size: 0.9rem;
+  }
+
+  .status-text[data-type="success"] {
+    color: var(--primary-dark);
+  }
+
+  .status-text[data-type="error"],
+  .status-text:not([data-type]) {
+    color: #e05353;
+  }
+
+  .helper-text {
+    font-size: 0.85rem;
+    color: #5f6b7c;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .login-container {
+      min-height: unset;
+      padding-block: 1.5rem;
+    }
+
+    .demo-login-hero .login-grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      padding: 3rem;
+    }
+
+    .login-panel {
+      padding: 2.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .demo-login-hero .login-grid {
+      padding: 2.25rem;
+      gap: 2.25rem;
+    }
+
+    .support-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .login-panel {
+      padding: 2.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login-surface {
+      background: #ffffff;
+    }
+
+    .demo-login-hero .login-grid {
+      padding: 1.75rem;
+      gap: 2rem;
+    }
+
+    .login-panel {
+      padding: 1.85rem;
+    }
+  }
+</style>
+

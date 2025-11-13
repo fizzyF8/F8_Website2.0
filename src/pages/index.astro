@@ -1,12 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import VerticalNavigation from '../components/VerticalNavigation.astro';
 import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
+import CredibilityCarousel from '../components/CredibilityCarousel.tsx';
+import VideoButton from '../components/VideoButton.jsx';
+import tvm2000Modi from '../assets/kiosks/TVM 2000/tvm2000_modi.jpg';
+import tvm2000Modi2 from '../assets/kiosks/TVM 2000/tvm2000_modi_2.jpg';
+import tvm2000Modi3 from '../assets/kiosks/TVM 2000/tvm2000_modi_3.jpg';
+import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
 ---
 
 <Layout>
-  <Navigation />
+  <VerticalNavigation />
   
   <!-- Full-Page Hero Section with Unicorn Studio Background -->
   <section class="hero-section-fullpage">
@@ -52,6 +57,49 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
         <div class="scroll-wheel"></div>
       </div>
       <p class="scroll-text">Scroll to explore</p>
+    </div>
+  </section>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="credibility-strip">
+    <div class="container">
+      <div class="credibility-grid glass">
+        <div class="credibility-copy">
+          <p class="credibility-text">
+            Trusted by India’s Leaders — PM Modi inaugurated and used our Transigo kiosk at Namma Metro.
+          </p>
+          <div class="credibility-badges">
+            <span class="credibility-badge">BMRCL Yellow Line</span>
+            <span class="credibility-badge">Inaugurated by PM Modi</span>
+            <span class="credibility-badge">Live Passenger Deployments</span>
+          </div>
+          <div class="credibility-actions">
+            <VideoButton 
+              client:load
+              videoSrc={tvm2kAdVideo}
+              className="btn btn-outline-primary"
+            >
+              Watch Video
+            </VideoButton>
+            <a 
+              href="https://archive.is/H8DGh" 
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read Press Coverage
+            </a>
+          </div>
+        </div>
+        <CredibilityCarousel 
+          client:load
+          images={[
+            { src: tvm2000Modi.src, alt: 'Prime Minister Narendra Modi inaugurating the Transigo kiosk at Namma Metro' },
+            { src: tvm2000Modi2.src, alt: 'Dignitaries touring the Transigo kiosk during the Namma Metro launch' },
+            { src: tvm2000Modi3.src, alt: 'Commuters engaging with the Transigo kiosk at the metro station' }
+          ]}
+        />
+      </div>
     </div>
   </section>
 
@@ -117,27 +165,75 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
   <!-- Section Divider -->
   <div class="section-divider"></div>
 
-  <!-- Featured Products -->
-  <section class="section bg-gray-50">
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="section what-we-build-section">
     <div class="container">
       <div class="text-center mb-16">
-        <h2 class="slide-up mb-6">Featured <span class="text-primary">Products</span></h2>
+        <h2 class="slide-up mb-6">What We <span class="text-primary">Build</span></h2>
         <p class="text-xl max-w-3xl mx-auto">
-          Discover our suite of connected solutions powering the next generation of infrastructure.
+          Purpose-built solutions delivering secure transit, banking, and onboarding infrastructure at scale.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="card-premium p-8 hover-scale">
-          <h3 class="text-primary mb-4">Raahi Platform</h3>
-          <p class="mb-6">End-to-end transit management platform with real-time analytics and seamless integration.</p>
-          <a href="/platforms" class="btn btn-secondary">Learn More</a>
-        </div>
+      <div class="what-we-build-grid">
+        <article class="glass solution-card">
+          <div class="solution-card-header">
+            <h3>Transigo</h3>
+            <p class="solution-subtitle">Transit Kiosks</p>
+          </div>
+          <p class="solution-description">Ticketing, Payments, Issuance</p>
+          <a href="/transigo" class="btn btn-primary solution-cta">
+            Explore Transigo
+          </a>
+        </article>
 
-        <div class="card-premium p-8 hover-scale">
-          <h3 class="text-primary mb-4">Veriphy</h3>
-          <p class="mb-6">WhatsApp-based document verification and onboarding solution for financial services.</p>
-          <a href="/veriphy" class="btn btn-secondary">Learn More</a>
+        <article class="glass solution-card">
+          <div class="solution-card-header">
+            <h3>Navigo</h3>
+            <p class="solution-subtitle">Banking Automation</p>
+          </div>
+          <p class="solution-description">Passbook Printing, CTS, Card Issuance</p>
+          <a href="/navigo" class="btn btn-primary solution-cta">
+            Explore Navigo
+          </a>
+        </article>
+
+        <article class="glass solution-card">
+          <div class="solution-card-header">
+            <h3>Veriphy</h3>
+            <p class="solution-subtitle">Messaging-Native Onboarding</p>
+          </div>
+          <p class="solution-description">KYC, Workflow, Automation</p>
+          <a href="/veriphy" class="btn btn-primary solution-cta">
+            Explore Veriphy
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="section quick-metrics-section">
+    <div class="container">
+      <div class="quick-metrics glass">
+        <div class="metrics-item">
+          <span class="metrics-value">1500+</span>
+          <span class="metrics-label">Daily transactions - Transigo</span>
+        </div>
+        <div class="metrics-item">
+          <span class="metrics-value">99.9%</span>
+          <span class="metrics-label">Uptime</span>
+        </div>
+        <div class="metrics-item">
+          <span class="metrics-value">5+</span>
+          <span class="metrics-label">Active stations</span>
+        </div>
+        <div class="metrics-item">
+          <span class="metrics-value">RBI + NCMC</span>
+          <span class="metrics-label">Compliant infrastructure</span>
         </div>
       </div>
     </div>
@@ -146,20 +242,18 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
   <!-- Section Divider -->
   <div class="section-divider"></div>
 
-  <!-- Call to Action -->
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
   <section class="section">
     <div class="container">
-      <div class="card-premium p-12 text-center">
-        <h2 class="slide-up mb-6">Ready to Transform Your Infrastructure?</h2>
+      <div class="glass bottom-cta">
+        <h2 class="slide-up mb-6">Ready to Build Smarter Infrastructure?</h2>
         <p class="text-xl mb-8 max-w-3xl mx-auto">
-          Join the growing network of organizations using Frog8 to build smarter, more accessible services.
+          Let’s plan your rollout across transit, banking, or public service locations with resilient infrastructure.
         </p>
-        <a href="/contact" class="btn btn-primary">Get Started Today</a>
+        <a href="/contact-demo" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -199,18 +293,20 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
   /* Full-Page Hero Section */
   .hero-section-fullpage {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     min-height: 100vh;
     overflow: hidden;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    left: calc(-280px - 3rem);
+    margin-right: calc(-100vw + 100%);
   }
 
   /* Content Overlay */
   .hero-content-overlay {
     position: relative;
     z-index: 50;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -220,7 +316,10 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
       rgba(10, 10, 10, 0.3) 0%,
       rgba(10, 10, 10, 0.6) 100%
     );
-    padding: 120px 2rem 2rem; /* Account for navigation height */
+    padding: 2rem;
+    margin: 0;
+    left: calc(280px + 3rem);
+    margin-left: calc(-280px - 3rem);
   }
 
   .hero-content-center {
@@ -461,6 +560,185 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
     left: 100%;
   }
 
+  /* Credibility Strip */
+  .credibility-strip {
+    padding: 2rem 0 3rem;
+    background: transparent;
+  }
+
+  .credibility-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 1.75rem 2.5rem;
+  }
+
+  .credibility-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .credibility-text {
+    color: #f5f5f5;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+
+  .credibility-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .credibility-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: rgba(167, 210, 33, 0.12);
+    border: 1px solid rgba(167, 210, 33, 0.3);
+    color: #b8e32e;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    box-shadow:
+      0 8px 18px rgba(167, 210, 33, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .credibility-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .btn.btn-outline-primary {
+    background: transparent;
+    color: #a7d221;
+    border: 2px solid rgba(167, 210, 33, 0.7);
+    box-shadow: none;
+  }
+
+  .btn.btn-outline-primary:hover {
+    background: linear-gradient(135deg, rgba(167, 210, 33, 0.15), rgba(184, 227, 46, 0.25));
+    color: #0a0a0a;
+    border-color: rgba(167, 210, 33, 0.9);
+    box-shadow: 0 12px 24px rgba(167, 210, 33, 0.2);
+  }
+
+  /* What We Build */
+  .what-we-build-section {
+    background: transparent;
+  }
+
+  .what-we-build-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+  }
+
+  .solution-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+  }
+
+  .solution-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(167, 210, 33, 0.08), rgba(184, 227, 46, 0.04));
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .solution-card:hover::after {
+    opacity: 1;
+  }
+
+  .solution-card-header {
+    text-align: center;
+  }
+
+  .solution-card-header h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin-bottom: 0.25rem;
+  }
+
+  .solution-subtitle {
+    font-size: 1rem;
+    color: rgba(245, 245, 245, 0.7);
+    font-weight: 500;
+  }
+
+  .solution-description {
+    color: rgba(245, 245, 245, 0.75);
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .solution-cta {
+    align-self: center;
+  }
+
+  /* Quick Metrics */
+  .quick-metrics-section {
+    background: transparent;
+  }
+
+  .quick-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 2.5rem;
+    align-items: stretch;
+  }
+
+  .metrics-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .metrics-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #a7d221;
+  }
+
+  .metrics-label {
+    font-size: 0.95rem;
+    color: rgba(245, 245, 245, 0.75);
+  }
+
+  /* Bottom CTA */
+  .bottom-cta {
+    padding: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
   /* Ethos Cards */
   .ethos-card {
     perspective: 1000px;
@@ -471,23 +749,31 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
     position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.9) 0%, 
+      rgba(30, 30, 30, 0.85) 100%
+    );
+    backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 2rem;
     border: 1px solid rgba(167, 210, 33, 0.2);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
     transform-style: preserve-3d;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 4px 16px rgba(167, 210, 33, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .ethos-card:hover .ethos-card-inner {
     transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
-    border-color: rgba(167, 210, 33, 0.6);
+    border-color: rgba(167, 210, 33, 0.4);
     box-shadow: 
-      0 20px 40px rgba(167, 210, 33, 0.2),
-      0 0 0 1px rgba(167, 210, 33, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 20px 60px rgba(167, 210, 33, 0.25),
+      0 10px 30px rgba(0, 0, 0, 0.8),
+      0 4px 16px rgba(167, 210, 33, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .ethos-icon-container {
@@ -513,8 +799,12 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
     content: '';
     position: absolute;
     inset: 3px;
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.95) 0%, 
+      rgba(30, 30, 30, 0.9) 100%
+    );
     border-radius: 50%;
+    backdrop-filter: blur(10px);
   }
 
   @keyframes iconRotate {
@@ -530,7 +820,7 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
   }
 
   .ethos-card:hover .ethos-icon {
-    color: #bdfc52;
+    color: #b8e32e;
     transform: scale(1.1) rotate(5deg);
   }
 
@@ -544,19 +834,19 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
   }
 
   .ethos-card:hover .ethos-title {
-    color: #bdfc52;
+    color: #b8e32e;
     transform: translateY(-2px);
   }
 
   .ethos-description {
-    color: rgba(26, 26, 26, 0.8);
+    color: rgba(245, 245, 245, 0.8);
     text-align: center;
     line-height: 1.6;
     transition: all 0.3s ease;
   }
 
   .ethos-card:hover .ethos-description {
-    color: rgba(26, 26, 26, 0.95);
+    color: rgba(245, 245, 245, 0.95);
   }
 
   .ethos-glow {
@@ -597,10 +887,16 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
     .hero-section-fullpage {
       min-height: 100vh;
       height: auto;
+      left: 0;
+      width: 100%;
+      margin-right: 0;
     }
 
     .hero-content-overlay {
       padding: 100px 1.5rem 1.5rem;
+      width: 100%;
+      left: 0;
+      margin-left: 0;
     }
 
     .hero-content-center {
@@ -651,6 +947,11 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
 
     .ethos-card:hover .ethos-card-inner {
       transform: translateY(-5px);
+      border-color: rgba(167, 210, 33, 0.4);
+      box-shadow: 
+        0 12px 40px rgba(167, 210, 33, 0.2),
+        0 6px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .ethos-icon-container {
@@ -661,6 +962,40 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
     .ethos-icon {
       width: 30px;
       height: 30px;
+    }
+
+    .credibility-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .credibility-copy {
+      align-items: flex-start;
+      text-align: left;
+      gap: 1.5rem;
+    }
+
+    .credibility-actions {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .what-we-build-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .solution-card {
+      padding: 2rem;
+    }
+
+    .quick-metrics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 1.75rem;
+    }
+
+    .metrics-item {
+      align-items: flex-start;
     }
   }
 
@@ -698,6 +1033,51 @@ import UnicornStudioEmbed from '../components/UnicornStudioEmbed.jsx';
 
     .scroll-indicator {
       display: none;
+    }
+
+    .credibility-grid {
+      padding: 1.25rem 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .credibility-text {
+      font-size: 1rem;
+    }
+
+    .credibility-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+
+    .credibility-badges {
+      gap: 0.5rem;
+    }
+
+    .what-we-build-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-metrics {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding: 1.5rem;
+    }
+
+    .bottom-cta {
+      padding: 2.25rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-section-fullpage {
+      left: calc(-260px - 2rem);
+    }
+
+    .hero-content-overlay {
+      padding: 2rem;
+      left: calc(260px + 2rem);
+      margin-left: calc(-260px - 2rem);
     }
   }
 

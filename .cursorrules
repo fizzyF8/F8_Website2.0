@@ -376,5 +376,27 @@ const { title = "Default Title" } = Astro.props;
 
 ---
 
+# Cursor Rule Integration Notes
+
+These rules serve as the single source of truth for the Frog8 website.  
+If similar configurations or partial definitions already exist in the repository, Cursor should:
+
+1. **Preserve compliant code**  
+   - Do not overwrite existing components, variables, or styles that already follow these standards.
+
+2. **Refactor only when necessary**  
+   - Update or align any inconsistent code (naming, styling, structure) to match these rules.
+
+3. **Merge intelligently**  
+   - When new features or sections are generated, follow these guidelines for file organization, design, and responsiveness.  
+   - Avoid creating duplicate components or styles; reference existing ones when possible.
+
+4. **Respect versioned intent**  
+   - The specifications in this `.cursorrules` file override any older or conflicting project conventions.  
+   - Always prioritize consistency with the design system, accessibility, and performance standards defined above.
+
+Last Verified: November 2025  
+Applies To: Entire Frog8 repository
+
 **Remember**: This website represents Frog8's professional image to enterprise clients (banks, metros, government). Every change should enhance credibility, clarity, and conversion while maintaining the modern, distinctive design system.
 

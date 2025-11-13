@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
 import InteractiveTVMCards from "../components/InteractiveTVMCards.jsx";
 import UnicornStudioEmbed from "../components/UnicornStudioEmbed.jsx";
 import afcIcon from "../assets/icons/afc_icon.png";
@@ -26,7 +25,7 @@ import tvm2kImage from "../assets/tvm2k.png";
 import tvm4kImage from "../assets/tvm4k.png";
 ---
 
-<Layout title="Frog8 - Kiosks | Unattended Automation Solutions">
+<Layout title="Frog8 - Transigo | Transit Automation Platform">
   <Navigation />
 
   <!-- Full-Page Hero Section with Unicorn Studio Background -->
@@ -44,13 +43,12 @@ import tvm4kImage from "../assets/tvm4k.png";
         <!-- Left Content -->
         <div class="hero-content-left">
           <h1 class="hero-title">
-            <span class="hero-text-line">Unattended</span><br />
-            <span class="hero-highlight">Automation</span><span class="hero-text-line"> Solutions</span>
+            <span class="hero-text-line">Transigo —</span><br />
+            <span class="hero-highlight">The Transit Automation Platform</span>
           </h1>
           
           <p class="hero-subtitle">
-            Industrial-grade kiosks for transit, banking, and retail. Built to
-            operate 24/7 in any environment.
+            Designed for India’s Metro Networks. Trusted by Namma Metro. Used by India’s Leaders.
           </p>
           
           <p class="hero-description">
@@ -74,10 +72,10 @@ import tvm4kImage from "../assets/tvm4k.png";
           <div class="tvm-carousel-container">
             <div class="tvm-carousel">
               <div class="tvm-slide active">
-                <img src={tvm2kImage.src} alt="TVM 2000 Series" class="tvm-image tvm-2k" />
+                <img src={tvm2kImage.src} alt="Transigo 2000 Series" class="tvm-image tvm-2k" />
               </div>
               <div class="tvm-slide">
-                <img src={tvm4kImage.src} alt="TVM 4000 Series" class="tvm-image tvm-4k" />
+                <img src={tvm4kImage.src} alt="Transigo 4000 Series" class="tvm-image tvm-4k" />
               </div>
             </div>
             <div class="tvm-carousel-dots">
@@ -405,9 +403,14 @@ import tvm4kImage from "../assets/tvm4k.png";
   <!-- Automation Image Section -->
   <section class="automation-image-section">
     <div class="container">
-      <h2 class="automation-image-heading accent-underline text-center mb-8">Automation tailored to <span class="text-green">Your Needs</span></h2>
-      <div class="automation-image-container">
-        <img src={automationImage.src} alt="Automation Solutions" class="automation-full-image" />
+      <h2 class="automation-image-heading accent-underline text-center mb-12">Automation tailored to <span class="text-green">Your Needs</span></h2>
+      <div class="automation-tailored-content text-center mb-8">
+          <p class="automation-tailored-text">
+            Every metro system has its own story. Transigo's modular design ensures seamless integration with your network's ticketing, recharge, and smart-card infrastructure.
+          </p>
+      </div>
+      <div class="automation-tailored-image glass">
+        <img src={automationImage.src} alt="Transigo kiosk in metro environment" class="automation-tailored-img" />
       </div>
     </div>
   </section>
@@ -602,7 +605,7 @@ import tvm4kImage from "../assets/tvm4k.png";
           </div>
           <h4 class="text-green mb-4">Weather Resistant</h4>
           <p>
-            IP65 rated, operates in -10°C to 55°C temperature range with 24/7
+            Operates in -10°C to 55°C temperature range with 24/7
             reliability.
           </p>
         </div>
@@ -793,7 +796,126 @@ import tvm4kImage from "../assets/tvm4k.png";
     </div>
   </section>
 
-  <Footer />
+  <!-- Modern Section Divider -->
+  <div class="section-divider-modern">
+    <span class="divider-dot"></span>
+  </div>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="section transigo-highlight-section">
+    <div class="container">
+      <div class="glass transigo-highlight-card">
+        <p class="transigo-highlight-text">
+          Transigo 4000 (formerly TVM 4000) was used by Hon’ble PM Modi during the Namma Metro inauguration — India’s first kiosk with instant, full-KYC card issuance capability.
+        </p>
+        <a href="/deployments#case-study" class="btn btn-primary transigo-highlight-cta">
+          See the Namma Metro Case Study
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unified Contact Form -->
+  <section class="section pt-8 pb-8">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="mb-4">Get in <span class="text-green">Touch</span></h2>
+          <p class="text-lg mb-6">
+            Tell us about your project or use our quick project planner—response within 24 hours
+          </p>
+        </div>
+        <div class="glass p-8 rounded-2xl">
+          <form class="space-y-6">
+            <!-- Basic Contact Information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="f8-label">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="f8-input"
+                  placeholder="Your full name"
+                />
+              </div>
+              <div>
+                <label for="email" class="f8-label">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="f8-input"
+                  placeholder="your.email@company.com"
+                />
+              </div>
+            </div>
+            
+            <!-- Project Planning Section -->
+            <div class="border-t border-green/20 pt-6">
+              <h3 class="text-green mb-4 font-semibold">Project Details (Optional)</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label class="f8-label">Industry</label>
+                  <select class="f8-select" name="industry">
+                    <option value="">Select Industry</option>
+                    <option value="transit-metro">Transit / Metro</option>
+                    <option value="banking-finance">Banking / Finance</option>
+                    <option value="retail">Retail</option>
+                    <option value="government">Government</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="f8-label">Solution Needed</label>
+                  <select class="f8-select" name="solution">
+                    <option value="">Select Solution</option>
+                    <option value="kiosks-hardware">Kiosks / Hardware</option>
+                    <option value="onboarding-kyc">Onboarding / KYC</option>
+                    <option value="payments-integration">Payments Integration</option>
+                    <option value="analytics-monitoring">Analytics / Monitoring</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="f8-label">Estimated Budget</label>
+                  <input
+                    type="text"
+                    name="budget"
+                    class="f8-input"
+                    placeholder="eg. ₹5L - ₹50L"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <!-- Message Section -->
+            <div>
+              <label for="message" class="f8-label">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="f8-textarea"
+                placeholder="Tell us about your project, requirements, or how we can help you..."
+                style="height: 200px; width: 100%; resize: none;"
+              ></textarea>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -890,6 +1012,27 @@ import tvm4kImage from "../assets/tvm4k.png";
     box-shadow: 0 0 8px 2px #a7d22177;
     margin: 0 1.5em;
   }
+
+  .transigo-highlight-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2.75rem 3rem;
+    border-radius: 24px;
+  }
+
+  .transigo-highlight-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.92);
+    max-width: 70ch;
+  }
+
+  .transigo-highlight-cta {
+    min-width: 0;
+  }
   .badge-new {
     display: inline-block;
     background: linear-gradient(90deg, #a7d221 70%, #b8e32e 100%);
@@ -918,18 +1061,26 @@ import tvm4kImage from "../assets/tvm4k.png";
   .feature-icon {
     width: 56px;
     height: 56px;
-    background: rgba(167, 210, 33, 0.1);
+    background: rgba(167, 210, 33, 0.16);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1.5px 12px 0 #a7d22124;
+    box-shadow:
+      0 10px 32px rgba(167, 210, 33, 0.15),
+      0 0 24px rgba(167, 210, 33, 0.32);
+    color: var(--primary);
   }
   .feature-icon img {
     width: 45px;
     height: 45px;
     object-fit: contain;
-    filter: brightness(1.1) contrast(1.1);
+    filter: brightness(0) saturate(100%) invert(63%) sepia(69%) saturate(502%) hue-rotate(33deg) brightness(105%) contrast(95%);
+  }
+  .feature-icon svg {
+    width: 45px;
+    height: 45px;
+    fill: currentColor;
   }
   .modern-table-glass {
     background: rgba(18, 18, 18, 0.85);
@@ -1373,26 +1524,52 @@ import tvm4kImage from "../assets/tvm4k.png";
     }
   }
   .automation-image-section {
+    position: relative;
+    z-index: 100;
     background: none;
     padding: 0;
     margin: 0 0 2.5rem 0;
   }
-  .automation-image-container {
-    width: 100%;
+  .automation-tailored-content {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+  .automation-tailored-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+    opacity: 1;
+  }
+  .automation-tailored-image {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 24px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    padding: 0;
   }
-  .automation-full-image {
+  .automation-tailored-img {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    border-radius: 18px;
+    border-radius: 16px;
+  }
+  @media (max-width: 900px) {
+    .automation-tailored-content {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+    .automation-tailored-text {
+      font-size: 1rem;
+    }
+    .automation-tailored-image {
+      padding: 1.5rem;
+    }
   }
   .automation-image-heading {
     font-size: 2.5rem;
@@ -1848,6 +2025,14 @@ import tvm4kImage from "../assets/tvm4k.png";
     .scroll-text {
       font-size: 0.75rem;
     }
+
+    .transigo-highlight-card {
+      padding: 2.25rem;
+    }
+
+    .transigo-highlight-text {
+      font-size: 1.05rem;
+    }
   }
 
   @media (max-width: 480px) {
@@ -1914,6 +2099,102 @@ import tvm4kImage from "../assets/tvm4k.png";
     .scroll-indicator {
       display: none;
     }
+
+    .transigo-highlight-card {
+      padding: 2rem 1.75rem;
+    }
+
+    .transigo-highlight-text {
+      font-size: 1rem;
+    }
+  }
+
+  /* Form Elements Styling */
+  .f8-label {
+    font-weight: 600;
+    margin-bottom: 0.55rem;
+    color: #e5e5e5;
+    letter-spacing: 0.01em;
+    display: block;
+  }
+
+  .f8-input,
+  .f8-select,
+  .f8-textarea {
+    width: 100%;
+    padding: 1.13rem 1.13rem;
+    border-radius: 1.15rem;
+    border: 1.5px solid rgba(167, 210, 33, 0.25);
+    background: rgba(26, 26, 26, 0.8);
+    color: var(--text);
+    font-size: 1.09rem;
+    margin-bottom: 0.9rem;
+    outline: none;
+    transition:
+      border 0.17s,
+      background 0.18s;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23a7d221' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em 1.5em;
+    padding-right: 3rem;
+  }
+
+  .f8-textarea {
+    background-image: none;
+    padding-right: 1.13rem;
+  }
+
+  .f8-input:focus,
+  .f8-select:focus,
+  .f8-textarea:focus {
+    border-color: var(--primary);
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 0 0 3px rgba(167, 210, 33, 0.2);
+  }
+
+  .f8-input::placeholder,
+  .f8-select::placeholder,
+  .f8-textarea::placeholder {
+    color: #b8c77e;
+    opacity: 0.86;
+    font-weight: 400;
+  }
+
+  /* Custom dropdown styling */
+  .f8-select option {
+    background: rgba(16, 30, 23, 0.95);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+  }
+
+  .f8-select option:hover,
+  .f8-select option:focus {
+    background: rgba(167, 210, 33, 0.3);
+    color: #fff;
+  }
+
+  .f8-select option:checked,
+  .f8-select option[selected] {
+    background: var(--primary);
+    color: #011;
+    font-weight: 600;
+  }
+
+  /* Hide scrollbar for textarea */
+  .f8-textarea::-webkit-scrollbar {
+    display: none;
+  }
+
+  .f8-textarea {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 </style>
 

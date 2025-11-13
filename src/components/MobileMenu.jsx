@@ -26,9 +26,9 @@ export default function MobileMenu() {
         width: '100vw',
         height: '100vh',
         zIndex: 9999,
-        background: 'linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(18, 18, 18, 0.98) 100%)',
+        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 250, 250, 0.98) 100%)',
         backdropFilter: 'blur(20px)',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.8)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -40,16 +40,42 @@ export default function MobileMenu() {
       <button
         onClick={toggleMenu}
         aria-label="Close menu"
-        className="absolute top-6 right-6 rounded-full p-2 bg-[rgba(167,210,33,0.2)] hover:bg-[rgba(167,210,33,0.3)] shadow-lg transition"
-        style={{ fontSize: 24, lineHeight: 1, color: '#a7d221', border: '1px solid rgba(167, 210, 33, 0.3)', zIndex: 100 }}
+        style={{
+          position: 'absolute',
+          top: '1.5rem',
+          right: '1.5rem',
+          width: '44px',
+          height: '44px',
+          borderRadius: '12px',
+          background: 'rgba(10, 10, 10, 0.1)',
+          border: '1px solid rgba(167, 210, 33, 0.3)',
+          color: '#a7d221',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          zIndex: 100,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'rgba(167, 210, 33, 0.2)';
+          e.currentTarget.style.borderColor = 'rgba(167, 210, 33, 0.5)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'rgba(10, 10, 10, 0.1)';
+          e.currentTarget.style.borderColor = 'rgba(167, 210, 33, 0.3)';
+        }}
       >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
       </button>
 
       {/* Logo */}
       <div style={{ width: '100%', display: 'flex', justifyContent: 'center', paddingTop: 40, paddingBottom: 10 }}>
         <a href="/" className="block">
-          <img src={logo.src} alt="Frog8 Logo" style={{ height: 44, width: 'auto' }} />
+          <img src={logo.src} alt="Frog8 Logo" style={{ height: 80, width: 'auto', filter: 'none' }} />
         </a>
       </div>
 
@@ -57,7 +83,7 @@ export default function MobileMenu() {
       <nav style={{ flex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 28 }}>
         {[
           { href: '/', label: 'Home' },
-          { href: '/platforms', label: 'Platforms' },
+          { href: '/platforms', label: 'Solutions' },
           { href: '/kiosks', label: 'Devices' },
           { href: '/veriphy', label: 'Veriphy' },
           { href: '/deployments', label: 'Deployments' },
@@ -67,7 +93,7 @@ export default function MobileMenu() {
             key={link.href}
             href={link.href}
             style={{
-              color: '#f5f5f5',
+              color: '#0a0a0a',
               fontWeight: 700,
               fontSize: '1.35rem',
               textDecoration: 'none',
@@ -78,7 +104,7 @@ export default function MobileMenu() {
               display: 'block',
               border: '1px solid transparent',
             }}
-            className="hover:bg-[rgba(167,210,33,0.15)] hover:text-[#b8e32e] hover:border-[rgba(167,210,33,0.3)]"
+            className="hover:bg-[rgba(167,210,33,0.15)] hover:text-[#8fb31c] hover:border-[rgba(167,210,33,0.3)]"
             onClick={toggleMenu}
           >
             {link.label}
@@ -124,40 +150,47 @@ export default function MobileMenu() {
     <div className="md:hidden">
       {/* Hamburger Icon */}
       <button
-  onClick={toggleMenu}
-  aria-label="Toggle mobile menu"
-  style={{
-    position: 'relative',
-    zIndex: 60,
-    background: 'rgba(167, 210, 33, 0.1)',
-    border: '1px solid rgba(167, 210, 33, 0.2)',
-    padding: 10,
-    borderRadius: 12,
-    cursor: 'pointer',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    outline: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }}
-  onMouseDown={e => e.preventDefault()}
-  className="hover:bg-[rgba(167,210,33,0.15)] hover:border-[rgba(167,210,33,0.3)]"
->
-  {!isMenuOpen ? (
-    // Modern Hamburger
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <rect y="8" width="32" height="3" rx="1.5" fill="#a7d221"/>
-      <rect y="15" width="32" height="3" rx="1.5" fill="#a7d221"/>
-      <rect y="22" width="32" height="3" rx="1.5" fill="#a7d221"/>
-    </svg>
-  ) : (
-    // Modern Close (X) Icon
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <rect x="24" y="6" width="25" height="3" rx="1.5" transform="rotate(45 24 6)" fill="#a7d221"/>
-      <rect x="6" y="8" width="25" height="3" rx="1.5" transform="rotate(-45 6 8)" fill="#a7d221"/>
-    </svg>
-  )}
-</button>
+        onClick={toggleMenu}
+        aria-label="Toggle mobile menu"
+        style={{
+          position: 'relative',
+          zIndex: 60,
+          background: 'rgba(167, 210, 33, 0.1)',
+          border: '1px solid rgba(167, 210, 33, 0.2)',
+          padding: 10,
+          borderRadius: 12,
+          cursor: 'pointer',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          outline: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onMouseDown={e => e.preventDefault()}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'rgba(167, 210, 33, 0.15)';
+          e.currentTarget.style.borderColor = 'rgba(167, 210, 33, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'rgba(167, 210, 33, 0.1)';
+          e.currentTarget.style.borderColor = 'rgba(167, 210, 33, 0.2)';
+        }}
+      >
+        {!isMenuOpen ? (
+          // Modern Hamburger
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect y="8" width="32" height="3" rx="1.5" fill="#a7d221"/>
+            <rect y="15" width="32" height="3" rx="1.5" fill="#a7d221"/>
+            <rect y="22" width="32" height="3" rx="1.5" fill="#a7d221"/>
+          </svg>
+        ) : (
+          // Modern Close (X) Icon
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect x="24" y="6" width="25" height="3" rx="1.5" transform="rotate(45 24 6)" fill="#a7d221"/>
+            <rect x="6" y="8" width="25" height="3" rx="1.5" transform="rotate(-45 6 8)" fill="#a7d221"/>
+          </svg>
+        )}
+      </button>
 
       {/* Render overlay at end of <body> for full coverage */}
       {isMenuOpen && createPortal(overlayMenu, document.body)}

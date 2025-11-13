@@ -26,7 +26,6 @@ const tvmData = [
       { icon: '💳', text: 'UPI & Card Payments' },
       { icon: '📱', text: 'QR Code Scanning' },
       { icon: '📦', text: 'Compact Footprint' },
-      { icon: '🛡️', text: 'IP54 Protection' },
       { icon: '⏰', text: '24/7 Operation' }
     ],
     idealFor: [
@@ -38,7 +37,6 @@ const tvmData = [
     specs: [
       { label: 'Display', value: '15" Touch' },
       { label: 'Payments', value: 'UPI, Cards' },
-      { label: 'Protection', value: 'IP54' },
       { label: 'Temperature', value: '-10°C to 55°C' }
     ]
   },
@@ -57,7 +55,6 @@ const tvmData = [
       { icon: '💰', text: 'Cash & Digital Payments' },
       { icon: '🖨️', text: 'Paper Ticket Printing' },
       { icon: '💳', text: 'NCMC Card Support' },
-      { icon: '🛡️', text: 'IP65 Protection' },
       { icon: '👆', text: 'Biometric Authentication' }
     ],
     idealFor: [
@@ -69,7 +66,6 @@ const tvmData = [
     specs: [
       { label: 'Display', value: '21" HD Touch' },
       { label: 'Payments', value: 'All Methods' },
-      { label: 'Protection', value: 'IP65' },
       { label: 'Printing', value: 'Thermal' }
     ]
   },
@@ -88,7 +84,6 @@ const tvmData = [
       { icon: '💳', text: 'All Payment Methods' },
       { icon: '🎫', text: 'Smart Card Issuance' },
       { icon: '🖨️', text: 'Multi-format Printing' },
-      { icon: '🛡️', text: 'IP67 Protection' },
       { icon: '🔒', text: 'Advanced Security' }
     ],
     idealFor: [
@@ -100,7 +95,6 @@ const tvmData = [
     specs: [
       { label: 'Display', value: '32" HD Touch' },
       { label: 'Payments', value: 'Universal' },
-      { label: 'Protection', value: 'IP67' },
       { label: 'Card Issuance', value: 'Yes' }
     ]
   }

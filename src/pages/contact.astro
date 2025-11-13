@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
 import UnicornStudioEmbed from "../components/UnicornStudioEmbed.jsx";
 import whatsapp from "../assets/whatsapp.png";
 ---
@@ -22,14 +21,11 @@ import whatsapp from "../assets/whatsapp.png";
     <div class="hero-content-overlay">
       <div class="hero-content-center">
         <h1 class="hero-title">
-          <span class="hero-text-line">Let's build the future of</span><br />
-          <span class="hero-highlight">access</span>
-          <span class="hero-text-line">— TOGETHER</span>
+          Get in Touch with <span class="hero-highlight">Frog8</span>
         </h1>
-        
+
         <p class="hero-subtitle">
-          Ready to transform your infrastructure with cutting-edge automation
-          and seamless user experiences? We'd love to hear from you.
+          Reach our teams in Mumbai and Bengaluru to plan your transit, banking, or onboarding rollout.
         </p>
       </div>
     </div>
@@ -43,12 +39,81 @@ import whatsapp from "../assets/whatsapp.png";
     </div>
   </section>
 
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('status') === 'success') {
+        const successEl = document.getElementById('form-success');
+        if (successEl) {
+          successEl.removeAttribute('hidden');
+        }
+      }
+    });
+  </script>
+
   <div class="section-divider"></div>
 
-  <!-- Contact Methods Panel -->
-  <section class="section pb-8">
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="section pb-8 contact-details-section">
     <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
+      <div class="text-center mb-12">
+        <h2 class="section-subheading">Talk to the Frog8 Team</h2>
+        <p class="section-subtext">Our regional leads respond within 24 hours.</p>
+      </div>
+      <div class="grid contact-info-grid gap-8">
+        <!-- Mumbai HQ -->
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <div class="contact-icon-container">
+              <div class="contact-icon-bg"></div>
+              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="contact-title">Mumbai HQ</h3>
+            <address class="contact-address">
+              Frog8 Technologies Services Pvt. Ltd.<br />
+              Mumbai, India
+            </address>
+            <div class="contact-glow"></div>
+          </div>
+        </div>
+        <!-- Bengaluru -->
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <div class="contact-icon-container">
+              <div class="contact-icon-bg"></div>
+              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 3h12l2 5-8 11-8-11 2-5z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-title">Bengaluru Operations</h3>
+            <p class="contact-description">
+              Care of AUM Infotech — <a
+                href="https://maps.app.goo.gl/mcH12rqnKry8Sq917"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link inline-link"
+                >View on Google Maps</a
+              >
+            </p>
+            <div class="contact-glow"></div>
+          </div>
+        </div>
+        <!-- Phone -->
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <div class="contact-icon-container">
+              <div class="contact-icon-bg"></div>
+              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-title">Phone</h3>
+            <a href="tel:+919820459958" class="contact-link">+91&nbsp;98204&nbsp;59958</a>
+            <div class="contact-glow"></div>
+          </div>
+        </div>
         <!-- Email -->
         <div class="contact-card">
           <div class="contact-card-inner">
@@ -59,48 +124,8 @@ import whatsapp from "../assets/whatsapp.png";
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
               </svg>
             </div>
-            <h3 class="contact-title">Email Us</h3>
-            <p class="contact-description mb-6">For partnerships, support, or general inquiries</p>
-            <a href="mailto:sales@f8payments.com" class="btn btn-primary btn-enhanced">
-              <span>sales@f8payments.com</span>
-              <div class="btn-shine"></div>
-            </a>
-            <div class="contact-glow"></div>
-          </div>
-        </div>
-        <!-- Call -->
-        <div class="contact-card">
-          <div class="contact-card-inner">
-            <div class="contact-icon-container">
-              <div class="contact-icon-bg"></div>
-              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-              </svg>
-            </div>
-            <h3 class="contact-title">Call Us</h3>
-            <p class="contact-description mb-6">Speak directly with our team of experts</p>
-            <a href="tel:+91-9820459958" class="btn btn-primary btn-enhanced">
-              <span>+91-9820459958</span>
-              <div class="btn-shine"></div>
-            </a>
-            <div class="contact-glow"></div>
-          </div>
-        </div>
-        <!-- Visit -->
-        <div class="contact-card">
-          <div class="contact-card-inner">
-            <div class="contact-icon-container">
-              <div class="contact-icon-bg"></div>
-              <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="contact-title">Visit Us</h3>
-            <p class="contact-description mb-6">Meet us at our HQ in India's tech capital</p>
-            <span class="btn btn-primary btn-enhanced">
-              <span>Mumbai, India</span>
-              <div class="btn-shine"></div>
-            </span>
+            <h3 class="contact-title">Email</h3>
+            <a href="mailto:sales@f8payments.com" class="contact-link">sales@f8payments.com</a>
             <div class="contact-glow"></div>
           </div>
         </div>
@@ -122,108 +147,117 @@ import whatsapp from "../assets/whatsapp.png";
   </a>
 
 
-  <!-- Grouped Contact & Project Planner -->
+  <!-- Unified Contact Form -->
   <section class="section pt-8 pb-8">
     <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
-        <!-- Contact Form -->
-        <div>
-          <div class="mb-10">
-            <h2 class="mb-4">Get in <span class="text-green">Touch</span></h2>
-            <p class="text-lg mb-6">
-              Tell us about your project—response within 24 hours
-            </p>
-          </div>
-          <div class="glass p-8 rounded-2xl">
-            <form class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="f8-label">Full Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="f8-input"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label for="email" class="f8-label">Email Address *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="f8-input"
-                    placeholder="your.email@company.com"
-                  />
-                </div>
-              </div>
-              <div>
-                <label for="message" class="f8-label">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="8"
-                  required
-                  class="f8-textarea"
-                  placeholder="Tell us about your project, requirements, or how we can help you..."
-                  style="height: 250px; width: 100%; resize: none;"></textarea>
-              </div>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button type="submit" class="btn btn-primary"
-                  >Send Message</button
-                >
-              </div>
-            </form>
-          </div>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="mb-4">Get in <span class="text-green">Touch</span></h2>
+          <p class="text-lg mb-6">
+            Tell us about your project or use our quick project planner—response within 24 hours
+          </p>
         </div>
-        <!-- Project Planner -->
-        <div>
-          <div class="mb-10">
-            <h2 class="mb-4">
-              Not sure <span class="text-green">where to start?</span>
-            </h2>
-            <p class="text-lg mb-6">
-              Use our quick project planner—our team will guide you through it.
-            </p>
+        <div class="glass p-8 rounded-2xl form-wrapper">
+          <div id="form-success" class="form-success" role="status" hidden>
+            Thanks for reaching out — our team will respond within 24 hours.
           </div>
-          <div class="glass p-8 rounded-2xl">
-            <form class="space-y-6 text-left">
+          <form
+            class="space-y-6"
+            action="https://formsubmit.co/sales@f8payments.com"
+            method="POST"
+            autocomplete="on"
+          >
+            <input type="hidden" name="_subject" value="Frog8 Website Contact Submission" />
+            <input type="hidden" name="_next" value="/contact?status=success" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="sr-only spam-field">
+              <label for="company-website">Company Website</label>
+              <input
+                id="company-website"
+                type="text"
+                name="_honey"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="f8-label">Industry</label>
-                <select class="f8-select">
-                  <option>Transit / Metro</option>
-                  <option>Banking / Finance</option>
-                  <option>Retail</option>
-                  <option>Government</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label class="f8-label">Solution Needed</label>
-                <select class="f8-select">
-                  <option>Kiosks / Hardware</option>
-                  <option>Onboarding / KYC</option>
-                  <option>Payments Integration</option>
-                  <option>Analytics / Monitoring</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label class="f8-label">Estimated Budget</label>
+                <label for="name" class="f8-label">Full Name *</label>
                 <input
                   type="text"
+                  id="name"
+                  name="name"
+                  required
                   class="f8-input"
-                  placeholder="eg. ₹5L - ₹50L"
+                  placeholder="Your full name"
+                  autocomplete="name"
                 />
               </div>
-              <button type="submit" class="btn btn-primary w-full mt-4"
-                >Submit Project Details</button
+              <div>
+                <label for="company" class="f8-label">Company *</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  class="f8-input"
+                  placeholder="Organisation name"
+                  autocomplete="organization"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="f8-label">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="f8-input"
+                placeholder="your.email@company.com"
+                autocomplete="email"
+              />
+            </div>
+
+            <div>
+              <label for="product-interest" class="f8-label">Product Interest *</label>
+              <select
+                id="product-interest"
+                name="product"
+                class="f8-select"
+                required
               >
-            </form>
-          </div>
+                <option value="">Select a product</option>
+                <option value="Transigo">Transigo</option>
+                <option value="Navigo">Navigo</option>
+                <option value="Veriphy">Veriphy</option>
+                <option value="CTS">CTS</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="f8-label">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="f8-textarea"
+                placeholder="Tell us about your deployment timeline, use case, or questions."
+              ></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -275,8 +309,6 @@ import whatsapp from "../assets/whatsapp.png";
       </div>
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -447,15 +479,79 @@ import whatsapp from "../assets/whatsapp.png";
     animation: fadeInUp 1s ease-out 0.5s both;
   }
 
+  .section-subheading {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .section-subtext {
+    color: rgba(245, 245, 245, 0.75);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1280px) {
+    .contact-info-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 992px) {
+    .contact-info-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .contact-address {
+    font-style: normal;
+    color: rgba(245, 245, 245, 0.82);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .inline-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.95rem;
+  }
+
+  .contact-link:hover {
+    color: var(--primary-light);
+    transform: translateY(-1px);
+  }
+
   /* Contact Cards */
   .contact-card {
     perspective: 1000px;
-    height: 350px;
+    min-height: 300px;
   }
 
-  .contact-card:nth-child(1) { opacity: 1; transform: translateY(0) scale(1); }
-  .contact-card:nth-child(2) { opacity: 1; transform: translateY(0) scale(1); }
-  .contact-card:nth-child(3) { opacity: 1; transform: translateY(0) scale(1); }
+  .contact-card:nth-child(1),
+  .contact-card:nth-child(2),
+  .contact-card:nth-child(3),
+  .contact-card:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 
   @keyframes cardSlideIn {
     from {
@@ -576,6 +672,37 @@ import whatsapp from "../assets/whatsapp.png";
 
   .contact-card:hover .contact-glow {
     opacity: 1;
+  }
+
+  .form-wrapper {
+    position: relative;
+  }
+
+  .form-success {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    background: rgba(167, 210, 33, 0.12);
+    border: 1px solid rgba(167, 210, 33, 0.3);
+    color: rgba(245, 245, 245, 0.9);
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .spam-field {
+    display: none;
   }
 
   /* Enhanced Buttons */
@@ -731,6 +858,8 @@ import whatsapp from "../assets/whatsapp.png";
   .f8-textarea {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    height: 200px;
+    resize: none;
   }
 
   /* FAQ Styling */

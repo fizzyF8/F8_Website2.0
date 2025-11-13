@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
 
 // Import all partner logos
 import bmrclLogo from "../assets/partners/bmrcl.svg";
@@ -16,6 +15,10 @@ import adityaVisionLogo from "../assets/partners/aditya_vision.png";
 import saybaGroupLogo from "../assets/partners/sayba_group.png";
 import aumInfotechLogo from "../assets/partners/aum_infotech.jpeg";
 import advantechLogo from "../assets/partners/Advantech.svg";
+import dataaegisLogo from "../assets/partners/dataaegis.png";
+import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg";
+import rupayLogo from "../assets/partners/rupay.png";
+import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp4";
 ---
 
 <Layout title="Frog8 - Deployments | Real-World Success Stories">
@@ -75,9 +78,14 @@ import advantechLogo from "../assets/partners/Advantech.svg";
               logo: southIndianBankLogo.src
             },
             {
-              name: "NSDL PB",
-              desc: "Payment bank infrastructure",
-              logo: nsdlLogo.src
+              name: "Airtel Payments Bank",
+              desc: "Digital payments infrastructure",
+              logo: airtelPaymentsBankLogo.src
+            },
+            {
+              name: "Dataaegis",
+              desc: "Data security solutions",
+              logo: dataaegisLogo.src
             },
             {
               name: "Axis Bank",
@@ -253,13 +261,80 @@ import advantechLogo from "../assets/partners/Advantech.svg";
 
   <div class="section-divider"></div>
 
+  <!-- BMRCL Journey Section -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="mb-4 md:mb-6 text-3xl md:text-4xl font-bold">
+          Our Journey with <span class="text-green">BMRCL</span>
+        </h2>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-white/90">
+          A three-year evolution from digital-first to full-platform deployment
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="journey-timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-date">April 2022</div>
+            <h3 class="timeline-title">WhatsApp Ticketing Launch</h3>
+            <p class="timeline-description">
+              Digital-first approach. Scaling to 100K tickets per day. Smart card top-ups and ticketing accessible via WhatsApp.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-date">April 2024</div>
+            <h3 class="timeline-title">TVM 1000 Pilot</h3>
+            <p class="timeline-description">
+              First hardware deployment at two of Bengaluru's busiest stations: Cubbon Park and MG Road. Introduction of self-service QR ticket machines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-date">Q1 2025</div>
+            <h3 class="timeline-title">TVM 2000 Expansion</h3>
+            <p class="timeline-description">
+              Industrial-grade, all-digital-payment TVMs deployed at four additional stations: Byappanahalli, Benniganahalli, SV Road, and Rajarajeshwari Nagar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-date">Q3 2025</div>
+            <h3 class="timeline-title">TransiGo 4000 Launch</h3>
+            <p class="timeline-description">
+              India's first instant, full-KYC, personalized bank card issuance—outside a bank branch. Complete biometric verification and card personalization in under 45 seconds.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- Success Metrics -->
   <section class="section bg-glass-light">
     <div class="container">
       <h2 class="text-center mb-10 md:mb-16">
         By the <span class="text-green">Numbers</span>
       </h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
         <div
           class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
         >
@@ -269,7 +344,19 @@ import advantechLogo from "../assets/partners/Advantech.svg";
             100K+
           </h3>
           <p class="text-xs md:text-base text-white/80">
-            Daily transactions processed
+            Daily Transactions<br />Via WhatsApp ticketing platform
+          </p>
+        </div>
+        <div
+          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
+        >
+          <h3
+            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
+          >
+            45s
+          </h3>
+          <p class="text-xs md:text-base text-white/80">
+            Card Issuance Time<br />Full-KYC, personalized bank card
           </p>
         </div>
         <div
@@ -281,31 +368,7 @@ import advantechLogo from "../assets/partners/Advantech.svg";
             99.9%
           </h3>
           <p class="text-xs md:text-base text-white/80">
-            System uptime achieved
-          </p>
-        </div>
-        <div
-          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
-        >
-          <h3
-            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
-          >
-            50+
-          </h3>
-          <p class="text-xs md:text-base text-white/80">
-            Kiosks deployed nationwide
-          </p>
-        </div>
-        <div
-          class="glass p-6 md:p-8 text-center hover-lift rounded-2xl shadow-lg bg-gradient-to-tr from-green/10 to-black/10"
-        >
-          <h3
-            class="text-green text-3xl md:text-4xl font-black mb-1 md:mb-4 tracking-tight"
-          >
-            85%
-          </h3>
-          <p class="text-xs md:text-base text-white/80">
-            Digital adoption rate
+            System Uptime<br />Banking-grade reliability
           </p>
         </div>
       </div>
@@ -314,75 +377,196 @@ import advantechLogo from "../assets/partners/Advantech.svg";
 
   <div class="section-divider"></div>
 
-  <!-- Case Study Highlights -->
-  <section class="section bg-black/20">
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section id="case-study" class="section glass case-study-section">
     <div class="container">
-      <h2 class="text-center mb-16">
-        Case Study <span class="text-green">Highlights</span>
-      </h2>
+      <div class="case-study-header">
+        <div>
+          <h2 class="case-study-title">Namma Metro · Transigo 4000</h2>
+          <p class="case-study-intro">
+            Bengaluru’s metro trusted Transigo to deliver the nation’s first kiosk experience inaugurated by Hon’ble PM Modi—combining instant ticketing with full-KYC card issuance.
+          </p>
+        </div>
+        <div class="case-study-actions">
+          <a href={tvm4000BrochureVideo} class="btn btn-primary">Watch Video</a>
+          <a href="[[awaiting coverage link]]" class="btn btn-secondary">Read Coverage</a>
+        </div>
+      </div>
 
-      <div class="case-study-blocks">
-        <!-- CASE STUDY 1 -->
-        <div class="case-study-block glass">
-          <div class="case-study-row">
-            <div class="case-study-segment">
-              <div class="case-study-label">Challenge</div>
-              <div class="case-study-content">
-                Metro network needed to reduce cash handling, improve passenger
-                experience, and increase digital adoption while maintaining AFCS
-                compliance.
-              </div>
-            </div>
-            <div class="case-study-divider"></div>
-            <div class="case-study-segment">
-              <div class="case-study-label">Solution</div>
-              <div class="case-study-content">
-                Deployed Transigo kiosks with WhatsApp ticketing integration,
-                NCMC card issuance, and multi-modal payment support across the
-                network.
-              </div>
-            </div>
-            <div class="case-study-divider"></div>
-            <div class="case-study-segment">
-              <div class="case-study-label">Results</div>
-              <div class="case-study-content">
-                <ul>
-                  <li>60% reduction in queue times</li>
-                  <li>85% digital adoption rate</li>
-                  <li>Significant operational cost savings within 6 months</li>
-                </ul>
-              </div>
-            </div>
+      <div class="case-study-media glass">
+        <video
+          src={tvm4000BrochureVideo}
+          class="case-study-video"
+          controls
+          preload="metadata"
+          aria-label="Transigo deployment at Namma Metro"
+        ></video>
+      </div>
+
+      <div class="case-study-metrics glass">
+        <div class="metric-item">
+          <span class="metric-value">100K+</span>
+          <span class="metric-label">daily tickets processed</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-value">99.9%</span>
+          <span class="metric-label">uptime across stations</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-value">85%</span>
+          <span class="metric-label">digital adoption</span>
+        </div>
+      </div>
+
+      <div class="case-study-partners">
+        <span class="partners-label">Partners</span>
+        <div class="partners-grid">
+          <div class="partner-chip glass partner-chip--bmrcl">
+            <img src={bmrclLogo.src} alt="BMRCL logo" />
+          </div>
+          <div class="partner-chip glass">
+            <img src={aumInfotechLogo.src} alt="AUM Infotech logo" />
+          </div>
+          <div class="partner-chip glass">
+            <img src={advantechLogo.src} alt="Advantech logo" />
+          </div>
+          <div class="partner-chip glass">
+            <img src={dataaegisLogo.src} alt="Dataaegis logo" />
+          </div>
+          <div class="partner-chip glass" style="min-width: 140px;">
+            <img src={airtelPaymentsBankLogo.src} alt="Airtel Payments Bank logo" style="max-width: 140px; width: 100%;" />
           </div>
         </div>
-        <!-- CASE STUDY 2 -->
-        <div class="case-study-block glass">
-          <div class="case-study-row">
-            <div class="case-study-segment">
-              <div class="case-study-label">Challenge</div>
-              <div class="case-study-content">
-                Rural bank branches needed to extend services 24/7 without
-                increasing staffing costs or compromising security.
-              </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Deployment Gallery -->
+  <section class="section bg-glass-light">
+    <div class="container">
+      <h2 class="text-center mb-10 md:mb-16">
+        Deployment <span class="text-green">Gallery</span>
+      </h2>
+      <p class="text-center mb-8 md:mb-12 text-lg text-white/80 max-w-2xl mx-auto">
+        See our kiosks in action across Namma Metro stations
+      </p>
+      <div class="deployment-gallery">
+        <div class="gallery-item glass">
+          <div class="gallery-image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="rgba(167, 210, 33, 0.1)"/>
+              <path d="M30 30H70V70H30V30Z" stroke="#a7d221" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="50" r="8" fill="#a7d221"/>
+            </svg>
+          </div>
+          <h3 class="gallery-station">TransiGo 2000 at Cubbon Park</h3>
+          <p class="gallery-location">Cubbon Park</p>
+        </div>
+        <div class="gallery-item glass">
+          <div class="gallery-image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="rgba(167, 210, 33, 0.1)"/>
+              <path d="M30 30H70V70H30V30Z" stroke="#a7d221" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="50" r="8" fill="#a7d221"/>
+            </svg>
+          </div>
+          <h3 class="gallery-station">MG Road Station Deployment</h3>
+          <p class="gallery-location">MG Road</p>
+        </div>
+        <div class="gallery-item glass">
+          <div class="gallery-image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="rgba(167, 210, 33, 0.1)"/>
+              <path d="M30 30H70V70H30V30Z" stroke="#a7d221" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="50" r="8" fill="#a7d221"/>
+            </svg>
+          </div>
+          <h3 class="gallery-station">Byappanahalli Customer Service</h3>
+          <p class="gallery-location">Byappanahalli</p>
+        </div>
+        <div class="gallery-item glass">
+          <div class="gallery-image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="rgba(167, 210, 33, 0.1)"/>
+              <path d="M30 30H70V70H30V30Z" stroke="#a7d221" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="50" r="8" fill="#a7d221"/>
+            </svg>
+          </div>
+          <h3 class="gallery-station">SV Road Station Installation</h3>
+          <p class="gallery-location">SV Road</p>
+        </div>
+        <div class="gallery-item glass">
+          <div class="gallery-image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="rgba(167, 210, 33, 0.1)"/>
+              <path d="M30 30H70V70H30V30Z" stroke="#a7d221" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="50" r="8" fill="#a7d221"/>
+            </svg>
+          </div>
+          <h3 class="gallery-station">Benniganahalli Station Overview</h3>
+          <p class="gallery-location">Benniganahalli</p>
+        </div>
+        <div class="gallery-item glass">
+          <div class="gallery-image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="rgba(167, 210, 33, 0.1)"/>
+              <path d="M30 30H70V70H30V30Z" stroke="#a7d221" stroke-width="2" fill="none"/>
+              <circle cx="50" cy="50" r="8" fill="#a7d221"/>
+            </svg>
+          </div>
+          <h3 class="gallery-station">Rajarajeshwari Nagar Kiosk</h3>
+          <p class="gallery-location">Rajarajeshwari Nagar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Testimonial Section -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <div class="testimonial-card glass">
+        <div class="testimonial-quote">
+          <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" fill="#a7d221" opacity="0.3"/>
+          </svg>
+          <p class="testimonial-text">
+            "Now, get Metro tickets from new machines within 1 min"
+          </p>
+          <p class="testimonial-attribution">
+            One passenger praised the "seamless experience" and "no queues" at our pilot deployment at Byappanahalli station.
+          </p>
+          <p class="testimonial-source">
+            — Times of India
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Partnership Section -->
+  <section class="section bg-glass-light">
+    <div class="container">
+      <div class="partnership-section">
+        <div class="partnership-content glass">
+          <h2 class="partnership-title">
+            <span class="text-green">Partnership</span>
+          </h2>
+          <h3 class="partnership-subtitle">Powered by Airtel Payments Bank</h3>
+          <p class="partnership-description">
+            Full-KYC RuPay + NCMC cards issued on our platform. Banking-grade security. Regulatory compliant. A first-of-its-kind partnership enabling instant card issuance outside traditional bank branches.
+          </p>
+          <div class="partnership-logos">
+            <div class="partnership-logo-item">
+              <img src={airtelPaymentsBankLogo.src} alt="Airtel Payments Bank" class="partnership-logo" />
             </div>
-            <div class="case-study-divider"></div>
-            <div class="case-study-segment">
-              <div class="case-study-label">Solution</div>
-              <div class="case-study-content">
-                Implemented Navo banking kiosks with passbook printing, cheque
-                deposits, and Veriphy onboarding for new account opening.
-              </div>
-            </div>
-            <div class="case-study-divider"></div>
-            <div class="case-study-segment">
-              <div class="case-study-label">Results</div>
-              <div class="case-study-content">
-                <ul>
-                  <li>Banking hours extended to 24/7</li>
-                  <li>40% reduction in operational costs</li>
-                  <li>Significant increase in customer satisfaction</li>
-                </ul>
-              </div>
+            <div class="partnership-logo-item">
+              <img src={rupayLogo.src} alt="RuPay" class="partnership-logo" />
             </div>
           </div>
         </div>
@@ -390,7 +574,94 @@ import advantechLogo from "../assets/partners/Advantech.svg";
     </div>
   </section>
 
-  <Footer />
+  <div class="section-divider"></div>
+
+  <!-- Deployment CTA Section -->
+  <section class="section bg-black/20">
+    <div class="container">
+      <div class="deployment-cta glass">
+        <h2 class="cta-title">Ready to Deploy in Your City?</h2>
+        <p class="cta-description">
+          Our proven platform is ready to scale across India's expanding metro network. Let's discuss your deployment.
+        </p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary">Request Technical Brief</a>
+          <a href="/platforms" class="btn btn-secondary">Explore TransiGo Platform</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section id="navigo-series" class="section glass case-study-section">
+    <div class="container">
+      <div class="case-study-header">
+        <div>
+          <h2 class="case-study-title">Navigo Series · Banking Automation</h2>
+          <p class="case-study-intro">
+            Navigo extends branch-grade banking into every neighbourhood—automating passbook updates, cheque processing, and card issuance in a single unattended unit.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-study-body">
+        <p>
+          Designed for regulated financial environments, Navigo kiosks integrate with core banking, Veriphy onboarding, and RBI-compliant workflows. The result: predictable self-service journeys with rigorous audit trails.
+        </p>
+        <div class="campaign-highlight glass">
+          <h3>Campaign Highlight</h3>
+          <p>
+            “Lost your card? Walk up to a Navigo kiosk, authenticate in seconds, and walk away with an activated replacement.” Adoption campaigns like these lifted branch NPS scores across metro and semi-urban footprints.
+          </p>
+        </div>
+        <ul class="case-study-points">
+          <li>Passbook printing, CTS ingestion, and instant card issuance</li>
+          <li>Secure biometric and multi-factor authentication options</li>
+          <li>Remote monitoring with SLA-backed field operations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section id="cts-solutions" class="section glass case-study-section">
+    <div class="container">
+      <div class="case-study-header">
+        <div>
+          <h2 class="case-study-title">CTS Solutions · Frog8 × Kores</h2>
+          <p class="case-study-intro">
+            Frog8 and Kores deliver an RBI-compliant cheque truncation and digitization stack powering national rollouts for leading banks.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-study-body">
+        <p>
+          The joint platform combines secure document capture, automated verification, and multi-node reconciliation—giving banks a turnkey path from paper cheques to real-time settlement.
+        </p>
+        <ul class="case-study-points">
+          <li>High-throughput scanners with automated endorsement detection</li>
+          <li>Workflow orchestration aligned to RBI CTS 3.0 specifications</li>
+          <li>Integration accelerators for core banking, AML, and dispute systems</li>
+        </ul>
+        <div class="campaign-highlight glass">
+          <h3>Impact Snapshot</h3>
+          <p>[[awaiting Hamid confirmation]]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section class="section final-cta-section">
+    <div class="container">
+      <div class="glass final-cta-card">
+        <h2>Partner with Frog8 to bring automation to your network.</h2>
+        <p>Schedule a strategy session and map the rollout for your transit, banking, or onboarding programs.</p>
+        <a href="/contact-demo" class="btn btn-primary">Request a Demo</a>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -422,7 +693,7 @@ import advantechLogo from "../assets/partners/Advantech.svg";
     transform: translateY(-5px) scale(1.022);
     z-index: 1;
   }
-  ..section-divider {
+  .section-divider {
     width: 180px;
     max-width: 28vw;
     height: 8px;
@@ -538,98 +809,221 @@ import advantechLogo from "../assets/partners/Advantech.svg";
       font-size: 0.92rem;
     }
   }
-  .case-study-blocks {
+  .case-study-section {
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .case-study-section .container {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem; /* 2.5rem = 40px; increase if you want more space between cards */
+    gap: 2.5rem;
   }
-  .case-study-block {
-    border-radius: 2.1rem;
-    background: rgba(26, 26, 26, 0.85);
-    backdrop-filter: blur(14px);
-    box-shadow:
-      0 4px 28px rgba(0, 0, 0, 0.8),
-      0 2px 8px rgba(167, 210, 33, 0.12);
-    padding: 2rem 1.2rem;
-    border: 1.5px solid rgba(167, 210, 33, 0.25);
-    transition:
-      box-shadow 0.18s,
-      transform 0.15s;
-  }
-  .case-study-block:hover {
-    box-shadow:
-      0 8px 40px rgba(167, 210, 33, 0.25),
-      0 4px 16px rgba(0, 0, 0, 0.9);
-    transform: scale(1.012);
-    border-color: rgba(167, 210, 33, 0.4);
-  }
-  .case-study-row {
+  .case-study-header {
     display: flex;
-    flex-direction: row;
-    gap: 0;
-    justify-content: stretch;
-    align-items: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
-  .case-study-segment {
-    flex: 1 1 0%;
-    padding: 0 1.3rem;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .case-study-label {
-    color: var(--primary-light);
+  .case-study-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 700;
-    font-size: 1.16rem;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.1rem;
-    text-transform: uppercase;
-  }
-  .case-study-content {
+    margin-bottom: 0.75rem;
     color: var(--text);
-    font-size: 1.08rem;
-    line-height: 1.72;
   }
-  .case-study-content ul {
-    padding-left: 1.15em;
-    margin: 0.25em 0 0 0;
+  .case-study-intro {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.85);
+    max-width: 650px;
+  }
+  .case-study-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .case-study-actions .btn {
+    min-width: 180px;
+  }
+  .case-study-media {
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .case-study-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+  }
+  .case-study-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: 24px;
+  }
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: flex-start;
+  }
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .metric-label {
+    font-size: 1rem;
+    color: rgba(245, 245, 245, 0.75);
+  }
+  .case-study-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .partners-label {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(245, 245, 245, 0.6);
+  }
+  .partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .partner-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(167, 210, 33, 0.25);
+    background: rgba(26, 26, 26, 0.75);
+    min-height: 54px;
+  }
+  .partner-chip img {
+    max-height: 32px;
+    max-width: 120px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  }
+  .partner-chip--bmrcl {
+    min-width: 160px;
+  }
+  .partner-chip--bmrcl img {
+    max-height: 48px;
+    max-width: 160px;
+  }
+  .partner-chip--text {
+    color: rgba(245, 245, 245, 0.85);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .case-study-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.82);
+  }
+  .case-study-points {
+    display: grid;
+    gap: 0.75rem;
+    padding-left: 1rem;
     list-style: disc;
-    color: var(--text-muted);
   }
-  .case-study-divider {
-    width: 2px;
-    background: linear-gradient(
-      180deg,
-      rgba(167, 210, 33, 0.16) 0%,
-      rgba(167, 210, 33, 0.07) 100%
-    );
-    border-radius: 2px;
-    margin: 0.5rem 0;
+  .campaign-highlight {
+    padding: 1.75rem 2rem;
+    border-radius: 20px;
+    background: rgba(26, 26, 26, 0.9);
   }
-  @media (max-width: 900px) {
-    .case-study-row {
+  .campaign-highlight h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  .final-cta-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+  }
+  .final-cta-card h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+  }
+  .final-cta-card p {
+    max-width: 640px;
+    font-size: 1.05rem;
+    color: rgba(245, 245, 245, 0.78);
+  }
+
+  @media (max-width: 1024px) {
+    .case-study-metrics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .case-study-section {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .case-study-header {
       flex-direction: column;
-      gap: 1.7rem;
+      align-items: flex-start;
     }
-    .case-study-divider {
-      width: 90%;
-      height: 2px;
-      margin: 1rem auto;
-      background: linear-gradient(
-        90deg,
-        rgba(167, 210, 33, 0.16) 0%,
-        rgba(167, 210, 33, 0.07) 100%
-      );
+    .case-study-actions {
+      width: 100%;
     }
-    .case-study-segment {
-      padding: 0.7rem 0.2rem;
+    .case-study-actions .btn {
+      flex: 1;
+      min-width: 0;
     }
-    .case-study-block {
-      padding: 1.2rem 0.5rem;
+    .case-study-intro {
+      font-size: 1.05rem;
     }
-    .case-study-blocks {
-      gap: 1.8rem;
+    .case-study-metrics {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+    .campaign-highlight {
+      padding: 1.5rem;
+    }
+    .final-cta-card {
+      padding: 2.5rem 1.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .case-study-actions {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .partners-grid {
+      gap: 0.75rem;
+    }
+    .partner-chip {
+      width: 100%;
+      justify-content: center;
+    }
+    .partner-chip img {
+      max-width: 100px;
+    }
+    .final-cta-card {
+      padding: 2rem 1.5rem;
     }
   }
 
@@ -660,6 +1054,401 @@ import advantechLogo from "../assets/partners/Advantech.svg";
     }
     .min-h-\[120px\] {
       min-height: 100px;
+    }
+  }
+
+  /* BMRCL Journey Timeline Styles */
+  .journey-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+      180deg,
+      rgba(167, 210, 33, 0.3) 0%,
+      rgba(167, 210, 33, 0.6) 50%,
+      rgba(167, 210, 33, 0.3) 100%
+    );
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 1.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: #a7d221;
+    border-radius: 50%;
+    border: 3px solid rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 0 4px rgba(167, 210, 33, 0.2),
+                0 4px 12px rgba(167, 210, 33, 0.4);
+    z-index: 2;
+  }
+
+  .timeline-content {
+    padding: 1.75rem 2rem;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .timeline-content:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 40px rgba(167, 210, 33, 0.2);
+  }
+
+  .timeline-date {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #a7d221;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    .journey-timeline::before {
+      left: 1.5rem;
+    }
+
+    .timeline-item {
+      padding-left: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-marker {
+      left: 1rem;
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+
+    .timeline-content {
+      padding: 1.5rem;
+    }
+
+    .timeline-title {
+      font-size: 1.25rem;
+    }
+
+    .timeline-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .journey-timeline::before {
+      left: 1.25rem;
+    }
+
+    .timeline-item {
+      padding-left: 3.5rem;
+    }
+
+    .timeline-marker {
+      left: 0.75rem;
+    }
+  }
+
+  /* Deployment Gallery Styles */
+  .deployment-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(167, 210, 33, 0.25);
+  }
+
+  .gallery-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(167, 210, 33, 0.1) 0%, rgba(26, 26, 26, 0.5) 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .gallery-image-placeholder svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+
+  .gallery-station {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-location {
+    font-size: 0.95rem;
+    color: #a7d221;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .deployment-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .deployment-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Testimonial Styles */
+  .testimonial-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 24px;
+  }
+
+  .testimonial-quote {
+    position: relative;
+  }
+
+  .quote-icon {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    opacity: 0.2;
+  }
+
+  .testimonial-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .testimonial-attribution {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.85);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  .testimonial-source {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #a7d221;
+    padding-left: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .testimonial-text,
+    .testimonial-attribution,
+    .testimonial-source {
+      padding-left: 1.5rem;
+    }
+
+    .quote-icon {
+      top: -0.5rem;
+      left: -0.5rem;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  /* Partnership Styles */
+  .partnership-section {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .partnership-content {
+    padding: 3rem;
+    text-align: center;
+    border-radius: 24px;
+  }
+
+  .partnership-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .partnership-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .partnership-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.85);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .partnership-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .partnership-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(167, 210, 33, 0.2);
+  }
+
+  .partnership-logo {
+    max-height: 60px;
+    max-width: 200px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+  }
+
+  .partnership-logo:hover {
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .partnership-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .partnership-subtitle {
+      font-size: 1.25rem;
+    }
+
+    .partnership-description {
+      font-size: 1rem;
+    }
+
+    .partnership-logos {
+      gap: 2rem;
+    }
+
+    .partnership-logo {
+      max-height: 50px;
+      max-width: 160px;
+    }
+  }
+
+  /* Deployment CTA Styles */
+  .deployment-cta {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 24px;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.85);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-buttons .btn {
+    min-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    .deployment-cta {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .cta-description {
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      min-width: 0;
     }
   }
 </style>

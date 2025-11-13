@@ -1,94 +1,129 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg";
 ---
 
-<Layout title="Frog8 - Veriphy | WhatsApp-First Onboarding Platform">
+<Layout title="Frog8 - Veriphy | Identity & Issuance Platform">
   <Navigation />
 
   <!-- Hero Section -->
-  <section class="section gradient-bg pt-32">
+  <section class="section gradient-bg pt-32 veriphy-hero">
     <div class="container text-center">
-      <h1 class="fade-in mb-8">
-        No portals. No apps. No chaos.<br />
-        Just <span class="text-green">Veriphy</span>.
+      <h1 class="fade-in mb-6">
+        <span class="hero-highlight">Veriphy</span>: Identity &amp; Issuance Platform
       </h1>
-      <p class="fade-in-delay text-xl mb-8 max-w-4xl mx-auto">
-        Messaging-native, secure, compliant onboarding for any business, via
-        WhatsApp, Signal, iMessage, or email.
+      <p class="fade-in-delay text-xl mb-8 max-w-3xl mx-auto">
+        Instant card issuance engine for full-KYC capture and personalization. Banking-grade infrastructure. API-first architecture.
       </p>
       <div class="fade-in-delay flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="btn btn-primary">Get Started</a>
-        <a href="/contact" class="btn btn-secondary">Request Demo</a>
+        <a href="/contact" class="btn btn-primary">Schedule Technical Demo</a>
       </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- How Veriphy Works -->
+  <!-- India's First Section -->
   <section class="section bg-glass-light">
     <div class="container">
-      <h2 class="text-center mb-16 mb-10 md:mb-16">
-        How <span class="text-green">Veriphy Works</span>
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="glass p-6 hover-lift">
-          <div class="icon-box">
-            <svg class="icon-svg" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
-              ></path>
+      <div class="text-center mb-12">
+        <h2 class="mb-4 md:mb-6 text-3xl md:text-4xl font-bold">
+          India's First <span class="text-green">Outside Bank Branches</span>
+        </h2>
+        <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-white/90">
+          Instant Card Issuance, Anywhere
+        </h3>
+        <p class="text-lg md:text-xl max-w-4xl mx-auto text-white/80 mb-8">
+          Veriphy enables banks to issue fully personalized, full-KYC RuPay + NCMC cards in under 45 seconds—outside traditional bank branches. A first in India, powered by our transit-proven platform.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Z" />
+              <path d="M3 22a9 9 0 0 1 18 0" />
             </svg>
           </div>
-          <h4 class="text-green mb-4 text-center">Customer Experience</h4>
-          <p class="text-center">
-            Simple messaging interface - no apps to download, no portals to
-            navigate
-          </p>
+          <h4>Full biometric KYC capture</h4>
+          <p>Fingerprint, iris, face recognition</p>
         </div>
-        <div class="glass p-6 hover-lift">
-          <div class="icon-box">
-            <svg class="icon-svg" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-              ></path>
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="4" y="4" width="16" height="16" rx="3" />
+              <path d="M8 9h8M8 13h5" />
             </svg>
           </div>
-          <h4 class="text-green mb-4 text-center">Frontline Team App</h4>
-          <p class="text-center">
-            Field agents manage onboarding with mobile-first tools and real-time
-            updates
-          </p>
+          <h4>Document verification</h4>
+          <p>Aadhaar, PAN, and more</p>
         </div>
-        <div class="glass p-6 hover-lift">
-          <div class="icon-box">
-            <svg class="icon-svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-              <path
-                fill-rule="evenodd"
-                d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                clip-rule="evenodd"></path>
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
             </svg>
           </div>
-          <h4 class="text-green mb-4 text-center">Manager Console</h4>
-          <p class="text-center">
-            Back office oversight with analytics, compliance tracking, and
-            approval workflows
-          </p>
+          <h4>Instant card personalization</h4>
+          <p>45-second engine</p>
         </div>
-        <div class="glass p-6 hover-lift">
-          <div class="icon-box">
-            <svg class="icon-svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6z" />
+              <path d="M9 12l2 2 4-4" />
             </svg>
           </div>
-          <h4 class="text-green mb-4 text-center">AI-Driven Performance</h4>
-          <p class="text-center">
-            Intelligent insights, automation, and optimization across all
-            touchpoints
-          </p>
+          <h4>Banking-grade security</h4>
+          <p>End-to-end encryption</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 7V4h16v3" />
+              <path d="M10 11l2-2 2 2" />
+              <path d="M12 9v6" />
+              <path d="M4 20h16v-9H4z" />
+            </svg>
+          </div>
+          <h4>Real-time verification APIs</h4>
+          <p>RESTful integration</p>
+        </div>
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h4l1 5 3-10" />
+            </svg>
+          </div>
+          <h4>Regulatory compliance</h4>
+          <p>RBI, UIDAI aligned</p>
+        </div>
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          </div>
+          <h4>Multi-format card printing</h4>
+          <p>RuPay + NCMC</p>
+        </div>
+        <div class="glass capability-card">
+          <div class="capability-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 2v20M2 12h20" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h4>Digital credential issuance</h4>
+          <p>Instant activation</p>
         </div>
       </div>
     </div>
@@ -96,65 +131,43 @@ import Footer from "../components/Footer.astro";
 
   <div class="section-divider"></div>
 
-  <!-- Use Cases Table -->
+  <!-- Why Banks Choose Veriphy -->
   <section class="section bg-black/20">
     <div class="container">
-      <h2 class="text-center mb-16">
-        Use <span class="text-green">Cases</span>
+      <h2 class="text-center mb-12">
+        Why Banks <span class="text-green">Choose Veriphy</span>
       </h2>
-      <div class="overflow-x-auto">
-        <div class="modern-table-glass p-3 rounded-xl shadow-lg">
-          <table class="modern-table w-full min-w-[700px] text-base">
-            <thead>
-              <tr>
-                <th>Industry</th>
-                <th>Use Case</th>
-                <th>Key Benefits</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Lending</td>
-                <td>Loan application and KYC</td>
-                <td>Faster approvals, reduced drop-offs</td>
-              </tr>
-              <tr>
-                <td>Insurance</td>
-                <td>Policy onboarding and claims</td>
-                <td>Digital-first customer experience</td>
-              </tr>
-              <tr>
-                <td>Banking</td>
-                <td>Account opening and verification</td>
-                <td>Regulatory compliance, secure process</td>
-              </tr>
-              <tr>
-                <td>Cards</td>
-                <td>Credit card applications</td>
-                <td>Instant verification, quick issuance</td>
-              </tr>
-              <tr>
-                <td>Recruitment</td>
-                <td>Employee onboarding</td>
-                <td>Streamlined HR processes</td>
-              </tr>
-              <tr>
-                <td>Housing/Access</td>
-                <td>Tenant verification</td>
-                <td>Document management, background checks</td>
-              </tr>
-              <tr>
-                <td>Government</td>
-                <td>Citizen services</td>
-                <td>Digital governance, transparency</td>
-              </tr>
-              <tr>
-                <td>Vendor Onboarding</td>
-                <td>Supplier verification</td>
-                <td>Compliance tracking, audit trails</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Complete KYC and card issuance in under 45 seconds—unmatched in the industry.</p>
+        </div>
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <h3>Banking Grade</h3>
+          <p>End-to-end encryption, secure enclaves, and full regulatory compliance.</p>
+        </div>
+        <div class="glass why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 7V4h16v3" />
+              <path d="M10 11l2-2 2 2" />
+              <path d="M12 9v6" />
+              <path d="M4 20h16v-9H4z" />
+            </svg>
+          </div>
+          <h3>Platform Ready</h3>
+          <p>RESTful APIs, webhook integrations, and comprehensive documentation.</p>
         </div>
       </div>
     </div>
@@ -162,123 +175,52 @@ import Footer from "../components/Footer.astro";
 
   <div class="section-divider"></div>
 
-  <!-- Differentiators -->
-  <section class="section">
+  <!-- Airtel Payments Bank Partnership -->
+  <section class="section bg-glass-light">
     <div class="container">
-      <h2 class="text-center mb-16">
-        What <span class="text-green">Makes Veriphy Different</span>
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="glass p-8 hover-lift">
-          <h4 class="text-green mb-4">Messaging-Native</h4>
-          <p>
-            Works on platforms your customers already use - WhatsApp, Signal,
-            iMessage, email. No app downloads required.
-          </p>
+      <div class="partnership-section glass">
+        <h2 class="partnership-title">
+          Powered by <span class="text-green">Airtel Payments Bank Partnership</span>
+        </h2>
+        <p class="partnership-description">
+          Our instant card issuance platform is live in partnership with Airtel Payments Bank, enabling full-KYC RuPay + NCMC card distribution through our TransiGo 4000 kiosks.
+        </p>
+        <div class="partnership-logo-container">
+          <img src={airtelPaymentsBankLogo.src} alt="Airtel Payments Bank" class="partnership-logo-main" />
         </div>
-        <div class="glass p-8 hover-lift">
-          <h4 class="text-green mb-4">Secure by Default</h4>
-          <p>
-            End-to-end encryption, PII protection, and compliance-ready
-            architecture built for regulated industries.
-          </p>
-        </div>
-        <div class="glass p-8 hover-lift">
-          <h4 class="text-green mb-4">Seamless Integration</h4>
-          <p>
-            APIs and SDKs for CRM, HRMS, eSign, and banking systems. Deploy in
-            days, not months.
-          </p>
-        </div>
-        <div class="glass p-8 hover-lift">
-          <h4 class="text-green mb-4">Role-Aware</h4>
-          <p>
-            Different interfaces for customers, field agents, managers, and
-            admins - each optimized for their workflow.
-          </p>
-        </div>
-        <div class="glass p-8 hover-lift">
-          <h4 class="text-green mb-4">AI-Driven</h4>
-          <p>
-            Intelligent document extraction, fraud detection, and process
-            optimization powered by machine learning.
-          </p>
-        </div>
-        <div class="glass p-8 hover-lift">
-          <h4 class="text-green mb-4">Designed in India</h4>
-          <p>
-            Built for Indian compliance requirements, languages, and business
-            processes from the ground up.
-          </p>
-        </div>
+        <a href="/deployments" class="btn btn-primary">See Live Deployment</a>
       </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Product Tiers (Choose Your Plan) -->
+  <!-- Platform Capabilities -->
   <section class="section bg-black/20">
     <div class="container">
-      <h2 class="text-center mb-16">
-        Choose <span class="text-green">Your Plan</span>
+      <h2 class="text-center mb-12">
+        Platform <span class="text-green">Capabilities</span>
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- LITE -->
-        <div
-          class="glass p-8 hover-lift flex flex-col h-full min-h-[440px] lg:min-h-[480px]"
-        >
-          <h3 class="text-green mb-4">Lite</h3>
-          <p class="mb-6">Perfect for small teams getting started</p>
-          <ul class="space-y-3 flex-1">
-            <li class="font-semibold">WhatsApp integration</li>
-            <li class="font-semibold">Basic document capture</li>
-            <li class="font-semibold">5 users included</li>
-            <li class="font-semibold">Email support included</li>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="glass capability-section">
+          <h3 class="capability-section-title">For Banks</h3>
+          <ul class="capability-list">
+            <li>Instant card issuance outside branches</li>
+            <li>Full KYC capture and verification</li>
+            <li>Reduce customer acquisition costs</li>
+            <li>Expand reach to unbanked segments</li>
+            <li>Real-time reporting and analytics</li>
           </ul>
-          <a href="/contact" class="btn btn-primary w-full mt-8">Choose Lite</a>
         </div>
-        <!-- PRO -->
-        <div
-          class="glass p-8 hover-lift border-2 border-green flex flex-col h-full min-h-[440px] lg:min-h-[480px]"
-        >
-          <h3 class="text-green mb-4">Pro</h3>
-          <p class="mb-6">Advanced features for growing businesses</p>
-          <ul class="space-y-3 flex-1">
-            <li class="font-semibold">Multi-platform messaging</li>
-            <li class="font-semibold">AI document extraction</li>
-            <li class="font-semibold">25 users included</li>
-            <li class="font-semibold">Analytics dashboard</li>
+        <div class="glass capability-section">
+          <h3 class="capability-section-title">For Transit Authorities</h3>
+          <ul class="capability-list">
+            <li>De-anonymize commuters at point of transit</li>
+            <li>Enable personalized services</li>
+            <li>Unlock ecosystem monetization</li>
+            <li>Build customer loyalty programs</li>
+            <li>Access valuable commuter data</li>
           </ul>
-          <a href="/contact" class="btn btn-primary w-full mt-8">Choose Pro</a>
-        </div>
-        <!-- MAX -->
-        <div
-          class="glass p-8 hover-lift flex flex-col h-full min-h-[440px] lg:min-h-[480px]"
-        >
-          <h3 class="text-green mb-4">Max</h3>
-          <p class="mb-6">Enterprise-grade security and compliance</p>
-          <ul class="space-y-3 flex-1">
-            <li class="font-semibold">Advanced security</li>
-            <li class="font-semibold">Compliance features</li>
-            <li class="font-semibold">100 users included</li>
-            <li class="font-semibold">Custom integrations</li>
-          </ul>
-          <a href="/contact" class="btn btn-primary w-full mt-8">Choose Max</a>
-        </div>
-        <!-- ENTERPRISE -->
-        <div
-          class="glass p-8 hover-lift flex flex-col h-full min-h-[440px] lg:min-h-[480px]"
-        >
-          <h3 class="text-green mb-4">Enterprise</h3>
-          <p class="mb-6">Custom solutions for large organizations</p>
-          <ul class="space-y-3 flex-1">
-            <li class="font-semibold">Unlimited users</li>
-            <li class="font-semibold">White-label solution</li>
-            <li class="font-semibold">Dedicated support</li>
-            <li class="font-semibold">Custom development</li>
-          </ul>
-          <a href="/contact" class="btn btn-primary w-full mt-8">Contact Us</a>
         </div>
       </div>
     </div>
@@ -286,180 +228,382 @@ import Footer from "../components/Footer.astro";
 
   <div class="section-divider"></div>
 
-  <!-- Integrations -->
-  <!-- <section class="section">
+  <!-- A First in India -->
+  <section class="section bg-glass-light">
     <div class="container">
-      <h2 class="text-center mb-16">
-        Integrations & <span class="text-green">SDKs</span>
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">CRM</h5>
-          <p class="text-sm">Salesforce, HubSpot</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">HRMS</h5>
-          <p class="text-sm">BambooHR, Workday</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">eSign</h5>
-          <p class="text-sm">DocuSign, Adobe Sign</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Banking APIs</h5>
-          <p class="text-sm">Core banking systems</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Payment</h5>
-          <p class="text-sm">Razorpay, Stripe</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h5 class="text-green mb-2">Storage</h5>
-          <p class="text-sm">AWS S3, Google Cloud</p>
-        </div>
+      <div class="first-india-card glass">
+        <h2 class="first-india-title">A First in India</h2>
+        <p class="first-india-text">
+          Never before has a fully compliant, full-KYC NCMC + RuPay card been issued instantly outside a bank branch. Veriphy makes it possible in under 45 seconds—fully secure, privacy-compliant, and customer-chosen.
+        </p>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div> -->
+  <div class="section-divider"></div>
 
-  <!-- Security & Compliance -->
-  <section class="section bg-black/20">
+  <!-- Final CTA -->
+  <section class="section final-cta-section">
     <div class="container">
-      <h2 class="text-center mb-16">
-        Security & <span class="text-green">Compliance</span>
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="glass p-6 text-center hover-lift">
-          <h4 class="text-green mb-4">PII Protection</h4>
-          <p>
-            Advanced data encryption and privacy controls for sensitive
-            information
-          </p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h4 class="text-green mb-4">KYC Ready</h4>
-          <p>Built-in compliance for Indian KYC and AML requirements</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h4 class="text-green mb-4">End-to-End Encryption</h4>
-          <p>Message and document encryption throughout the entire workflow</p>
-        </div>
-        <div class="glass p-6 text-center hover-lift">
-          <h4 class="text-green mb-4">Audit Trails</h4>
-          <p>
-            Complete audit logs and compliance reporting for regulatory
-            requirements
-          </p>
+      <div class="glass final-cta-card">
+        <h2>Ready to Transform Identity Issuance?</h2>
+        <p>Whether you're a bank seeking to expand reach or a transit authority looking to unlock the customer relationship, let's discuss how Veriphy can help.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary">Request Technical Brief</a>
+          <a href="/kiosks" class="btn btn-secondary">See Platform Hardware</a>
         </div>
       </div>
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>
-  .pricing-card {
+  .veriphy-hero .hero-highlight {
+    background: linear-gradient(135deg, #a7d221, #b8e32e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .capability-grid .capability-card {
+    padding: 2rem;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-  }
-  .pricing-card .button-row {
-    margin-top: auto;
-  }
-
-  /* Modern table styling (consistent, themed, readable) */
-  .modern-table-glass {
-    background: rgba(18, 18, 18, 0.85);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
-    border: 1.5px solid rgba(167, 210, 33, 0.25);
-    box-shadow:
-      0 4px 24px rgba(0, 0, 0, 0.8),
-      0 1.5px 8px rgba(167, 210, 33, 0.12);
-  }
-  .modern-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-    min-width: 700px;
-  }
-  .modern-table thead th {
-    background: rgba(167, 210, 33, 0.15);
-    color: var(--primary-light);
-    font-weight: 800;
-    font-size: 1.05em;
-    padding: 15px 14px;
-    border-bottom: 2px solid rgba(167, 210, 33, 0.3);
+    gap: 1rem;
     text-align: left;
   }
-  .modern-table tbody td {
-    background: transparent;
-    color: var(--text);
-    font-weight: 500;
-    padding: 13px 14px;
-    border-bottom: 1.5px solid rgba(167, 210, 33, 0.1);
-  }
-  .modern-table tbody tr:hover {
-    background: rgba(167, 210, 33, 0.12);
-  }
-  .modern-table tbody td:first-child {
-    font-weight: 700;
-    color: var(--primary-light);
-  }
-
-  @media (max-width: 900px) {
-    .modern-table {
-      min-width: 520px;
-      font-size: 0.98em;
-    }
-    .modern-table-glass {
-      padding: 0.5rem;
-    }
-  }
-  @media (max-width: 640px) {
-    .modern-table {
-      min-width: 340px;
-      font-size: 0.92em;
-    }
-    .modern-table-glass {
-      padding: 0.1rem;
-    }
-  }
-  .text-green {
-    color: #a7d221;
-  }
-  /* Icon sizing & alignment for feature cards */
-  .icon-box {
-    width: 3rem;
-    height: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-    background: rgba(167, 210, 33, 0.17);
-    border-radius: 9999px;
+  .capability-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(167, 210, 33, 0.16);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary);
   }
-  .icon-svg {
-    width: 1.65rem;
-    height: 1.65rem;
-    color: #a7d221;
+  .capability-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke-width: 1.8;
+  }
+  .capability-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .capability-card p {
+    color: rgba(245, 245, 245, 0.75);
+    line-height: 1.6;
   }
 
-  /* Icon sizing for list ticks */
-  .w-4 {
-    width: 1rem;
+  .usecase-grid .usecase-card {
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
-  .h-4 {
-    height: 1rem;
+  .usecase-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
   }
-  .gap-2 {
-    gap: 0.5rem;
+  .usecase-card p {
+    color: rgba(245, 245, 245, 0.78);
+    line-height: 1.6;
   }
-  .border-2 {
-    border-width: 2px;
+
+  .automation-visual {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+    padding: 2.5rem;
+    border-radius: 24px;
+  }
+  .automation-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: rgba(245, 245, 245, 0.85);
+  }
+  .automation-step h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-light);
+  }
+  .automation-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(167, 210, 33, 0.6);
+    font-size: 2rem;
+  }
+
+  .security-grid .security-card {
+    padding: 1.75rem;
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .security-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(167, 210, 33, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+  }
+  .security-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.7;
+  }
+  .security-card h4 {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .security-card p {
+    color: rgba(245, 245, 245, 0.76);
+    line-height: 1.6;
+  }
+
+  .final-cta-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 24px;
+  }
+  .final-cta-card h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+  }
+  .final-cta-card p {
+    max-width: 640px;
+    font-size: 1.05rem;
+    color: rgba(245, 245, 245, 0.78);
+  }
+
+  @media (max-width: 1024px) {
+    .capability-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .automation-visual {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .capability-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .usecase-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .automation-visual {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .automation-arrow span {
+      transform: rotate(90deg);
+    }
+    .final-cta-card {
+      padding: 2.5rem 1.75rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .capability-grid,
+    .usecase-grid,
+    .automation-visual {
+      grid-template-columns: 1fr;
+    }
+    .automation-arrow {
+      display: none;
+    }
+    .final-cta-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  /* Why Cards */
+  .why-card {
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(167, 210, 33, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin: 0 auto 1rem;
+  }
+
+  .why-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 2;
+  }
+
+  .why-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card p {
+    color: rgba(245, 245, 245, 0.8);
+    line-height: 1.7;
+  }
+
+  /* Partnership Section */
+  .partnership-section {
+    padding: 3rem;
+    text-align: center;
+    border-radius: 24px;
+  }
+
+  .partnership-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .partnership-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.85);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+
+  .partnership-logo-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .partnership-logo-main {
+    max-height: 80px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Capability Sections */
+  .capability-section {
+    padding: 2.5rem;
+    border-radius: 20px;
+  }
+
+  .capability-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #a7d221;
+    margin-bottom: 1.5rem;
+  }
+
+  .capability-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .capability-list li {
+    color: rgba(245, 245, 245, 0.85);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .capability-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #a7d221;
+    font-weight: 700;
+  }
+
+  /* First India Card */
+  .first-india-card {
+    padding: 3rem;
+    text-align: center;
+    border-radius: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .first-india-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .first-india-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.85);
+  }
+
+  /* CTA Buttons */
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .why-card {
+      padding: 1.5rem;
+    }
+
+    .partnership-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .capability-section {
+      padding: 2rem;
+    }
+
+    .first-india-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
   }
 </style>

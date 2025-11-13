@@ -1,0 +1,741 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import { Image } from "astro:assets";
+import veriphyPreview from "../assets/veriphy.png";
+import raahiPreview from "../assets/raahi.png";
+import metroVideo from "../assets/metro.webm";
+---
+
+<Layout
+  title="Frog8 - Partner Studio | Experience Our Solutions"
+  description="Explore Frog8’s live product environments, mobility analytics, and onboarding journeys curated for investors and enterprise partners."
+>
+  <Navigation />
+
+  <main>
+    <script is:inline>
+      if (typeof window !== "undefined") {
+        const redirectPath = "/demo-login";
+        const sessionKey = "frog8StudioAccess";
+        const sessionRaw = window.localStorage.getItem(sessionKey);
+
+        const redirectToLogin = () => {
+          window.localStorage.removeItem(sessionKey);
+          window.location.replace(redirectPath);
+        };
+
+        if (!sessionRaw) {
+          redirectToLogin();
+        } else {
+          try {
+            const session = JSON.parse(sessionRaw);
+            const expiresAt = session?.expiresAt ?? 0;
+            if (!expiresAt || Date.now() > Number(expiresAt)) {
+              redirectToLogin();
+            }
+          } catch {
+            redirectToLogin();
+          }
+        }
+
+        const registerLogout = () => {
+          const logoutButton = window.document.getElementById("demo-logout");
+          if (!logoutButton) {
+            return;
+          }
+
+          logoutButton.addEventListener("click", () => {
+            window.localStorage.removeItem(sessionKey);
+            window.location.replace(redirectPath);
+          });
+        };
+
+        if (window.document.readyState === "loading") {
+          window.document.addEventListener("DOMContentLoaded", registerLogout, { once: true });
+        } else {
+          registerLogout();
+        }
+      }
+    </script>
+
+    <!-- Hero -->
+    <section class="section gradient-bg pt-32 studio-hero">
+      <div class="container">
+        <div class="studio-toolbar glass-dark" role="region" aria-label="Session controls">
+          <div class="session-meta">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Secure session active</span>
+          </div>
+          <button type="button" id="demo-logout" class="btn-logout">
+            Log Out
+          </button>
+        </div>
+        <div class="hero-shell glass">
+          <div class="hero-copy">
+            <span class="eyebrow">Partner Experience Suite</span>
+            <h1 class="mb-6">
+              Experience Frog8 <span class="text-green">Solutions</span> in Motion
+            </h1>
+            <p class="hero-subhead">
+              Walk through live deployments, strategic dashboards, and guided journeys that
+              showcase how Frog8 orchestrates frictionless mobility, payments, and onboarding for
+              enterprises across India.
+            </p>
+            <div class="cta-group">
+              <a href="#experience-gallery" class="btn btn-primary">Explore Solutions</a>
+              <a href="/contact" class="btn btn-secondary">Connect with Us</a>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric">
+                <span class="metric-value">45M+</span>
+                <span class="metric-label">Annual journeys powered</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">2 min</span>
+                <span class="metric-label">Average onboarding time</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">24/7</span>
+                <span class="metric-label">Monitored uptime</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-preview">
+            <div class="preview-card glass-dark">
+              <div class="preview-chip">Live Console</div>
+              <h3>Mumbai Metro Growth Console</h3>
+              <p>
+                Visualize commuter analytics, uptime, and transactional flows across stations.
+              </p>
+              <a
+                href="https://mumbai-metro-growth-p7m0.bolt.host/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="preview-link"
+              >
+                Open Console
+              </a>
+            </div>
+            <div class="preview-card glass-dark">
+              <div class="preview-chip chip-secondary">Guided Journey</div>
+              <h3>Veriphy WhatsApp Experience</h3>
+              <p>
+                Explore a secure KYC workflow built for financial institutions and large enterprises.
+              </p>
+              <a
+                href="https://demo.veriphy.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="preview-link"
+              >
+                Launch Experience
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Solution Showcase -->
+    <section id="experience-gallery" class="section experience-gallery">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h2 class="slide-up mb-6">
+            Live <span class="text-green">Solution Experiences</span>
+          </h2>
+          <p class="text-xl max-w-3xl mx-auto">
+            Explore guided views of live deployments. Each experience showcases production-ready
+            modules, integrations, and analytics you can expect when partnering with Frog8.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Mumbai Metro Experience -->
+          <article class="experience-card glass">
+            <div class="experience-media metro-media">
+              <video
+                class="experience-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster={raahiPreview.src}
+              >
+                <source src={metroVideo} type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="experience-content">
+              <div class="experience-header">
+                <span class="experience-label">Mobility Platform</span>
+                <span class="experience-badge">Live Deployment</span>
+              </div>
+              <h3>Mumbai Metro Growth Dashboard</h3>
+              <p>
+                See how Frog8 powers smart ticketing, AFC health, and station performance for
+                one of India’s busiest transit networks. The dashboard highlights kiosk uptime,
+                transaction funnels, and rider engagement in real-time.
+              </p>
+              <ul class="experience-highlights">
+                <li>Station-level analytics and alerting</li>
+                <li>Device fleet monitoring with predictive maintenance</li>
+                <li>Embedded payments with NCMC & UPI support</li>
+              </ul>
+              <div class="experience-actions">
+                <div class="experience-action-row">
+                  <a
+                    href="https://mumbai-metro-growth-p7m0.bolt.host/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    Open Mumbai Metro
+                  </a>
+                  <a href="/platforms" class="btn btn-secondary">View Transit Platform</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veriphy Experience -->
+          <article class="experience-card glass">
+            <div class="experience-media experience-media-image">
+              <Image
+                src={veriphyPreview}
+                alt="Preview of Veriphy WhatsApp onboarding conversation"
+                width={640}
+                height={360}
+                class="experience-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="experience-content">
+              <div class="experience-header">
+                <span class="experience-label">Digital Onboarding</span>
+                <span class="experience-badge">Interactive Prototype</span>
+              </div>
+              <h3>Veriphy WhatsApp Journey</h3>
+              <p>
+                Step into a customer conversation that moves from discovery to verification in
+                minutes. Veriphy orchestrates compliant document capture, biometric checks, and
+                approvals through a single secure chat.
+              </p>
+              <ul class="experience-highlights">
+                <li>Role-aware flows for customers, agents, and reviewers</li>
+                <li>AI-assisted document extraction and fraud safeguards</li>
+                <li>Configurable policies for BFSI, mobility, and housing</li>
+              </ul>
+              <div class="experience-actions">
+                <div class="experience-action-row">
+                  <a
+                    href="https://demo.veriphy.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  >
+                    Launch Veriphy Experience
+                  </a>
+                  <a href="/veriphy" class="btn btn-secondary">Learn About Veriphy</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- How to Engage -->
+    <section class="section engagement">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h2 class="slide-up mb-6">
+            From Exploration to <span class="text-green">Deployment</span>
+          </h2>
+          <p class="text-xl max-w-3xl mx-auto">
+            Our teams guide you through rapid discovery, tailored configuration, and
+            mission-critical rollout. Here’s how we move fast without compromising on control.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="process-card glass">
+            <div class="step-index">01</div>
+            <h4>Discovery Workshop</h4>
+            <p>
+              Map your current journeys, integration points, and compliance needs with our
+              solution architects.
+            </p>
+            <div class="process-footer">~2 weeks</div>
+          </div>
+          <div class="process-card glass">
+            <div class="step-index">02</div>
+            <h4>Pilot Configuration</h4>
+            <p>
+              Launch a sandbox environment with branded experiences, analytics, and live device
+              telemetry.
+            </p>
+            <div class="process-footer">4-6 weeks</div>
+          </div>
+          <div class="process-card glass">
+            <div class="step-index">03</div>
+            <h4>Go-Live & Scale</h4>
+            <p>
+              Train frontline teams, integrate with your ecosystem, and expand coverage with SLA-led
+              support.
+            </p>
+            <div class="process-footer">Continuous</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CTA -->
+    <section class="section final-cta">
+      <div class="container">
+        <div class="cta-card card-premium">
+          <h2 class="mb-6">
+            Ready to Co-Design Your <span class="text-green">Next Launch</span>?
+          </h2>
+          <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Book a deep-dive session with Frog8 experts. We’ll tailor the showcase to your workflows,
+            data stacks, and growth targets.
+          </p>
+          <div class="cta-actions">
+            <a href="/contact" class="btn btn-primary">Schedule Strategy Call</a>
+            <a href="/deployments" class="btn btn-secondary">View Customer Stories</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .studio-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.35rem;
+    border-radius: 18px;
+    margin-bottom: 1.75rem;
+    border: 1px solid rgba(167, 210, 33, 0.28);
+    backdrop-filter: blur(18px);
+  }
+
+  .session-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(145deg, var(--primary-light), var(--primary));
+    box-shadow: 0 0 12px rgba(167, 210, 33, 0.65);
+  }
+
+  .btn-logout {
+    background: rgba(167, 210, 33, 0.16);
+    color: var(--primary-dark);
+    border-radius: 999px;
+    padding: 0.6rem 1.45rem;
+    font-weight: 600;
+    border: 1px solid rgba(167, 210, 33, 0.32);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .btn-logout::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    box-shadow: 0 0 10px rgba(167, 210, 33, 0.6);
+  }
+
+  .btn-logout:hover {
+    transform: translateY(-2px);
+    background: rgba(167, 210, 33, 0.24);
+    box-shadow: 0 10px 22px rgba(167, 210, 33, 0.25);
+    color: var(--primary);
+  }
+
+  .btn-logout:focus-visible {
+    outline: 3px solid rgba(167, 210, 33, 0.32);
+    outline-offset: 3px;
+  }
+
+  .studio-hero .hero-shell {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2.5rem;
+    padding: 3rem;
+    border-radius: 28px;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary-light);
+    background: rgba(167, 210, 33, 0.12);
+    border: 1px solid rgba(167, 210, 33, 0.25);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .hero-subhead {
+    color: var(--text-muted);
+    max-width: 620px;
+  }
+
+  .cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .metric {
+    padding: 1.25rem;
+    border-radius: 18px;
+    border: 1px solid rgba(167, 210, 33, 0.2);
+    background: linear-gradient(
+      135deg,
+      rgba(26, 26, 26, 0.85) 0%,
+      rgba(30, 30, 30, 0.92) 100%
+    );
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .hero-preview {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .preview-card {
+    padding: 1.75rem;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid rgba(167, 210, 33, 0.28);
+  }
+
+  .preview-chip {
+    align-self: flex-start;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(167, 210, 33, 0.18);
+    color: var(--primary-light);
+    border: 1px solid rgba(167, 210, 33, 0.28);
+  }
+
+  .chip-secondary {
+    background: rgba(167, 210, 33, 0.12);
+    color: var(--primary);
+  }
+
+  .preview-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-light);
+    font-weight: 600;
+    text-decoration: none;
+    gap: 0.4rem;
+    transition: var(--transition);
+  }
+
+  .preview-link::after {
+    content: "↗";
+    font-size: 1.1rem;
+  }
+
+  .preview-link:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .experience-gallery .experience-card {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.75rem;
+    padding: 2rem;
+    border-radius: 26px;
+  }
+
+  .experience-media {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 16px 32px rgba(0, 0, 0, 0.5),
+      0 8px 18px rgba(167, 210, 33, 0.12);
+  }
+
+  .experience-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .experience-media-image {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(
+      135deg,
+      rgba(26, 26, 26, 0.85) 0%,
+      rgba(30, 30, 30, 0.9) 100%
+    );
+    padding: 1.5rem;
+  }
+
+  .experience-media-image .experience-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .experience-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .experience-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .experience-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(167, 210, 33, 0.3);
+    background: rgba(167, 210, 33, 0.14);
+  }
+
+  .experience-highlights {
+    display: grid;
+    gap: 0.75rem;
+    color: var(--text);
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .experience-highlights li {
+    position: relative;
+    color: var(--text-muted);
+  }
+
+  .experience-highlights li::marker {
+    color: var(--primary-light);
+  }
+
+  .experience-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .experience-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .engagement {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.9) 0%,
+      rgba(18, 18, 18, 0.88) 45%,
+      rgba(10, 10, 10, 0.9) 100%
+    );
+  }
+
+  .process-card {
+    padding: 2rem;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-index {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(167, 210, 33, 0.25);
+    letter-spacing: -0.04em;
+  }
+
+  .process-footer {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(167, 210, 33, 0.2);
+    padding-top: 0.75rem;
+  }
+
+  .final-cta .cta-card {
+    padding: 3.5rem;
+    border-radius: 28px;
+    text-align: center;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .studio-toolbar {
+      margin-bottom: 1.5rem;
+      padding: 0.85rem 1.2rem;
+    }
+
+    .hero-metrics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .studio-hero .hero-shell {
+      padding: 2.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .studio-toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.85rem 1rem;
+    }
+
+    .studio-hero .hero-shell {
+      padding: 2rem;
+    }
+
+    .hero-metrics {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .experience-gallery .experience-card {
+      padding: 1.75rem;
+    }
+
+    .experience-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .process-card {
+      padding: 1.75rem;
+    }
+
+    .final-cta .cta-card {
+      padding: 2.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .studio-hero .hero-shell {
+      padding: 1.5rem;
+    }
+
+    .cta-group,
+    .experience-actions,
+    .cta-actions {
+      flex-direction: column;
+    }
+
+    .preview-card {
+      padding: 1.35rem;
+    }
+
+    .metric {
+      padding: 1rem;
+    }
+
+    .experience-gallery .experience-card {
+      padding: 1.5rem;
+    }
+
+    .process-card {
+      padding: 1.5rem;
+    }
+
+    .final-cta .cta-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
