@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
+import VerticalNavigation from "../components/VerticalNavigation.astro";
 import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg";
 ---
 
 <Layout title="Frog8 - Veriphy | Identity & Issuance Platform">
-  <Navigation />
+  <VerticalNavigation />
 
   <!-- Hero Section -->
   <section class="section gradient-bg pt-32 veriphy-hero">
@@ -264,13 +264,14 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     -webkit-text-fill-color: transparent;
   }
 
-  .capability-grid .capability-card {
+  .capability-card {
     padding: 2rem;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    text-align: left;
+    text-align: center;
+    align-items: center;
   }
   .capability-icon {
     width: 48px;
@@ -281,6 +282,7 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     align-items: center;
     justify-content: center;
     color: var(--primary);
+    flex-shrink: 0;
   }
   .capability-icon svg {
     width: 26px;
@@ -291,10 +293,12 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text);
+    text-align: center;
   }
   .capability-card p {
     color: rgba(245, 245, 245, 0.75);
     line-height: 1.6;
+    text-align: center;
   }
 
   .usecase-grid .usecase-card {
@@ -405,9 +409,41 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
   }
 
   @media (max-width: 768px) {
-    .capability-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .capability-card {
+      padding: 1.5rem;
+      text-align: center;
+      align-items: center;
     }
+
+    .capability-card h4,
+    .capability-card p {
+      text-align: center;
+    }
+
+    .capability-section {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .capability-section-title {
+      text-align: center;
+    }
+
+    .capability-list {
+      align-items: center;
+      text-align: center;
+    }
+
+    .capability-list li {
+      text-align: center;
+      padding-left: 0;
+      padding-top: 0.5rem;
+    }
+
+    .capability-list li::before {
+      display: none;
+    }
+
     .usecase-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -423,7 +459,18 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
   }
 
   @media (max-width: 640px) {
-    .capability-grid,
+    .capability-card {
+      padding: 1.25rem;
+    }
+
+    .capability-section {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .capability-list li {
+      padding-top: 0.25rem;
+    }
+
     .usecase-grid,
     .automation-visual {
       grid-template-columns: 1fr;
@@ -433,6 +480,28 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     }
     .final-cta-card {
       padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .capability-card {
+      padding: 1rem;
+    }
+
+    .capability-section {
+      padding: 1.25rem 1rem;
+    }
+
+    .why-card {
+      padding: 1.25rem;
+    }
+
+    .partnership-section {
+      padding: 1.5rem 1rem;
+    }
+
+    .first-india-card {
+      padding: 1.5rem 1rem;
     }
   }
 
@@ -517,6 +586,7 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
   .capability-section {
     padding: 2.5rem;
     border-radius: 20px;
+    text-align: center;
   }
 
   .capability-section-title {
@@ -524,6 +594,7 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     font-weight: 700;
     color: #a7d221;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .capability-list {
@@ -533,6 +604,8 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .capability-list li {
@@ -540,6 +613,7 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
     line-height: 1.7;
     padding-left: 1.5rem;
     position: relative;
+    width: 100%;
   }
 
   .capability-list li::before {
@@ -584,26 +658,47 @@ import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg"
   @media (max-width: 768px) {
     .why-card {
       padding: 1.5rem;
+      text-align: center;
+    }
+
+    .why-card h3,
+    .why-card p {
+      text-align: center;
     }
 
     .partnership-section {
       padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .partnership-title,
+    .partnership-description {
+      text-align: center;
     }
 
     .capability-section {
-      padding: 2rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
     }
 
     .first-india-card {
       padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .first-india-title,
+    .first-india-text {
+      text-align: center;
     }
 
     .cta-buttons {
       flex-direction: column;
+      align-items: center;
     }
 
     .cta-buttons .btn {
       width: 100%;
+      max-width: 300px;
     }
   }
 </style>

@@ -58,6 +58,17 @@ const {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
   }
 
   body {
@@ -77,6 +88,14 @@ const {
     -moz-osx-font-smoothing: grayscale;
   }
 
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+  }
+
   /* Account for vertical navigation sidebar (floating panel) and sticky logo */
   #main-content {
     margin-left: 0;
@@ -93,8 +112,39 @@ const {
 
   @media (max-width: 768px) {
     #main-content {
-      padding-left: 0;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
       padding-top: 80px; /* Account for mobile nav bar */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      width: 100%;
+      max-width: 100vw;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    /* Ensure hero sections break out of container on mobile */
+    #main-content > section.hero-section-fullpage,
+    #main-content > section:first-child {
+      position: relative;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      transform: none !important;
+    }
+
+    /* Ensure all content inside hero sections is centered */
+    #main-content > section.hero-section-fullpage > *,
+    #main-content > section:first-child > * {
+      left: 0 !important;
+      right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      transform: none !important;
     }
   }
 
@@ -455,6 +505,17 @@ const {
     margin: 0 auto;
     padding: 0 24px;
     width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   /* Enhanced Button styles */
@@ -963,5 +1024,92 @@ const {
   ::-moz-selection {
     background: var(--primary);
     color: #0a0a0a;
+  }
+
+  /* Unicorn Studio Embed Performance Optimizations */
+  .unicorn-studio-embed {
+    /* GPU acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    
+    /* Smooth rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    
+    /* Reduce repaints */
+    contain: layout style paint;
+    
+    /* Optimize compositing */
+    isolation: isolate;
+  }
+
+  /* Full-page Unicorn Studio Embed - Core Fix */
+  .unicorn-studio-embed-fullpage {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .unicorn-studio-embed {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Performance optimizations for hero sections with Unicorn Studio */
+  .hero-section-fullpage {
+    /* Optimize compositing layer */
+    contain: layout style paint;
+    transform: translateZ(0);
+    will-change: scroll-position;
+  }
+
+  /* Optimize content overlay to prevent repaints */
+  .hero-content-overlay {
+    /* Create new stacking context */
+    isolation: isolate;
+    /* GPU acceleration */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .unicorn-studio-embed {
+      /* Further reduce quality on mobile for better performance */
+      image-rendering: auto;
+    }
+
+    /* Core fix for full-page embed on mobile */
+    .unicorn-studio-embed-fullpage {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100vh !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+      box-sizing: border-box !important;
+    }
+    
+    .hero-section-fullpage {
+      /* Reduce will-change on mobile to save memory */
+      will-change: auto;
+    }
   }
 </style>

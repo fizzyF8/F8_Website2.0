@@ -5,28 +5,31 @@ export default function ScrollNavMenu({ children }) {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Check if we're on desktop (width > 768px)
+      const isDesktop = window.innerWidth > 768;
+      
       // Find the CTA buttons in the hero section
       const heroCta = document.querySelector('.hero-cta');
       const footer = document.querySelector('.footer');
       
-      // Check if footer is in view
-      let footerInView = false;
-      if (footer) {
+      // On desktop only: Check if footer is in view and hide navigation
+      if (isDesktop && footer) {
         const footerRect = footer.getBoundingClientRect();
         // Footer is in view if its top is above the bottom of viewport
-        footerInView = footerRect.top < window.innerHeight;
-      }
-      
-      // If footer is in view, hide navigation
-      if (footerInView) {
-        setIsVisible(false);
-        return;
+        const footerInView = footerRect.top < window.innerHeight;
+        
+        // If footer is in view on desktop, hide navigation
+        if (footerInView) {
+          setIsVisible(false);
+          return;
+        }
       }
       
       if (!heroCta) {
         // If no CTA buttons found, try to find hero section as fallback
         const heroSection = document.querySelector('.hero-section-fullpage');
         if (!heroSection) {
+          // For pages without hero section, show navigation immediately
           setIsVisible(true);
           return;
         }

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
+import VerticalNavigation from "../components/VerticalNavigation.astro";
 
 // Import all partner logos
 import bmrclLogo from "../assets/partners/bmrcl.svg";
@@ -19,10 +19,21 @@ import dataaegisLogo from "../assets/partners/dataaegis.png";
 import airtelPaymentsBankLogo from "../assets/partners/airtel_payments_bank.svg";
 import rupayLogo from "../assets/partners/rupay.png";
 import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp4";
+// Import BMRCL Champs images
+import bmrclChamps1 from "../assets/bmrcl_champs/IMG-20251112-WA0016.jpg";
+import bmrclChamps2 from "../assets/bmrcl_champs/IMG-20251112-WA0018.jpg";
+import bmrclChamps3 from "../assets/bmrcl_champs/IMG-20251112-WA0019.jpg";
+import bmrclChamps4 from "../assets/bmrcl_champs/IMG-20251112-WA0020.jpg";
+import bmrclChamps5 from "../assets/bmrcl_champs/IMG-20251112-WA0021.jpg";
+import bmrclChamps6 from "../assets/bmrcl_champs/IMG-20251112-WA0022.jpg";
+import bmrclChamps7 from "../assets/bmrcl_champs/WhatsApp Image 2025-11-12 at 19.52.06_1bd28dcc.jpg";
+import bmrclChamps8 from "../assets/bmrcl_champs/WhatsApp Image 2025-11-12 at 19.53.23_f38854d0.jpg";
+import bmrclChamps9 from "../assets/bmrcl_champs/WhatsApp Image 2025-11-12 at 19.53.58_188d61fb.jpg";
+import bmrclChamps10 from "../assets/bmrcl_champs/WhatsApp Image 2025-11-12 at 20.22.24_a4987cb5.jpg";
 ---
 
 <Layout title="Frog8 - Deployments | Real-World Success Stories">
-  <Navigation />
+  <VerticalNavigation />
 
   <!-- Hero Section -->
   <section class="section gradient-bg pt-32 pb-10 md:pb-16">
@@ -652,6 +663,80 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
+  <section id="bmrcl-champs" class="section glass case-study-section">
+    <div class="container">
+      <div class="case-study-header">
+        <div>
+          <h2 class="case-study-title">BMRCL Champs · Field Operations Management</h2>
+          <p class="case-study-intro">
+            A comprehensive software solution empowering BMRCL to track, manage, and optimize field operations for PRs maintaining TransiGo devices across Bangalore metro stations.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-study-body">
+        <p>
+          BMRCL Champs streamlines field operations with a dual-platform approach: a web application for administrators to monitor operations, and an Android app for PRs, team leads, and managers to manage daily tasks, attendance, and device maintenance.
+        </p>
+        
+        <div class="champs-features-grid">
+          <div class="champs-feature-card glass">
+            <h3>Android App</h3>
+            <p class="champs-feature-desc">For PRs, Team Leads & Managers</p>
+            <ul class="case-study-points">
+              <li>Geolocation-based attendance marking</li>
+              <li>Task scheduling and completion tracking</li>
+              <li>Leave management system</li>
+              <li>Real-time device status monitoring</li>
+              <li>Transaction viewing and reporting</li>
+              <li>Team coordination and communication</li>
+            </ul>
+          </div>
+          
+          <div class="champs-feature-card glass">
+            <h3>Web Application</h3>
+            <p class="champs-feature-desc">For Administrators</p>
+            <ul class="case-study-points">
+              <li>Centralized dashboard and analytics</li>
+              <li>PR performance and attendance tracking</li>
+              <li>Device health monitoring across stations</li>
+              <li>Task assignment and workflow management</li>
+              <li>Comprehensive reporting and insights</li>
+              <li>Multi-level access control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="champs-gallery glass">
+          <div class="champs-gallery-grid">
+            <img src={bmrclChamps1.src} alt="BMRCL Champs Android App - Dashboard" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps2.src} alt="BMRCL Champs Android App - Attendance" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps3.src} alt="BMRCL Champs Android App - Tasks" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps4.src} alt="BMRCL Champs Android App - Device View" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps5.src} alt="BMRCL Champs Android App - Transactions" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps6.src} alt="BMRCL Champs Android App - Features" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps7.src} alt="BMRCL Champs Web App - Admin Dashboard" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps8.src} alt="BMRCL Champs Web App - Analytics" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps9.src} alt="BMRCL Champs Web App - Management" class="champs-gallery-img" loading="lazy" />
+            <img src={bmrclChamps10.src} alt="BMRCL Champs - Operations Overview" class="champs-gallery-img" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="campaign-highlight glass">
+          <h3>Impact</h3>
+          <p>
+            BMRCL Champs ensures seamless coordination between field teams and administrators, enabling real-time visibility into device health, PR performance, and operational efficiency across all TransiGo deployments in the Bangalore metro network.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
   <section class="section final-cta-section">
     <div class="container">
@@ -791,7 +876,7 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
   }
   .deploy-bullets {
     margin-top: 0.5rem;
-    text-align: left;
+    text-align: center;
     display: inline-block;
     color: var(--text);
     font-size: 1.02rem;
@@ -868,7 +953,8 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
   .metric-value {
     font-size: 2rem;
@@ -983,10 +1069,16 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     }
     .case-study-header {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+    .case-study-title,
+    .case-study-intro {
+      text-align: center;
     }
     .case-study-actions {
       width: 100%;
+      justify-content: center;
     }
     .case-study-actions .btn {
       flex: 1;
@@ -999,11 +1091,30 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
       grid-template-columns: 1fr;
       padding: 1.5rem;
     }
+    .metric-item {
+      align-items: center;
+      text-align: center;
+    }
+    .case-study-body {
+      text-align: center;
+    }
+    .case-study-points {
+      text-align: left;
+      display: inline-block;
+    }
     .campaign-highlight {
       padding: 1.5rem;
+      text-align: center;
+    }
+    .campaign-highlight h3,
+    .campaign-highlight p {
+      text-align: center;
     }
     .final-cta-card {
       padding: 2.5rem 1.75rem;
+    }
+    .deploy-bullets {
+      text-align: center;
     }
   }
 
@@ -1024,6 +1135,14 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     }
     .final-cta-card {
       padding: 2rem 1.5rem;
+    }
+    .partnership-logo-item {
+      min-width: 160px;
+      padding: 1.25rem 1.5rem;
+    }
+    .partnership-logo {
+      max-height: 45px;
+      max-width: 160px;
     }
   }
 
@@ -1357,6 +1476,8 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     background: rgba(26, 26, 26, 0.6);
     border-radius: 16px;
     border: 1px solid rgba(167, 210, 33, 0.2);
+    min-height: 80px;
+    min-width: 200px;
   }
 
   .partnership-logo {
@@ -1367,6 +1488,7 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     object-fit: contain;
     filter: brightness(0.95);
     transition: filter 0.3s ease;
+    display: block;
   }
 
   .partnership-logo:hover {
@@ -1376,6 +1498,13 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
   @media (max-width: 768px) {
     .partnership-content {
       padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .partnership-title,
+    .partnership-subtitle,
+    .partnership-description {
+      text-align: center;
     }
 
     .partnership-subtitle {
@@ -1387,12 +1516,21 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     }
 
     .partnership-logos {
-      gap: 2rem;
+      gap: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .partnership-logo-item {
+      min-width: 180px;
+      width: 100%;
+      max-width: 300px;
     }
 
     .partnership-logo {
       max-height: 50px;
-      max-width: 160px;
+      max-width: 180px;
+      width: 100%;
     }
   }
 
@@ -1449,6 +1587,102 @@ import tvm4000BrochureVideo from "../assets/kiosks/TVM 4000/tvm_4000_brochure.mp
     .cta-buttons .btn {
       width: 100%;
       min-width: 0;
+    }
+  }
+
+  /* BMRCL Champs Styles */
+  .champs-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .champs-feature-card {
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(26, 26, 26, 0.9);
+  }
+
+  .champs-feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .champs-feature-desc {
+    font-size: 1rem;
+    color: rgba(245, 245, 245, 0.7);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .champs-gallery {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    border-radius: 24px;
+    background: rgba(26, 26, 26, 0.9);
+  }
+
+  .champs-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .champs-gallery-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .champs-gallery-img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(167, 210, 33, 0.2);
+  }
+
+  @media (max-width: 1024px) {
+    .champs-features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .champs-feature-card {
+      padding: 1.5rem;
+    }
+
+    .champs-feature-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .champs-gallery {
+      padding: 1.5rem;
+    }
+
+    .champs-gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .champs-feature-card {
+      padding: 1.25rem;
+    }
+
+    .champs-gallery {
+      padding: 1.25rem;
+    }
+
+    .champs-gallery-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

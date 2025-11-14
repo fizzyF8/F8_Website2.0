@@ -1,10 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
+import VerticalNavigation from "../components/VerticalNavigation.astro";
+import vinayakImage from "../assets/leadership/vinayak.jpg";
+import hamidImage from "../assets/leadership/hamid.jpg";
+import premImage from "../assets/leadership/prem_gupta.png";
+import srinivasImage from "../assets/leadership/srinivas_shankar.jpeg";
 ---
 
 <Layout title="Frog8 - About Us | Where Fintech Meets Infrastructure">
-  <Navigation />
+  <VerticalNavigation />
 
   <section class="section gradient-bg pt-32 relative overflow-hidden hero-section">
     <!-- Advanced Background Effects -->
@@ -119,6 +123,14 @@ import Navigation from "../components/Navigation.astro";
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="glass leader-card">
+          <div class="leader-image-wrapper">
+            <img 
+              src={vinayakImage.src} 
+              alt="Vinayak Prasad, Founder" 
+              class="leader-image"
+              loading="lazy"
+            />
+          </div>
           <h3 class="leader-name">Vinayak Prasad</h3>
           <p class="leader-role">Founder</p>
           <p class="leader-bio">
@@ -126,6 +138,14 @@ import Navigation from "../components/Navigation.astro";
           </p>
         </div>
         <div class="glass leader-card">
+          <div class="leader-image-wrapper">
+            <img 
+              src={hamidImage.src} 
+              alt="Mohammed Hamid Ansari, Co-founder" 
+              class="leader-image"
+              loading="lazy"
+            />
+          </div>
           <h3 class="leader-name">Mohammed Hamid Ansari</h3>
           <p class="leader-role">Co-founder</p>
           <p class="leader-bio">
@@ -133,6 +153,14 @@ import Navigation from "../components/Navigation.astro";
           </p>
         </div>
         <div class="glass leader-card">
+          <div class="leader-image-wrapper">
+            <img 
+              src={srinivasImage.src} 
+              alt="Srinivas S, Product Design" 
+              class="leader-image"
+              loading="lazy"
+            />
+          </div>
           <h3 class="leader-name">Srinivas S</h3>
           <p class="leader-role">Product Design</p>
           <p class="leader-bio">
@@ -140,6 +168,14 @@ import Navigation from "../components/Navigation.astro";
           </p>
         </div>
         <div class="glass leader-card">
+          <div class="leader-image-wrapper">
+            <img 
+              src={premImage.src} 
+              alt="Prem Gupta, Platform Architecture" 
+              class="leader-image"
+              loading="lazy"
+            />
+          </div>
           <h3 class="leader-name">Prem Gupta</h3>
           <p class="leader-role">Platform Architecture</p>
           <p class="leader-bio">
@@ -675,6 +711,57 @@ import Navigation from "../components/Navigation.astro";
   .leader-card {
     padding: 2.5rem;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .leader-image-wrapper {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(167, 210, 33, 0.3);
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.4),
+      0 4px 12px rgba(167, 210, 33, 0.2);
+    background: rgba(26, 26, 26, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .leader-card:hover .leader-image-wrapper {
+    border-color: rgba(167, 210, 33, 0.5);
+    box-shadow: 
+      0 12px 32px rgba(0, 0, 0, 0.5),
+      0 6px 16px rgba(167, 210, 33, 0.3);
+    transform: scale(1.05);
+  }
+
+  .leader-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .leader-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(167, 210, 33, 0.4);
+    background: rgba(26, 26, 26, 0.8);
+  }
+
+  .leader-image-placeholder svg {
+    width: 80px;
+    height: 80px;
   }
 
   .leader-name {
@@ -697,6 +784,7 @@ import Navigation from "../components/Navigation.astro";
     font-size: 1.05rem;
     line-height: 1.7;
     color: rgba(245, 245, 245, 0.85);
+    text-align: left;
   }
 
   /* Opportunity Cards */
@@ -777,6 +865,17 @@ import Navigation from "../components/Navigation.astro";
 
     .leader-card {
       padding: 2rem;
+    }
+
+    .leader-image-wrapper {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 1.25rem;
+    }
+
+    .leader-image-placeholder svg {
+      width: 60px;
+      height: 60px;
     }
 
     .opportunity-card {

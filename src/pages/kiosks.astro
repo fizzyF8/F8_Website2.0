@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
+import VerticalNavigation from "../components/VerticalNavigation.astro";
 import InteractiveTVMCards from "../components/InteractiveTVMCards.jsx";
 import UnicornStudioEmbed from "../components/UnicornStudioEmbed.jsx";
 import afcIcon from "../assets/icons/afc_icon.png";
@@ -26,13 +26,13 @@ import tvm4kImage from "../assets/tvm4k.png";
 ---
 
 <Layout title="Frog8 - Transigo | Transit Automation Platform">
-  <Navigation />
+  <VerticalNavigation />
 
   <!-- Full-Page Hero Section with Unicorn Studio Background -->
   <section class="hero-section-fullpage">
     <!-- Unicorn Studio Animation Background -->
     <UnicornStudioEmbed 
-      client:load 
+      client:visible 
       projectId="Ewoj40eRJR83ht443zTr"
       fullPage={true}
     />
@@ -1585,19 +1585,25 @@ import tvm4kImage from "../assets/tvm4k.png";
   /* Full-Page Hero Section */
   .hero-section-fullpage {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     min-height: 100vh;
     overflow: hidden;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    margin-left: calc(-280px - 3rem);
+    margin-right: calc(-100vw + 100%);
   }
 
   /* Content Overlay */
   .hero-content-overlay {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 50;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1606,7 +1612,8 @@ import tvm4kImage from "../assets/tvm4k.png";
       rgba(10, 10, 10, 0.3) 0%,
       rgba(10, 10, 10, 0.6) 100%
     );
-    padding: 120px 2rem 2rem; /* Account for navigation height */
+    padding: 2rem;
+    margin: 0;
   }
 
   .hero-content-layout {
@@ -1932,26 +1939,64 @@ import tvm4kImage from "../assets/tvm4k.png";
     left: 100%;
   }
 
+  @media (max-width: 1024px) {
+    .hero-section-fullpage {
+      margin-left: calc(-260px - 2rem);
+    }
+
+    .hero-content-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2rem;
+    }
+  }
+
   /* Mobile Responsiveness for Hero */
   @media (max-width: 768px) {
     .hero-section-fullpage {
       min-height: 100vh;
       height: auto;
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
 
     .hero-content-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
       padding: 100px 1.5rem 1.5rem;
+      z-index: 50;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-content-layout {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 1rem;
       grid-template-columns: 1fr;
       gap: 2rem;
       text-align: center;
     }
 
     .hero-content-left {
+      width: 100%;
+      padding-left: 0 !important;
       order: 1;
-      padding-left: 0;
+    }
+
+    .hero-title {
+      margin-left: 0 !important;
+      width: 100%;
     }
 
     .hero-content-right {
@@ -2037,6 +2082,13 @@ import tvm4kImage from "../assets/tvm4k.png";
 
   @media (max-width: 480px) {
     .hero-content-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
       padding: 90px 1rem 1rem;
     }
 
