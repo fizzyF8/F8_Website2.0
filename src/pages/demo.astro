@@ -132,6 +132,21 @@ import metroVideo from "../assets/metro.webm";
                 Launch Experience
               </a>
             </div>
+            <div class="preview-card glass-dark">
+              <div class="preview-chip">Live Website</div>
+              <h3>Frog8 Corporate Website</h3>
+              <p>
+                Experience the complete Frog8 brand story, solutions overview, and partner portal.
+              </p>
+              <a
+                href="https://frog8-b2b-website-5878.bolt.host/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="preview-link"
+              >
+                Visit Website
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -319,6 +334,43 @@ import metroVideo from "../assets/metro.webm";
 </Layout>
 
 <style>
+  /* Remove left padding and margin to eliminate dark bar */
+  #main-content {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  #main-content > main {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #main-content > main > section {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #main-content > main > section .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    #main-content {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #main-content {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+
   .studio-toolbar {
     display: flex;
     align-items: center;
@@ -663,78 +715,420 @@ import metroVideo from "../assets/metro.webm";
 
     .hero-metrics {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .hero-preview {
+      gap: 0.875rem;
+    }
+
+    .preview-card {
+      padding: 1.5rem;
     }
   }
 
   @media (max-width: 900px) {
     .studio-hero .hero-shell {
       padding: 2.5rem;
+      gap: 2rem;
+    }
+
+    .hero-copy {
+      gap: 1.5rem;
     }
   }
 
   @media (max-width: 768px) {
+    /* Hero Section Mobile */
+    .studio-hero.section {
+      padding-top: 2rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .studio-hero .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     .studio-toolbar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.6rem;
-      padding: 0.85rem 1rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .session-meta {
+      font-size: 0.875rem;
+      gap: 0.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+    }
+
+    .btn-logout {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+      min-height: 36px;
     }
 
     .studio-hero .hero-shell {
-      padding: 2rem;
+      padding: 1.75rem;
+      gap: 1.75rem;
+      border-radius: 24px;
+    }
+
+    .hero-copy {
+      gap: 1.25rem;
+    }
+
+    .eyebrow {
+      font-size: 0.875rem;
+      padding: 0.35rem 0.75rem;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-subhead {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .cta-group {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .cta-group .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.95rem;
+      min-height: 44px;
     }
 
     .hero-metrics {
       grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 0.875rem;
+    }
+
+    .metric {
+      padding: 1.125rem;
+    }
+
+    .metric-value {
+      font-size: 1.75rem;
+    }
+
+    .metric-label {
+      font-size: 0.875rem;
+    }
+
+    .hero-preview {
+      gap: 0.875rem;
+    }
+
+    .preview-card {
+      padding: 1.25rem;
+      border-radius: 18px;
+    }
+
+    .preview-card h3 {
+      font-size: 1.125rem;
+    }
+
+    .preview-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Experience Gallery Mobile */
+    .experience-gallery.section {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .experience-gallery .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
 
     .experience-gallery .experience-card {
-      padding: 1.75rem;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      border-radius: 20px;
+    }
+
+    .experience-media {
+      border-radius: 16px;
+      min-height: 200px;
+    }
+
+    .experience-content {
+      gap: 1.25rem;
     }
 
     .experience-header {
       flex-direction: column;
       align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .experience-label,
+    .experience-badge {
+      font-size: 0.8rem;
+    }
+
+    .experience-content h3 {
+      font-size: clamp(1.25rem, 4vw, 1.5rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .experience-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .experience-highlights {
+      font-size: 0.9rem;
+      gap: 0.5rem;
+      padding-left: 1rem;
+    }
+
+    .experience-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .experience-action-row {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .experience-actions .btn {
+      width: 100%;
+      justify-content: center;
+      min-height: 44px;
+      font-size: 0.95rem;
+    }
+
+    /* Engagement Section Mobile */
+    .engagement.section {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .engagement .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
 
     .process-card {
-      padding: 1.75rem;
+      padding: 1.5rem;
+      gap: 1rem;
+      border-radius: 20px;
+    }
+
+    .step-index {
+      font-size: 2.5rem;
+    }
+
+    .process-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .process-footer {
+      font-size: 0.85rem;
+      padding-top: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    /* Final CTA Mobile */
+    .final-cta.section {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .final-cta .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
 
     .final-cta .cta-card {
-      padding: 2.5rem;
+      padding: 2rem;
+      border-radius: 24px;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 1rem;
+    }
+
+    .final-cta .text-xl {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .cta-actions .btn {
+      width: 100%;
+      justify-content: center;
+      min-height: 44px;
+      font-size: 0.95rem;
     }
   }
 
   @media (max-width: 480px) {
+    .studio-hero.section {
+      padding-top: 1.5rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    .studio-hero .container,
+    .experience-gallery .container,
+    .engagement .container,
+    .final-cta .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .studio-toolbar {
+      padding: 0.625rem 0.875rem;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+    }
+
+    .session-meta {
+      font-size: 0.8rem;
+    }
+
+    .btn-logout {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      min-height: 32px;
+    }
+
     .studio-hero .hero-shell {
-      padding: 1.5rem;
+      padding: 1.25rem;
+      gap: 1.5rem;
+      border-radius: 20px;
     }
 
-    .cta-group,
-    .experience-actions,
-    .cta-actions {
-      flex-direction: column;
+    .hero-copy h1 {
+      font-size: clamp(1.5rem, 7vw, 2rem);
+      margin-bottom: 0.75rem;
     }
 
-    .preview-card {
-      padding: 1.35rem;
+    .hero-subhead {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-group .btn {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+      min-height: 48px;
     }
 
     .metric {
       padding: 1rem;
     }
 
+    .metric-value {
+      font-size: 1.5rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+    }
+
+    .preview-card {
+      padding: 1rem;
+      border-radius: 16px;
+    }
+
+    .preview-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-card p {
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
     .experience-gallery .experience-card {
-      padding: 1.5rem;
+      padding: 1.25rem;
+      gap: 1.25rem;
+    }
+
+    .experience-media {
+      min-height: 180px;
+    }
+
+    .experience-content h3 {
+      font-size: clamp(1.125rem, 5vw, 1.375rem);
+    }
+
+    .experience-content p {
+      font-size: 0.9rem;
+    }
+
+    .experience-highlights {
+      font-size: 0.85rem;
     }
 
     .process-card {
-      padding: 1.5rem;
+      padding: 1.25rem;
+    }
+
+    .step-index {
+      font-size: 2rem;
+    }
+
+    .process-card h4 {
+      font-size: 1.125rem;
     }
 
     .final-cta .cta-card {
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.25rem, 6vw, 1.75rem);
+    }
+
+    .final-cta .text-xl {
+      font-size: 0.95rem;
+    }
+
+    .cta-actions .btn {
+      padding: 0.75rem 1.25rem;
+      min-height: 48px;
     }
   }
 </style>

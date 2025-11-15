@@ -7,6 +7,8 @@ import logo from "../assets/logo.png";
 <Layout
   title="Frog8 Partner Access | Secure Login"
   description="Authenticate to enter the Frog8 Partner Studio. Review live product environments, investor materials, and performance dashboards in one secure space."
+  hasSidebar={false}
+  showFooter={false}
 >
   <main class="login-surface">
     <section class="section demo-login-hero">
@@ -159,14 +161,39 @@ import logo from "../assets/logo.png";
 </script>
 
 <style>
+  /* Layout now handles sidebar spacing via props, but ensure login page is full-width */
+  
+  /* Ensure body background matches login page - override dark theme */
+  :global(body.no-sidebar) {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 45%, #eef3ff 100%) !important;
+    background-attachment: fixed;
+  }
+
+  #main-content.no-sidebar {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
   .login-surface {
     min-height: 100vh;
     background: linear-gradient(135deg, #f9fafb 0%, #ffffff 45%, #eef3ff 100%);
     color: #111111;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
   }
 
   .demo-login-hero {
     padding-block: clamp(3rem, 6vh, 5rem);
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   .login-container {
@@ -400,18 +427,129 @@ import logo from "../assets/logo.png";
   }
 
   @media (max-width: 768px) {
+    /* Ensure no top spacing on mobile */
+    #main-content.no-sidebar {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    .login-surface {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      min-height: 100vh;
+    }
+
+    .demo-login-hero {
+      padding-top: clamp(1.5rem, 3vh, 2rem) !important;
+      padding-bottom: clamp(2rem, 4vh, 3rem) !important;
+      margin-top: 0 !important;
+    }
+
+    .login-container {
+      min-height: auto;
+      padding-block: 1rem;
+    }
+
     .demo-login-hero .login-grid {
-      padding: 2.25rem;
-      gap: 2.25rem;
+      padding: 2rem;
+      gap: 2rem;
+      border-radius: 24px;
+    }
+
+    .login-intro {
+      gap: 1.25rem;
+    }
+
+    .login-intro h1 {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .login-intro .text-lg {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .intro-list {
+      padding-left: 1rem;
+      gap: 0.5rem;
+      font-size: 0.9rem;
     }
 
     .support-actions {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .support-actions .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .support-link {
+      justify-content: center;
+      text-align: center;
+      padding: 0.5rem;
     }
 
     .login-panel {
-      padding: 2.25rem;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .login-panel h2 {
+      font-size: clamp(1.5rem, 4vw, 1.875rem);
+      margin-bottom: 1rem;
+    }
+
+    .panel-subhead {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .login-form {
+      gap: 1.25rem;
+    }
+
+    .input-group {
+      gap: 0.5rem;
+    }
+
+    .input-group label {
+      font-size: 0.875rem;
+    }
+
+    .input-group input {
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      min-height: 44px; /* Better touch target */
+    }
+
+    .remember-me {
+      font-size: 0.9rem;
+    }
+
+    .remember-me input {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+      min-height: 48px; /* Better touch target */
+      justify-content: center;
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      line-height: 1.5;
     }
   }
 
@@ -420,13 +558,97 @@ import logo from "../assets/logo.png";
       background: #ffffff;
     }
 
+    .demo-login-hero {
+      padding-top: 1rem !important;
+      padding-bottom: 1.5rem !important;
+    }
+
+    .login-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-block: 0.5rem;
+    }
+
     .demo-login-hero .login-grid {
-      padding: 1.75rem;
-      gap: 2rem;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      border-radius: 20px;
+    }
+
+    .brand-mark img {
+      width: min(180px, 50%);
+    }
+
+    .login-intro {
+      gap: 1rem;
+    }
+
+    .login-intro h1 {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .eyebrow-alt {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.75rem;
+    }
+
+    .login-intro .text-lg {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .intro-list {
+      font-size: 0.85rem;
+      gap: 0.5rem;
+      padding-left: 0.875rem;
     }
 
     .login-panel {
-      padding: 1.85rem;
+      padding: 1.5rem;
+      border-radius: 18px;
+    }
+
+    .login-panel h2 {
+      font-size: clamp(1.25rem, 5vw, 1.5rem);
+    }
+
+    .panel-subhead {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .code-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+
+    .login-form {
+      gap: 1rem;
+    }
+
+    .input-group input {
+      padding: 0.75rem 0.875rem;
+      font-size: 16px; /* Prevents zoom on iOS */
+      min-height: 48px;
+    }
+
+    .btn-primary {
+      min-height: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .status-text {
+      font-size: 0.85rem;
+    }
+
+    .helper-text {
+      font-size: 0.75rem;
+      line-height: 1.4;
     }
   }
 </style>
