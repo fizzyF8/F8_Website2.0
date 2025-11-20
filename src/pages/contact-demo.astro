@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Redirecting…">
+  <meta http-equiv="refresh" content="0;url=/contact" />
+  <link rel="canonical" href="/contact" />
+
+  <section class="section">
+    <div class="container">
+      <div class="glass redirect-card">
+        <h1>Redirecting to Contact</h1>
+        <p>If you are not redirected automatically, follow the link below.</p>
+        <a href="/contact" class="btn-primary-link">Go to Contact</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .redirect-card {
+    padding: 2rem;
+    text-align: center;
+    border-radius: 20px;
+  }
+  .btn-primary-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0a0a0a;
+    text-decoration: none;
+    background: linear-gradient(135deg, #a7d221 0%, #b8e32e 100%);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(167, 210, 33, 0.3);
+  }
+  .btn-primary-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(167, 210, 33, 0.5);
+  }
+</style>
+
+

@@ -403,7 +403,9 @@ import tvm4kImage from "../assets/tvm4k.png";
   <!-- Automation Image Section -->
   <section class="automation-image-section">
     <div class="container">
-      <h2 class="automation-image-heading accent-underline text-center mb-12">Automation tailored to <span class="text-green">Your Needs</span></h2>
+      <div class="text-center mb-12">
+        <h2 class="automation-image-heading accent-underline">Automation tailored to <span class="text-green">Your Needs</span></h2>
+      </div>
       <div class="automation-tailored-content text-center mb-8">
           <p class="automation-tailored-text">
             Every metro system has its own story. Transigo's modular design ensures seamless integration with your network's ticketing, recharge, and smart-card infrastructure.
@@ -1743,7 +1745,7 @@ import tvm4kImage from "../assets/tvm4k.png";
   /* Scroll Indicator */
   .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 60;
@@ -2094,7 +2096,7 @@ import tvm4kImage from "../assets/tvm4k.png";
     }
 
     .scroll-indicator {
-      bottom: 20px;
+      bottom: 40px;
     }
 
     .scroll-text {
@@ -2202,10 +2204,30 @@ import tvm4kImage from "../assets/tvm4k.png";
   }
 
   .f8-input,
-  .f8-select,
   .f8-textarea {
     width: 100%;
     padding: 1.13rem 1.13rem;
+    border-radius: 1.15rem;
+    border: 1.5px solid rgba(167, 210, 33, 0.25);
+    background: rgba(26, 26, 26, 0.8);
+    color: var(--text);
+    font-size: 1.09rem;
+    margin-bottom: 0.9rem;
+    outline: none;
+    transition:
+      border 0.17s,
+      background 0.18s;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  /* Dropdown icon only for select elements */
+  .f8-select {
+    width: 100%;
+    padding: 1.13rem 3rem 1.13rem 1.13rem;
     border-radius: 1.15rem;
     border: 1.5px solid rgba(167, 210, 33, 0.25);
     background: rgba(26, 26, 26, 0.8);
@@ -2225,12 +2247,6 @@ import tvm4kImage from "../assets/tvm4k.png";
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1.5em 1.5em;
-    padding-right: 3rem;
-  }
-
-  .f8-textarea {
-    background-image: none;
-    padding-right: 1.13rem;
   }
 
   .f8-input:focus,

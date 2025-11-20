@@ -274,14 +274,6 @@ import whatsapp from "../assets/whatsapp.png";
       <div class="max-w-2xl mx-auto space-y-4">
         <details class="glass p-4">
           <summary class="font-semibold text-green cursor-pointer"
-            >Do you support PAN India deployments?</summary
-          >
-          <div class="mt-2 text-white/80 text-sm">
-            Yes, we deploy and maintain kiosks in every Indian state.
-          </div>
-        </details>
-        <details class="glass p-4">
-          <summary class="font-semibold text-green cursor-pointer"
             >How fast can I get a demo?</summary
           >
           <div class="mt-2 text-white/80 text-sm">
@@ -293,17 +285,48 @@ import whatsapp from "../assets/whatsapp.png";
             >Can you customize solutions?</summary
           >
           <div class="mt-2 text-white/80 text-sm">
-            Absolutely. Nearly every deployment we do is tailored for each
+            Absolutely. Every deployment we do is tailored for each
             partner.
           </div>
         </details>
         <details class="glass p-4">
           <summary class="font-semibold text-green cursor-pointer"
-            >What support do you provide?</summary
+            >Where are your kiosks currently deployed?</summary
           >
           <div class="mt-2 text-white/80 text-sm">
-            24/7 phone, WhatsApp, and email support. On-site engineers available
-            as needed.
+            Our Transigo kiosks are live at Bengaluru Namma Metro stations, processing thousands of daily transactions with 99.9% uptime.
+          </div>
+        </details>
+        <details class="glass p-4">
+          <summary class="font-semibold text-green cursor-pointer"
+            >What payment methods do your transit kiosks support?</summary
+          >
+          <div class="mt-2 text-white/80 text-sm">
+            They support all digital payments including UPI and cards, along with NCMC card top-ups and QR code ticketing.
+          </div>
+        </details>
+        <details class="glass p-4">
+          <summary class="font-semibold text-green cursor-pointer"
+            >Can your kiosks issue bank cards instantly?</summary
+          >
+          <div class="mt-2 text-white/80 text-sm">
+            Yes, our upcoming Transigo 4000 series enables instant issuance of full-KYC, personalized RuPay + NCMC cards in under 45 seconds.
+          </div>
+        </details>
+        <details class="glass p-4">
+          <summary class="font-semibold text-green cursor-pointer"
+            >Do you provide solutions beyond transit?</summary
+          >
+          <div class="mt-2 text-white/80 text-sm">
+            Yes, we offer Navigo for banking automation (passbook printing, CTS) and Veriphy for messaging-native onboarding and KYC.
+          </div>
+        </details>
+        <details class="glass p-4">
+          <summary class="font-semibold text-green cursor-pointer"
+            >Is your infrastructure secure and compliant?</summary
+          >
+          <div class="mt-2 text-white/80 text-sm">
+            Absolutely. Our platforms are built with enterprise-grade security, end-to-end encryption, and are fully RBI and NCMC compliant.
           </div>
         </details>
       </div>
@@ -390,7 +413,7 @@ import whatsapp from "../assets/whatsapp.png";
   /* Scroll Indicator */
   .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 60;
@@ -825,12 +848,32 @@ import whatsapp from "../assets/whatsapp.png";
 
   input,
   textarea,
-  select,
   .f8-input,
-  .f8-select,
   .f8-textarea {
     width: 100%;
     padding: 1.13rem 1.13rem;
+    border-radius: 1.15rem;
+    border: 1.5px solid rgba(167, 210, 33, 0.25);
+    background: rgba(26, 26, 26, 0.8);
+    color: var(--text);
+    font-size: 1.09rem;
+    margin-bottom: 0.9rem;
+    outline: none;
+    transition:
+      border 0.17s,
+      background 0.18s;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  /* Dropdown icon only for select elements */
+  select,
+  .f8-select {
+    width: 100%;
+    padding: 1.13rem 3rem 1.13rem 1.13rem;
     border-radius: 1.15rem;
     border: 1.5px solid rgba(167, 210, 33, 0.25);
     background: rgba(26, 26, 26, 0.8);
@@ -850,7 +893,6 @@ import whatsapp from "../assets/whatsapp.png";
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1.5em 1.5em;
-    padding-right: 3rem;
   }
 
   input:focus,
@@ -1122,7 +1164,7 @@ import whatsapp from "../assets/whatsapp.png";
     }
 
     .scroll-indicator {
-      bottom: 20px;
+      bottom: 40px;
     }
 
     .scroll-text {

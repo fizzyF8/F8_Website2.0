@@ -1,10 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import VerticalNavigation from "../components/VerticalNavigation.astro";
+import TeamWheel from "../components/TeamWheel.jsx";
 import vinayakImage from "../assets/leadership/vinayak.jpg";
 import hamidImage from "../assets/leadership/hamid.jpg";
 import premImage from "../assets/leadership/prem_gupta.png";
 import srinivasImage from "../assets/leadership/srinivas_shankar.jpeg";
+
+const leadershipTeam = [
+  {
+    name: "Vinayak Prasad",
+    role: "Founder",
+    bio: "~30 years in retail banking, fintech, and self-service automation. Leadership roles at Capital One, Verifone, and Meta. Deep expertise in payment systems and platform scaling.",
+    image: vinayakImage.src
+  },
+  {
+    name: "Mohammed Hamid Ansari",
+    role: "Co-founder",
+    bio: "20+ years in banking infrastructure and platform delivery. Led grid-wide deployments with Forbes Technosys for major banks including SBI and DBS. Expert in enterprise-scale implementation.",
+    image: hamidImage.src
+  },
+  {
+    name: "Srinivas S",
+    role: "Product Design",
+    bio: "40+ years in product design for transit, urban mobility, and smart-pay solutions. Deep experience in BRTS, metro systems, and AFCS (Automated Fare Collection Systems).",
+    image: srinivasImage.src
+  },
+  {
+    name: "Prem Gupta",
+    role: "Platform Architecture",
+    bio: "20+ years in regulated fintech platforms. Expertise in payments, loyalty, issuance, acquiring, and system architecture. Ensures regulatory compliance and security.",
+    image: premImage.src
+  },
+  {
+    name: "Sunil Kulkarni",
+    role: "Strategic Advisor",
+    bio: "Fintech veteran and former CEO of BCFI. Deep expertise in digital distribution, banking infrastructure, and driving financial inclusion across India.",
+    image: null
+  }
+];
 ---
 
 <Layout title="Frog8 - About Us | Where Fintech Meets Infrastructure">
@@ -121,68 +155,7 @@ import srinivasImage from "../assets/leadership/srinivas_shankar.jpeg";
       <p class="text-center mb-12 text-lg text-white/80 max-w-3xl mx-auto">
         Proven leaders with deep, specific expertise across transit, payments, and platform scaling
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="glass leader-card">
-          <div class="leader-image-wrapper">
-            <img 
-              src={vinayakImage.src} 
-              alt="Vinayak Prasad, Founder" 
-              class="leader-image"
-              loading="lazy"
-            />
-          </div>
-          <h3 class="leader-name">Vinayak Prasad</h3>
-          <p class="leader-role">Founder</p>
-          <p class="leader-bio">
-            ~30 years in retail banking, fintech, and self-service automation. Leadership roles at Capital One, Verifone, and Meta. Deep expertise in payment systems and platform scaling.
-          </p>
-        </div>
-        <div class="glass leader-card">
-          <div class="leader-image-wrapper">
-            <img 
-              src={hamidImage.src} 
-              alt="Mohammed Hamid Ansari, Co-founder" 
-              class="leader-image"
-              loading="lazy"
-            />
-          </div>
-          <h3 class="leader-name">Mohammed Hamid Ansari</h3>
-          <p class="leader-role">Co-founder</p>
-          <p class="leader-bio">
-            20+ years in banking infrastructure and platform delivery. Led grid-wide deployments with Forbes Technosys for major banks including SBI and DBS. Expert in enterprise-scale implementation.
-          </p>
-        </div>
-        <div class="glass leader-card">
-          <div class="leader-image-wrapper">
-            <img 
-              src={srinivasImage.src} 
-              alt="Srinivas S, Product Design" 
-              class="leader-image"
-              loading="lazy"
-            />
-          </div>
-          <h3 class="leader-name">Srinivas S</h3>
-          <p class="leader-role">Product Design</p>
-          <p class="leader-bio">
-            40+ years in product design for transit, urban mobility, and smart-pay solutions. Deep experience in BRTS, metro systems, and AFCS (Automated Fare Collection Systems).
-          </p>
-        </div>
-        <div class="glass leader-card">
-          <div class="leader-image-wrapper">
-            <img 
-              src={premImage.src} 
-              alt="Prem Gupta, Platform Architecture" 
-              class="leader-image"
-              loading="lazy"
-            />
-          </div>
-          <h3 class="leader-name">Prem Gupta</h3>
-          <p class="leader-role">Platform Architecture</p>
-          <p class="leader-bio">
-            20+ years in regulated fintech platforms. Expertise in payments, loyalty, issuance, acquiring, and system architecture. Ensures regulatory compliance and security.
-          </p>
-        </div>
-      </div>
+      <TeamWheel client:visible members={leadershipTeam} />
     </div>
   </section>
 
@@ -197,7 +170,7 @@ import srinivasImage from "../assets/leadership/srinivas_shankar.jpeg";
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div class="glass opportunity-card">
           <div class="opportunity-value">$100B</div>
-          <div class="opportunity-label">Metro Market by 2030</div>
+          <a href="https://mumbai-metro-growth-p7m0.bolt.host/" target="_blank" rel="noopener noreferrer" class="opportunity-label hover:text-green transition-colors">Metro Market by 2030</a>
         </div>
         <div class="glass opportunity-card">
           <div class="opportunity-value">100M</div>
@@ -705,86 +678,6 @@ import srinivasImage from "../assets/leadership/srinivas_shankar.jpeg";
   .approach-card p {
     color: rgba(245, 245, 245, 0.8);
     line-height: 1.7;
-  }
-
-  /* Leader Cards */
-  .leader-card {
-    padding: 2.5rem;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .leader-image-wrapper {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 1.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid rgba(167, 210, 33, 0.3);
-    box-shadow: 
-      0 8px 24px rgba(0, 0, 0, 0.4),
-      0 4px 12px rgba(167, 210, 33, 0.2);
-    background: rgba(26, 26, 26, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .leader-card:hover .leader-image-wrapper {
-    border-color: rgba(167, 210, 33, 0.5);
-    box-shadow: 
-      0 12px 32px rgba(0, 0, 0, 0.5),
-      0 6px 16px rgba(167, 210, 33, 0.3);
-    transform: scale(1.05);
-  }
-
-  .leader-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .leader-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(167, 210, 33, 0.4);
-    background: rgba(26, 26, 26, 0.8);
-  }
-
-  .leader-image-placeholder svg {
-    width: 80px;
-    height: 80px;
-  }
-
-  .leader-name {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-
-  .leader-role {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #a7d221;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .leader-bio {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: rgba(245, 245, 245, 0.85);
-    text-align: left;
   }
 
   /* Opportunity Cards */

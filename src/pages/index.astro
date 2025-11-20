@@ -8,6 +8,7 @@ import tvm2000Modi from '../assets/kiosks/TVM 2000/tvm2000_modi.jpg';
 import tvm2000Modi2 from '../assets/kiosks/TVM 2000/tvm2000_modi_2.jpg';
 import tvm2000Modi3 from '../assets/kiosks/TVM 2000/tvm2000_modi_3.jpg';
 import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
+import tvm2kAdEnglish from '../assets/kiosks/TVM 2000/tvm2k_ad_english.mp4';
 ---
 
 <Layout>
@@ -35,14 +36,14 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
           </p>
           
           <p class="hero-description">
-            Frog8 builds connected platforms and intelligent kiosks that transform access—across transit, banking, and public services. From metro stations to rural banks, our solutions simplify how India moves, pays, and verifies.
+            Frog8 builds connected platforms and intelligent kiosks that transform access - across transit, banking, and public services. From metro stations to rural banks, our solutions simplify how India moves, pays, and verifies.
           </p>
           
           <div class="hero-cta">
             <a href="/contact" class="btn btn-primary">
               <span>Schedule a Demo</span>
               <div class="btn-shine"></div>
-            </a>
+            </a>  
             <a href="/platforms" class="btn btn-secondary">
               <span>Explore Our Offerings</span>
               <div class="btn-shine"></div>
@@ -63,43 +64,78 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
   <!-- [Updated: Frog8 Rebuild Nov 2025 - by Fizzy] -->
   <section class="credibility-strip">
     <div class="container">
-      <div class="credibility-grid glass">
-        <div class="credibility-copy">
-          <p class="credibility-text">
-            Trusted by India’s Leaders — PM Modi inaugurated and used our Transigo kiosk at Namma Metro.
+      <div class="credibility-card-redesigned glass">
+        <!-- Header Section -->
+        <div class="credibility-header">
+          <h2 class="credibility-title">
+            Trusted by India's <span class="text-primary">Leaders</span>
+          </h2>
+          <p class="credibility-subtitle">
+            PM Modi inaugurated and used our Transigo kiosk at Namma Metro
           </p>
-          <div class="credibility-badges">
-            <span class="credibility-badge">BMRCL Yellow Line</span>
-            <span class="credibility-badge">Inaugurated by PM Modi</span>
-            <span class="credibility-badge">Live Passenger Deployments</span>
-          </div>
-          <div class="credibility-actions">
-            <VideoButton 
-              client:load
-              videoSrc={tvm2kAdVideo}
-              className="btn btn-outline-primary"
-            >
-              Watch Video
-            </VideoButton>
-            <a 
-              href="https://archive.is/H8DGh" 
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read Press Coverage
-            </a>
-          </div>
         </div>
-        <div class="credibility-image">
-          <CredibilityCarousel 
-            client:load
-            images={[
-              { src: tvm2000Modi.src, alt: 'Prime Minister Narendra Modi inaugurating the Transigo kiosk at Namma Metro' },
-              { src: tvm2000Modi2.src, alt: 'Dignitaries touring the Transigo kiosk during the Namma Metro launch' },
-              { src: tvm2000Modi3.src, alt: 'Commuters engaging with the Transigo kiosk at the metro station' }
-            ]}
-          />
+
+        <!-- Main Content Grid -->
+        <div class="credibility-content-grid">
+          <!-- Left: Timeline & Info -->
+          <div class="credibility-info-section">
+            <!-- Milestone Event -->
+            <div class="timeline-container">
+              <div class="timeline-header">
+                <svg class="timeline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <h3 class="timeline-title">A Historic Milestone</h3>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-date">August 10, 2025</div>
+                  <div class="timeline-event">Prime Minister Narendra Modi inaugurated the BMRCL Yellow Line, a 19.15 km fully elevated metro corridor connecting Rashtreeya Vidyalaya Road to Bommasandra with 16 stations.</div>
+                  <div class="timeline-location">During this historic inauguration, PM Modi personally used and inaugurated our Transigo kiosk at Namma Metro, marking a significant moment for digital transit infrastructure in India.</div>
+                  <a 
+                    href="https://archive.is/H8DGh" 
+                    class="timeline-press-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read Press Coverage >>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Actions -->
+              <div class="credibility-actions">
+                <p class="credibility-video-description">Learn how to use our Transigo kiosk — tutorial by an Instagram influencer</p>
+                <div class="credibility-actions-buttons">
+                  <VideoButton 
+                    client:load
+                    videoSrc={tvm2kAdVideo}
+                    englishVideoSrc={tvm2kAdEnglish}
+                    className="btn btn-outline-primary"
+                  >
+                    Watch Tutorial
+                  </VideoButton>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Image Carousel -->
+          <div class="credibility-image">
+            <CredibilityCarousel 
+              client:load
+              images={[
+                { src: tvm2000Modi.src, alt: 'Prime Minister Narendra Modi inaugurating the Transigo kiosk at Namma Metro' },
+                { src: tvm2000Modi2.src, alt: 'Dignitaries touring the Transigo kiosk during the Namma Metro launch' },
+                { src: tvm2000Modi3.src, alt: 'Commuters engaging with the Transigo kiosk at the metro station' }
+              ]}
+            />
+            <p class="credibility-image-description">
+              <span class="neon-highlight">PM Narendra Modi</span> using our Transigo kiosk at Namma Metro, showcasing India's digital transit infrastructure.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -180,7 +216,7 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
       <div class="what-we-build-grid">
         <article class="glass solution-card">
           <div class="solution-card-header">
-            <h3>Transigo</h3>
+            <h3>Transit automation</h3>
             <p class="solution-subtitle">Transit Kiosks</p>
           </div>
           <p class="solution-description">Ticketing, Payments, Issuance</p>
@@ -191,8 +227,8 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
 
         <article class="glass solution-card">
           <div class="solution-card-header">
-            <h3>Navigo</h3>
-            <p class="solution-subtitle">Banking Automation</p>
+            <h3>Banking automation</h3>
+            <p class="solution-subtitle">Self-Service Kiosks</p>
           </div>
           <p class="solution-description">Passbook Printing, CTS, Card Issuance</p>
           <a href="/navigo" class="btn btn-primary solution-cta">
@@ -202,7 +238,7 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
 
         <article class="glass solution-card">
           <div class="solution-card-header">
-            <h3>Veriphy</h3>
+            <h3>WhatsApp workflow management</h3>
             <p class="solution-subtitle">Messaging-Native Onboarding</p>
           </div>
           <p class="solution-description">KYC, Workflow, Automation</p>
@@ -252,7 +288,7 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
         <p class="text-xl mb-8 max-w-3xl mx-auto">
           Let’s plan your rollout across transit, banking, or public service locations with resilient infrastructure.
         </p>
-        <a href="/contact-demo" class="btn btn-primary">Request a Demo</a>
+        <a href="/contact" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
   </section>
@@ -364,7 +400,7 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
   /* Scroll Indicator */
   .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 60;
@@ -589,64 +625,199 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
     left: 100%;
   }
 
-  /* Credibility Strip */
+  /* Credibility Strip - Redesigned */
   .credibility-strip {
-    padding: 2rem 0 3rem;
+    padding: 3rem 0 4rem;
     background: transparent;
   }
 
-  .credibility-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: center;
-    gap: 2rem;
-    padding: 1.75rem 2.5rem;
-  }
-
-  .credibility-copy {
+  .credibility-card-redesigned {
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
-    align-self: stretch;
-    justify-content: center;
+    gap: 2.5rem;
   }
 
-  .credibility-text {
+  .credibility-header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .credibility-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
     color: #f5f5f5;
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    max-width: 60ch;
-  }
-
-  .credibility-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .credibility-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    background: rgba(167, 210, 33, 0.12);
-    border: 1px solid rgba(167, 210, 33, 0.3);
-    color: #b8e32e;
-    font-size: 0.875rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    margin-bottom: 0.75rem;
     line-height: 1.2;
-    box-shadow:
-      0 8px 18px rgba(167, 210, 33, 0.14),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
+
+  .credibility-subtitle {
+    font-size: 1.125rem;
+    color: rgba(245, 245, 245, 0.8);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .credibility-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .credibility-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .credibility-image {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .credibility-image-description {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 245, 0.8);
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    padding: 0 0.5rem;
+  }
+
+  .neon-highlight {
+    color: #a7d221;
+    font-weight: 700;
+    text-shadow: 
+      0 0 10px rgba(167, 210, 33, 0.6),
+      0 0 20px rgba(167, 210, 33, 0.4),
+      0 0 30px rgba(184, 227, 46, 0.2);
+    letter-spacing: 0.02em;
+  }
+
+  /* Timeline Styles */
+  .timeline-container {
+    background: rgba(18, 18, 18, 0.6);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(167, 210, 33, 0.15);
+  }
+
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-icon {
+    width: 24px;
+    height: 24px;
+    color: #a7d221;
+  }
+
+  .timeline-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f5f5f5;
+    margin: 0;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #a7d221;
+    border: 3px solid rgba(167, 210, 33, 0.2);
+    box-shadow: 0 0 0 4px rgba(167, 210, 33, 0.1);
+  }
+
+  .timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .timeline-date {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #a7d221;
+  }
+
+  .timeline-event {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-location {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 245, 0.7);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-press-link {
+    display: inline-block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #a7d221;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 0 10px rgba(167, 210, 33, 0.5);
+    letter-spacing: 0.02em;
+  }
+
+  .timeline-press-link:hover {
+    color: #b8e32e;
+    text-shadow: 
+      0 0 15px rgba(167, 210, 33, 0.8),
+      0 0 25px rgba(184, 227, 46, 0.4);
+    transform: translateX(4px);
+  }
+
+  .timeline-press-link:active {
+    transform: translateX(2px);
+  }
+
 
   .credibility-actions {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(167, 210, 33, 0.15);
+  }
+
+  .credibility-video-description {
+    font-size: 0.875rem;
+    color: rgba(245, 245, 245, 0.6);
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+  }
+
+  .credibility-actions-buttons {
+    display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
   }
 
   .btn.btn-outline-primary {
@@ -654,6 +825,8 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
     color: #a7d221;
     border: 2px solid rgba(167, 210, 33, 0.7);
     box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn.btn-outline-primary:hover {
@@ -661,6 +834,11 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
     color: #0a0a0a;
     border-color: rgba(167, 210, 33, 0.9);
     box-shadow: 0 12px 24px rgba(167, 210, 33, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .btn.btn-outline-primary:active {
+    transform: translateY(0);
   }
 
   /* What We Build */
@@ -974,7 +1152,7 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
     }
 
     .scroll-indicator {
-      bottom: 20px;
+      bottom: 40px;
     }
 
     .scroll-text {
@@ -1008,26 +1186,62 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
       height: 30px;
     }
 
-    .credibility-grid {
+    .credibility-card-redesigned {
+      padding: 1.75rem;
+      gap: 2rem;
+    }
+
+    .credibility-content-grid {
       grid-template-columns: 1fr;
-      gap: 1.75rem;
-      padding: 1.5rem 1.75rem;
+      gap: 2rem;
     }
 
     .credibility-image {
       order: -1;
+      gap: 1rem;
     }
 
-    .credibility-copy {
+    .credibility-image-description {
+      font-size: 0.875rem;
+      padding: 0;
+    }
+
+    .credibility-info-section {
       order: 1;
-      align-items: flex-start;
-      text-align: left;
       gap: 1.5rem;
+    }
+
+    .credibility-header {
+      text-align: left;
+    }
+
+    .credibility-subtitle {
+      text-align: left;
+    }
+
+    .timeline-container {
+      padding: 1.25rem;
     }
 
     .credibility-actions {
       width: 100%;
-      justify-content: flex-start;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+    }
+
+    .credibility-actions-buttons {
+      width: 100%;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .credibility-actions-buttons .btn {
+      width: 100%;
+    }
+
+    .credibility-video-description {
+      font-size: 0.8125rem;
     }
 
     .what-we-build-grid {
@@ -1093,12 +1307,28 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
       display: none;
     }
 
-    .credibility-grid {
-      padding: 1.25rem 1.5rem;
-      gap: 1.5rem;
+    .credibility-card-redesigned {
+      padding: 1.5rem;
+      gap: 1.75rem;
     }
 
-    .credibility-text {
+    .credibility-title {
+      font-size: 1.5rem;
+    }
+
+    .credibility-subtitle {
+      font-size: 1rem;
+    }
+
+    .credibility-image-description {
+      font-size: 0.8125rem;
+    }
+
+    .timeline-container {
+      padding: 1rem;
+    }
+
+    .timeline-title {
       font-size: 1rem;
     }
 
@@ -1106,10 +1336,22 @@ import tvm2kAdVideo from '../assets/kiosks/TVM 2000/tvm2k_ad.mp4';
       flex-direction: column;
       align-items: stretch;
       gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
     }
 
-    .credibility-badges {
-      gap: 0.5rem;
+    .credibility-actions-buttons {
+      width: 100%;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .credibility-actions-buttons .btn {
+      width: 100%;
+    }
+
+    .credibility-video-description {
+      font-size: 0.75rem;
     }
 
     .what-we-build-grid {
